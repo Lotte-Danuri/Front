@@ -496,7 +496,7 @@
         </div>
 
         <!-- Button -->
-        <a class="btn btn-link px-0 text-reset" href="./shop.html">
+        <a class="btn btn-link px-0 text-reset" href="./MyShop">
           View All <i class="fe fe-arrow-right ms-2"></i>
         </a>
 
@@ -679,28 +679,28 @@
             <div class="collapse" id="sidebarHome" data-bs-parent="#sidebarNav">
               <ul class="list-styled fs-lg py-3 mb-0">
                 <li class="list-styled-item">
-                  <a class="list-styled-link" href="./index.html">Default</a>
+                  <a class="list-styled-link" href="./">Default</a>
                 </li>
                 <li class="list-styled-item">
-                  <a class="list-styled-link" href="./index-classic.html">Classic</a>
+                  <a class="list-styled-link" href="./">Classic</a>
                 </li>
                 <li class="list-styled-item">
-                  <a class="list-styled-link" href="./index-fashion.html">Fashion</a>
+                  <a class="list-styled-link" href="./">Fashion</a>
                 </li>
                 <li class="list-styled-item">
-                  <a class="list-styled-link" href="./index-boxed.html">Boxed</a>
+                  <a class="list-styled-link" href="./">Boxed</a>
                 </li>
                 <li class="list-styled-item">
-                  <a class="list-styled-link" href="./index-simple.html">Simple</a>
+                  <a class="list-styled-link" href="./">Simple</a>
                 </li>
                 <li class="list-styled-item">
-                  <a class="list-styled-link" href="./index-asymmetric.html">Asymmetric</a>
+                  <a class="list-styled-link" href="./">Asymmetric</a>
                 </li>
                 <li class="list-styled-item">
-                  <a class="list-styled-link" href="./index-sidenav.html">Sidenav</a>
+                  <a class="list-styled-link" href="./">Sidenav</a>
                 </li>
                 <li class="list-styled-item">
-                  <a class="list-styled-link" href="./index-landing.html">Landing</a>
+                  <a class="list-styled-link" href="./">Landing</a>
                 </li>
               </ul>
             </div>
@@ -724,31 +724,31 @@
                   <!-- Links -->
                   <ul class="list-styled fs-lg py-3">
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./shop.html">All Clothing</a>
+                      <a class="list-styled-link" href="./MyShop">All Clothing</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./shop.html">Blouses & Shirts</a>
+                      <a class="list-styled-link" href="./MyShop">Blouses & Shirts</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./shop.html">Coats & Jackets</a>
+                      <a class="list-styled-link" href="./MyShop">Coats & Jackets</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./shop.html">Dresses</a>
+                      <a class="list-styled-link" href="./MyShop">Dresses</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./shop.html">Hoodies & Sweats</a>
+                      <a class="list-styled-link" href="./MyShop">Hoodies & Sweats</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./shop.html">Denim</a>
+                      <a class="list-styled-link" href="./MyShop">Denim</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./shop.html">Jeans</a>
+                      <a class="list-styled-link" href="./MyShop">Jeans</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./shop.html">Jumpers & Cardigans</a>
+                      <a class="list-styled-link" href="./MyShop">Jumpers & Cardigans</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./shop.html">Leggings</a>
+                      <a class="list-styled-link" href="./MyShop">Leggings</a>
                     </li>
                   </ul>
 
@@ -761,28 +761,28 @@
                   <!-- Links -->
                   <ul class="list-styled fs-lg">
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./shop.html">All Shoes & Boots</a>
+                      <a class="list-styled-link" href="./MyShop">All Shoes & Boots</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./shop.html">Branded Shoes</a>
+                      <a class="list-styled-link" href="./MyShop">Branded Shoes</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./shop.html">Boots</a>
+                      <a class="list-styled-link" href="./MyShop">Boots</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./shop.html">Heels</a>
+                      <a class="list-styled-link" href="./MyShop">Heels</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./shop.html">Trainers</a>
+                      <a class="list-styled-link" href="./MyShop">Trainers</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./shop.html">Sandals</a>
+                      <a class="list-styled-link" href="./MyShop">Sandals</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./shop.html">Shoes</a>
+                      <a class="list-styled-link" href="./MyShop">Shoes</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./shop.html">Wide Fit Shoes</a>
+                      <a class="list-styled-link" href="./MyShop">Wide Fit Shoes</a>
                     </li>
                   </ul>
 
@@ -795,31 +795,31 @@
                   <!-- Links -->
                   <ul class="list-styled fs-lg">
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./shop.html">All Bags & Accessories</a>
+                      <a class="list-styled-link" href="./MyShop">All Bags & Accessories</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./shop.html">Accessories</a>
+                      <a class="list-styled-link" href="./MyShop">Accessories</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./shop.html">Bags & Purses</a>
+                      <a class="list-styled-link" href="./MyShop">Bags & Purses</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./shop.html">Luggage</a>
+                      <a class="list-styled-link" href="./MyShop">Luggage</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./shop.html">Belts</a>
+                      <a class="list-styled-link" href="./MyShop">Belts</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./shop.html">Hats</a>
+                      <a class="list-styled-link" href="./MyShop">Hats</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./shop.html">Hair Accessories</a>
+                      <a class="list-styled-link" href="./MyShop">Hair Accessories</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./shop.html">Jewellery</a>
+                      <a class="list-styled-link" href="./MyShop">Jewellery</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./shop.html">Travel Accessories</a>
+                      <a class="list-styled-link" href="./MyShop">Travel Accessories</a>
                     </li>
                   </ul>
 
@@ -846,7 +846,7 @@
                   <!-- Links -->
                   <ul class="list-styled fs-lg">
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./shop.html">Default</a>
+                      <a class="list-styled-link" href="./MyShop">Default</a>
                     </li>
                     <li class="list-styled-item">
                       <a class="list-styled-link" href="./shop-topbar.html">Topbar</a>
@@ -1579,41 +1579,20 @@
             <li class="nav-item dropdown">
 
               <!-- Toggle -->
-              <a class="nav-link" data-bs-toggle="dropdown" href="#">Home</a>
+              <!-- <a class="nav-link" data-bs-toggle="dropdown" href="#">Home</a> -->
 
               <!-- Menu -->
-              <div class="dropdown-menu">
+              <!-- <div class="dropdown-menu">
                 <div class="card card-lg">
                   <div class="card-body">
                     <ul class="list-styled fs-sm">
                       <li class="list-styled-item">
-                        <a class="list-styled-link" href="./index.html">Default</a>
-                      </li>
-                      <li class="list-styled-item">
-                        <a class="list-styled-link" href="./index-classic.html">Classic</a>
-                      </li>
-                      <li class="list-styled-item">
-                        <a class="list-styled-link" href="./index-fashion.html">Fashion</a>
-                      </li>
-                      <li class="list-styled-item">
-                        <a class="list-styled-link" href="./index-boxed.html">Boxed</a>
-                      </li>
-                      <li class="list-styled-item">
-                        <a class="list-styled-link" href="./index-simple.html">Simple</a>
-                      </li>
-                      <li class="list-styled-item">
-                        <a class="list-styled-link" href="./index-asymmetric.html">Asymmetric</a>
-                      </li>
-                      <li class="list-styled-item">
-                        <a class="list-styled-link" href="./index-sidenav.html">Sidenav</a>
-                      </li>
-                      <li class="list-styled-item">
-                        <a class="list-styled-link" href="./index-landing.html">Landing</a>
+                        <a class="list-styled-link" href="./">Default</a>
                       </li>
                     </ul>
                   </div>
                 </div>
-              </div>
+              </div> -->
 
             </li>
             <li class="nav-item dropdown position-static">
@@ -1663,31 +1642,31 @@
                               <!-- Links -->
                               <ul class="list-styled mb-6 mb-md-0 fs-sm">
                                 <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./shop.html">All Clothing</a>
+                                  <a class="list-styled-link" href="./MyShop">All Clothing</a>
                                 </li>
                                 <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./shop.html">Blouses & Shirts</a>
+                                  <a class="list-styled-link" href="./MyShop">Blouses & Shirts</a>
                                 </li>
                                 <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./shop.html">Coats & Jackets</a>
+                                  <a class="list-styled-link" href="./MyShop">Coats & Jackets</a>
                                 </li>
                                 <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./shop.html">Dresses</a>
+                                  <a class="list-styled-link" href="./MyShop">Dresses</a>
                                 </li>
                                 <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./shop.html">Hoodies & Sweats</a>
+                                  <a class="list-styled-link" href="./MyShop">Hoodies & Sweats</a>
                                 </li>
                                 <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./shop.html">Denim</a>
+                                  <a class="list-styled-link" href="./MyShop">Denim</a>
                                 </li>
                                 <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./shop.html">Jeans</a>
+                                  <a class="list-styled-link" href="./MyShop">Jeans</a>
                                 </li>
                                 <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./shop.html">Jumpers & Cardigans</a>
+                                  <a class="list-styled-link" href="./MyShop">Jumpers & Cardigans</a>
                                 </li>
                                 <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./shop.html">Leggings</a>
+                                  <a class="list-styled-link" href="./MyShop">Leggings</a>
                                 </li>
                               </ul>
 
@@ -1700,28 +1679,28 @@
                               <!-- Links -->
                               <ul class="list-styled mb-6 mb-md-0 fs-sm">
                                 <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./shop.html">All Shoes & Boots</a>
+                                  <a class="list-styled-link" href="./MyShop">All Shoes & Boots</a>
                                 </li>
                                 <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./shop.html">Branded Shoes</a>
+                                  <a class="list-styled-link" href="./MyShop">Branded Shoes</a>
                                 </li>
                                 <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./shop.html">Boots</a>
+                                  <a class="list-styled-link" href="./MyShop">Boots</a>
                                 </li>
                                 <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./shop.html">Heels</a>
+                                  <a class="list-styled-link" href="./MyShop">Heels</a>
                                 </li>
                                 <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./shop.html">Trainers</a>
+                                  <a class="list-styled-link" href="./MyShop">Trainers</a>
                                 </li>
                                 <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./shop.html">Sandals</a>
+                                  <a class="list-styled-link" href="./MyShop">Sandals</a>
                                 </li>
                                 <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./shop.html">Shoes</a>
+                                  <a class="list-styled-link" href="./MyShop">Shoes</a>
                                 </li>
                                 <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./shop.html">Wide Fit Shoes</a>
+                                  <a class="list-styled-link" href="./MyShop">Wide Fit Shoes</a>
                                 </li>
                               </ul>
 
@@ -1734,31 +1713,31 @@
                               <!-- Links -->
                               <ul class="list-styled mb-0 fs-sm">
                                 <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./shop.html">All Bags & Accessories</a>
+                                  <a class="list-styled-link" href="./MyShop">All Bags & Accessories</a>
                                 </li>
                                 <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./shop.html">Accessories</a>
+                                  <a class="list-styled-link" href="./MyShop">Accessories</a>
                                 </li>
                                 <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./shop.html">Bags & Purses</a>
+                                  <a class="list-styled-link" href="./MyShop">Bags & Purses</a>
                                 </li>
                                 <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./shop.html">Luggage</a>
+                                  <a class="list-styled-link" href="./MyShop">Luggage</a>
                                 </li>
                                 <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./shop.html">Belts</a>
+                                  <a class="list-styled-link" href="./MyShop">Belts</a>
                                 </li>
                                 <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./shop.html">Hats</a>
+                                  <a class="list-styled-link" href="./MyShop">Hats</a>
                                 </li>
                                 <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./shop.html">Hair Accessories</a>
+                                  <a class="list-styled-link" href="./MyShop">Hair Accessories</a>
                                 </li>
                                 <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./shop.html">Jewellery</a>
+                                  <a class="list-styled-link" href="./MyShop">Jewellery</a>
                                 </li>
                                 <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./shop.html">Travel Accessories</a>
+                                  <a class="list-styled-link" href="./MyShop">Travel Accessories</a>
                                 </li>
                               </ul>
 
@@ -1771,22 +1750,22 @@
                               <!-- Links -->
                               <ul class="list-styled mb-0 fs-sm">
                                 <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./shop.html">All Collections</a>
+                                  <a class="list-styled-link" href="./MyShop">All Collections</a>
                                 </li>
                                 <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./shop.html">Occasionwear</a>
+                                  <a class="list-styled-link" href="./MyShop">Occasionwear</a>
                                 </li>
                                 <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./shop.html">Going Out</a>
+                                  <a class="list-styled-link" href="./MyShop">Going Out</a>
                                 </li>
                                 <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./shop.html">Workwear</a>
+                                  <a class="list-styled-link" href="./MyShop">Workwear</a>
                                 </li>
                                 <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./shop.html">Holiday Shop</a>
+                                  <a class="list-styled-link" href="./MyShop">Holiday Shop</a>
                                 </li>
                                 <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./shop.html">Jean Fit Guide</a>
+                                  <a class="list-styled-link" href="./MyShop">Jean Fit Guide</a>
                                 </li>
                               </ul>
 
@@ -1802,7 +1781,7 @@
                                 <!-- Overlay -->
                                 <div class="card-img-overlay bg-dark-0 bg-hover align-items-center">
                                   <div class="text-center">
-                                    <a class="btn btn-white stretched-link" href="./shop.html">
+                                    <a class="btn btn-white stretched-link" href="./MyShop">
                                       Shop Sweaters <i class="fe fe-arrow-right ms-2"></i>
                                     </a>
                                   </div>
@@ -1839,7 +1818,7 @@
                         <!-- Links -->
                         <ul class="list-styled mb-7 fs-sm">
                           <li class="list-styled-item">
-                            <a class="list-styled-link" href="./shop.html">Default</a>
+                            <a class="list-styled-link" href="./MyShop">Default</a>
                           </li>
                           <li class="list-styled-item">
                             <a class="list-styled-link" href="./shop-topbar.html">Topbar</a>
@@ -2048,9 +2027,9 @@
               </div>
 
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="docs/getting-started.html">Docs</a>
-            </li>
+            </li> -->
           </ul>
 
           <!-- Nav -->

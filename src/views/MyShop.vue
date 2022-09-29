@@ -665,7 +665,7 @@
 
                         <!-- Heading -->
                         <h4>
-                          2019 Summer Collection
+                          2022 Summer Collection
                         </h4>
 
                         <!-- Button -->
@@ -823,7 +823,7 @@
                   <div class="card-img">
 
                     <!-- Image -->
-                    <a class="card-img-hover" href="product.html">
+                    <a class="card-img-hover" href="/MyProduct">
                       <img class="card-img-top card-img-back" src="assets/img/products/product-120.jpg" alt="...">
                       <img class="card-img-top card-img-front" src="assets/img/products/product-5.jpg" alt="...">
                     </a>
@@ -859,7 +859,7 @@
 
                     <!-- Title -->
                     <div class="fw-bold">
-                      <a class="text-body" href="product.html">
+                      <a class="text-body" href="/MyProduct">
                         Leather mid-heel Sandals
                       </a>
                     </div>
@@ -883,7 +883,7 @@
                   <div class="card-img">
 
                     <!-- Image -->
-                    <a class="card-img-hover" href="product.html">
+                    <a class="card-img-hover" href="/MyProduct">
                       <img class="card-img-top card-img-back" src="assets/img/products/product-121.jpg" alt="...">
                       <img class="card-img-top card-img-front" src="assets/img/products/product-6.jpg" alt="...">
                     </a>
@@ -919,7 +919,7 @@
 
                     <!-- Title -->
                     <div class="fw-bold">
-                      <a class="text-body" href="product.html">
+                      <a class="text-body" href="/MyProduct">
                         Cotton floral print Dress
                       </a>
                     </div>
@@ -948,7 +948,7 @@
                   <div class="card-img">
 
                     <!-- Image -->
-                    <a class="card-img-hover" href="product.html">
+                    <a class="card-img-hover" href="/MyProduct">
                       <img class="card-img-top card-img-back" src="assets/img/products/product-122.jpg" alt="...">
                       <img class="card-img-top card-img-front" src="assets/img/products/product-7.jpg" alt="...">
                     </a>
@@ -984,7 +984,7 @@
 
                     <!-- Title -->
                     <div class="fw-bold">
-                      <a class="text-body" href="product.html">
+                      <a class="text-body" href="/MyProduct">
                         Leather Sneakers
                       </a>
                     </div>
@@ -1044,7 +1044,7 @@
 
                     <!-- Title -->
                     <div class="fw-bold">
-                      <a class="text-body" href="product.html">
+                      <a class="text-body" href="/MyProduct">
                         Cropped cotton Top
                       </a>
                     </div>
@@ -1103,7 +1103,7 @@
 
                     <!-- Title -->
                     <div class="fw-bold">
-                      <a class="text-body" href="product.html">
+                      <a class="text-body" href="/MyProduct">
                         Floral print midi Dress
                       </a>
                     </div>
@@ -1132,7 +1132,7 @@
                   <div class="card-img">
 
                     <!-- Image -->
-                    <a class="card-img-hover" href="product.html">
+                    <a class="card-img-hover" href="/MyProduct">
                       <img class="card-img-top card-img-back" src="assets/img/products/product-123.jpg" alt="...">
                       <img class="card-img-top card-img-front" src="assets/img/products/product-10.jpg" alt="...">
                     </a>
@@ -1168,7 +1168,7 @@
 
                     <!-- Title -->
                     <div class="fw-bold">
-                      <a class="text-body" href="product.html">
+                      <a class="text-body" href="/MyProduct">
                         Suede cross body Bag
                       </a>
                     </div>
@@ -1193,7 +1193,7 @@
                   <div class="card-img">
 
                     <!-- Image -->
-                    <a class="card-img-hover" href="product.html">
+                    <a class="card-img-hover" href="/MyProduct">
                       <img class="card-img-top card-img-back" src="assets/img/products/product-124.jpg" alt="...">
                       <img class="card-img-top card-img-front" src="assets/img/products/product-11.jpg" alt="...">
                     </a>
@@ -1229,7 +1229,7 @@
 
                     <!-- Title -->
                     <div class="fw-bold">
-                      <a class="text-body" href="product.html">
+                      <a class="text-body" href="/MyProduct">
                         Printed A-line Skirt
                       </a>
                     </div>
@@ -1293,7 +1293,7 @@
 
                     <!-- Title -->
                     <div class="fw-bold">
-                      <a class="text-body" href="product.html">
+                      <a class="text-body" href="/MyProduct">
                         Heel strappy Sandals
                       </a>
                     </div>

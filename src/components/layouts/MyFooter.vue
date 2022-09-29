@@ -27,7 +27,7 @@
             <div class="col-12 col-md-3">
 
               <!-- Heading -->
-              <h4 class="mb-6 text-white">Shopper.</h4>
+              <h4 class="mb-6 text-white">Lux On.</h4>
 
               <!-- Social -->
               <ul class="list-unstyled list-inline mb-7 mb-md-0">
@@ -147,7 +147,7 @@
                   <a class="text-gray-300" href="#!">1-202-555-0106</a>
                 </li>
                 <li>
-                  <a class="text-gray-300" href="#!">help@shopper.com</a>
+                  <a class="text-gray-300" href="#!">help@LuxOn.com</a>
                 </li>
               </ul>
 

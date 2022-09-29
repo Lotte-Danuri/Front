@@ -4,8 +4,6 @@ import router from './router'
 import store from './store'
 import mixins from './mixins'
 
-createApp(App).use(store).use(router).mixin(mixins).mount('#app')
-
 // const cors = require('cors')
 
 // const corsOption = {
@@ -14,3 +12,5 @@ createApp(App).use(store).use(router).mixin(mixins).mount('#app')
 // }
 
 // createApp(App).use(cors(corsOption))
+
+createApp(App).use(store).use(router).mixin(mixins).mount('#app')
