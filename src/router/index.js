@@ -1,18 +1,21 @@
-import {
-  createRouter,
-  createWebHistory
-} from 'vue-router'
-import ProductList from '../views/ProductList.vue'
-import ProductDetail from '../views/ProductDetail.vue'
-import ProductCreate from '../views/ProductCreate.vue'
-import ProductUpdate from '../views/ProductUpdate.vue'
-import SalesList from '../views/SalesList.vue'
-import ImageInsert from '../views/ImageInsert.vue'
+import { createRouter, createWebHistory } from 'vue-router'
+import MyMain from '../views/MyMain.vue'
+import MyProduct from '../views/MyProduct.vue'
+import ProductDetail from '../views/MyDetail.vue'
 
-const routes = [{
+const routes = [
+  {
     path: '/',
-    name: 'Home',
-    component: ProductList
+    name: 'MyMain',
+    component: MyMain
+  },
+  {
+    path: '/MyShop',
+    name: 'MyShop',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/MyShop.vue')
   },
   {
     path: '/detail',
@@ -20,24 +23,9 @@ const routes = [{
     component: ProductDetail
   },
   {
-    path: '/create',
-    name: 'ProductCreate',
-    component: ProductCreate
-  },
-  {
-    path: '/update',
-    name: 'ProductUpdate',
-    component: ProductUpdate
-  },
-  {
-    path: '/sales',
-    name: 'SalesList',
-    component: SalesList
-  },
-  {
-    path: '/image_insert',
-    name: 'ImageInsert',
-    component: ImageInsert
+    path: '/MyProduct',
+    name: 'MyProduct',
+    component: MyProduct
   }
 ]
 

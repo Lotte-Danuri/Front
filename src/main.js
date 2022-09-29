@@ -1,20 +1,16 @@
-import { createApp } from "vue";
+import { createApp } from 'vue'
+import App from './App.vue'
+import router from './router'
+import store from './store'
+import mixins from './mixins'
 
-import App from "./App.vue";
-import router from "./router";
-import mixins from "./mixins";
-import store from "./store";
-import VueSweetalert2 from "vue-sweetalert2";
-import "sweetalert2/dist/sweetalert2.min.css";
+// const cors = require('cors')
 
-// import 'bootstrap'
-// import 'bootstrap/dist/css/bootstrap.min.css'
+// const corsOption = {
+//   origin: 'http://localhost:8080',
+//   credentials: true
+// }
 
-const app = createApp(App);
-app.use(router);
-app.mixin(mixins);
-app.use(store);
-app.use(VueSweetalert2);
-app.mount("#app");
+// createApp(App).use(cors(corsOption))
 
-window.Kakao.init("7a3a9cd4830c8f8ae415f16baa3d136f");
+createApp(App).use(store).use(router).mixin(mixins).mount('#app')

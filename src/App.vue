@@ -1,41 +1,24 @@
 <template>
-<div>
-  <Header />
-  <router-view/>
-  <Footer />
-  </div>
+    <MyHeader></MyHeader>
+    <router-link to="/"></router-link>
+    <router-link to="/MyShop"></router-link>
+    <router-view/>
+    <MyFooter></MyFooter>
 </template>
+
 <script>
-import Header from './layouts/Header';
-import Footer from './layouts/Footer';
+import MyHeader from './components/layouts/MyHeader.vue'
+import MyFooter from './components/layouts/MyFooter.vue'
+
 export default {
-  components: {Header, Footer},
-  computed: {
-    user() {
-      return this.$store.state.user;
-    }
+  name: 'App',
+  components: {
+    MyHeader,
+    MyFooter
   }
 }
 </script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>

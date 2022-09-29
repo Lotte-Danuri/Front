@@ -1,20 +1,11 @@
-const target = 'http://127.0.0.1:3000';
+const target = 'http://43.201.18.146'
 
 module.exports = {
   devServer: {
-    port: 8080,
     proxy: {
-      '^/api': {
+      '/products': {
         target,
         changeOrigin: true
-      },
-      '^/upload': {
-        target,
-        changeOrigin: true,
-      },
-      '^/download': {
-        target,
-        changeOrigin: true,
       }
     }
   }
