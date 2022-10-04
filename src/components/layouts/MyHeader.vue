@@ -1,4 +1,5 @@
 <template>
+  <div>
         <!-- MODALS -->
     <!-- Newsletter: Horizontal -->
     <div class="modal fade" id="modalNewsletterHorizontal" tabindex="-1" role="dialog" aria-hidden="true">
@@ -388,7 +389,8 @@
               <option selected>All Categories</option>
               <option>Women</option>
               <option>Men</option>
-              <option>Kids</option>
+              <option>Accessories</option>
+              <option>Beauty</option>
             </select>
           </div>
           <div class="input-group input-group-merge">
@@ -621,8 +623,8 @@
 
       <!-- Buttons -->
       <div class="offcanvas-body">
-        <a class="btn w-100 btn-dark" href="./checkout.html">Continue to Checkout</a>
-        <a class="btn w-100 btn-outline-dark mt-2" href="./shopping-cart.html">View Cart</a>
+        <a class="btn w-100 btn-dark" href="./MyCheckout">Continue to Checkout</a>
+        <a class="btn w-100 btn-outline-dark mt-2" href="./MyCart">View Cart</a>
       </div>
 
       <!-- Empty cart (remove `.d-none` to enable it) -->
@@ -896,10 +898,10 @@
                   <!-- Links -->
                   <ul class="list-styled fs-lg">
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./shopping-cart.html">Shopping Cart</a>
+                      <a class="list-styled-link" href="./MyCart">Shopping Cart</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./checkout.html">Checkout</a>
+                      <a class="list-styled-link" href="./MyCheckout">Checkout</a>
                     </li>
                     <li class="list-styled-item">
                       <a class="list-styled-link" href="./order-completed.html">Order Completed</a>
@@ -921,10 +923,10 @@
                       <a class="list-styled-link" href="./account-order.html">Order</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./account-orders.html">Orders</a>
+                      <a class="list-styled-link" href="./MyOrders">Orders</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./account-wishlist.html">Wishlist</a>
+                      <a class="list-styled-link" href="./MyWishlist">Wishlist</a>
                     </li>
                     <li class="list-styled-item">
                       <a class="list-styled-link" href="./account-personal-info.html">Personal Info</a>
@@ -1618,7 +1620,10 @@
                             Men
                           </a>
                           <a class="nav-link text-uppercase" data-bs-toggle="tab" href="#navTab">
-                            Kids
+                            Accessories
+                          </a>
+                          <a class="nav-link text-uppercase" data-bs-toggle="tab" href="#navTab">
+                            Beauty
                           </a>
                         </nav>
 
@@ -1628,144 +1633,20 @@
                 </div>
 
                 <!-- Tab content -->
-                <div class="card card-lg">
+                <div :key="i" v-for="(category,i) in categoryList" class="card card-lg" v-show="true">
                   <div class="card-body">
                     <div class="tab-content">
                       <div class="tab-pane fade show active" id="navTab">
                         <div class="container">
                           <div class="row">
-                            <div class="col-6 col-md">
-
+                            <div :key="j" v-for="(categorySecondDtoList,j) in category.categorySecondDtoList" class="col-6 col-md">
                               <!-- Heading -->
-                              <div class="mb-5 fw-bold">Clothing</div>
+                              <div class="mb-5 fw-bold" style="font-weight:bold !important">{{categorySecondDtoList.categoryName}}</div>
 
                               <!-- Links -->
                               <ul class="list-styled mb-6 mb-md-0 fs-sm">
-                                <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./MyShop">All Clothing</a>
-                                </li>
-                                <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./MyShop">Blouses & Shirts</a>
-                                </li>
-                                <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./MyShop">Coats & Jackets</a>
-                                </li>
-                                <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./MyShop">Dresses</a>
-                                </li>
-                                <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./MyShop">Hoodies & Sweats</a>
-                                </li>
-                                <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./MyShop">Denim</a>
-                                </li>
-                                <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./MyShop">Jeans</a>
-                                </li>
-                                <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./MyShop">Jumpers & Cardigans</a>
-                                </li>
-                                <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./MyShop">Leggings</a>
-                                </li>
-                              </ul>
-
-                            </div>
-                            <div class="col-6 col-md">
-
-                              <!-- Heading -->
-                              <div class="mb-5 fw-bold">Shoes & Boots</div>
-
-                              <!-- Links -->
-                              <ul class="list-styled mb-6 mb-md-0 fs-sm">
-                                <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./MyShop">All Shoes & Boots</a>
-                                </li>
-                                <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./MyShop">Branded Shoes</a>
-                                </li>
-                                <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./MyShop">Boots</a>
-                                </li>
-                                <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./MyShop">Heels</a>
-                                </li>
-                                <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./MyShop">Trainers</a>
-                                </li>
-                                <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./MyShop">Sandals</a>
-                                </li>
-                                <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./MyShop">Shoes</a>
-                                </li>
-                                <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./MyShop">Wide Fit Shoes</a>
-                                </li>
-                              </ul>
-
-                            </div>
-                            <div class="col-6 col-md">
-
-                              <!-- Heading -->
-                              <div class="mb-5 fw-bold">Bags & Accessories</div>
-
-                              <!-- Links -->
-                              <ul class="list-styled mb-0 fs-sm">
-                                <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./MyShop">All Bags & Accessories</a>
-                                </li>
-                                <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./MyShop">Accessories</a>
-                                </li>
-                                <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./MyShop">Bags & Purses</a>
-                                </li>
-                                <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./MyShop">Luggage</a>
-                                </li>
-                                <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./MyShop">Belts</a>
-                                </li>
-                                <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./MyShop">Hats</a>
-                                </li>
-                                <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./MyShop">Hair Accessories</a>
-                                </li>
-                                <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./MyShop">Jewellery</a>
-                                </li>
-                                <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./MyShop">Travel Accessories</a>
-                                </li>
-                              </ul>
-
-                            </div>
-                            <div class="col-6 col-md">
-
-                              <!-- Heading -->
-                              <div class="mb-5 fw-bold">Collections</div>
-
-                              <!-- Links -->
-                              <ul class="list-styled mb-0 fs-sm">
-                                <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./MyShop">All Collections</a>
-                                </li>
-                                <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./MyShop">Occasionwear</a>
-                                </li>
-                                <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./MyShop">Going Out</a>
-                                </li>
-                                <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./MyShop">Workwear</a>
-                                </li>
-                                <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./MyShop">Holiday Shop</a>
-                                </li>
-                                <li class="list-styled-item">
-                                  <a class="list-styled-link" href="./MyShop">Jean Fit Guide</a>
+                                <li style="padding-bottom: 15px;" :key="k" v-for="(categoryThirdDtoList,k) in categorySecondDtoList.categoryThirdDtoList" class="list-styled-item">
+                                  <a class="list-styled-link" href="./MyShop">{{categoryThirdDtoList.categoryName}}</a>
                                 </li>
                               </ul>
 
@@ -1865,10 +1746,10 @@
                         <!-- Links -->
                         <ul class="list-styled mb-7 fs-sm">
                           <li class="list-styled-item">
-                            <a class="list-styled-link" href="./shopping-cart.html">Shopping Cart</a>
+                            <a class="list-styled-link" href="./MyCart">Shopping Cart</a>
                           </li>
                           <li class="list-styled-item">
-                            <a class="list-styled-link" href="./checkout.html">Checkout</a>
+                            <a class="list-styled-link" href="./MyCheckout">Checkout</a>
                           </li>
                           <li class="list-styled-item">
                             <a class="list-styled-link" href="./order-completed.html">Order Completed</a>
@@ -1887,10 +1768,10 @@
                             <a class="list-styled-link" href="./account-order.html">Order</a>
                           </li>
                           <li class="list-styled-item">
-                            <a class="list-styled-link" href="./account-orders.html">Orders</a>
+                            <a class="list-styled-link" href="./MyOrders">Orders</a>
                           </li>
                           <li class="list-styled-item">
-                            <a class="list-styled-link" href="./account-wishlist.html">Wishlist</a>
+                            <a class="list-styled-link" href="./MyWishlist">Wishlist</a>
                           </li>
                           <li class="list-styled-item">
                             <a class="list-styled-link" href="./account-personal-info.html">Personal Info</a>
@@ -2040,12 +1921,12 @@
               </a>
             </li>
             <li class="nav-item ms-lg-n4">
-              <a class="nav-link" href="./account-orders.html">
+              <a class="nav-link" href="./MyOrders">
                 <i class="fe fe-user"></i>
               </a>
             </li>
             <li class="nav-item ms-lg-n4">
-              <a class="nav-link" href="./account-wishlist.html">
+              <a class="nav-link" href="./MyWishlist">
                 <i class="fe fe-heart"></i>
               </a>
             </li>
@@ -2080,11 +1961,28 @@
         </div>
       </div>
     </div>
+  </div>
 </template>
 
 <script>
 export default {
-
+  data () {
+    return {
+      categoryList: []
+    }
+  },
+  created () {
+    this.getCategoryList()
+  },
+  methods: {
+    async getCategoryList () {
+      this.categoryList = await this.$api('/product/categories', {})
+      console.log(this.categoryList)
+    }
+    // goToDetail (productId) {
+    //   this.$router.push({ path: '/detail', query: { product_id: productId } })
+    // }
+  }
 }
 </script>
 

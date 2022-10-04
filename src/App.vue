@@ -1,7 +1,8 @@
 <template>
     <MyHeader></MyHeader>
     <router-link to="/"></router-link>
-    <router-link to="/MyShop"></router-link>
+    <!-- <router-link to="/MyShop"></router-link> -->
+    <!-- <router-link to="/MyWishlist"></router-link> -->
     <router-view/>
     <MyFooter></MyFooter>
 </template>

@@ -6,6 +6,10 @@ module.exports = {
       '/products': {
         target,
         changeOrigin: true
+      },
+      '/categories': {
+        target,
+        changeOrigin: true
       }
     }
   }

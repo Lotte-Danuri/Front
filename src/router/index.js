@@ -1,6 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import MyMain from '../views/MyMain.vue'
 import MyProduct from '../views/MyProduct.vue'
+import MyWishlist from '../views/MyWishlist.vue'
+import MyCart from '../views/MyCart.vue'
+import MyCheckout from '../views/MyCheckout.vue'
+import MyOrders from '../views/MyOrders.vue'
 import ProductDetail from '../views/MyDetail.vue'
 
 const routes = [
@@ -18,14 +22,34 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/MyShop.vue')
   },
   {
-    path: '/detail',
-    name: 'ProductDetail',
-    component: ProductDetail
-  },
-  {
     path: '/MyProduct',
     name: 'MyProduct',
     component: MyProduct
+  },
+  {
+    path: '/MyWishlist',
+    name: 'MyWishlist',
+    component: MyWishlist
+  },
+  {
+    path: '/MyCart',
+    name: 'MyCart',
+    component: MyCart
+  },
+  {
+    path: '/MyCheckout',
+    name: 'MyCheckout',
+    component: MyCheckout
+  },
+  {
+    path: '/MyOrders',
+    name: 'MyOrders',
+    component: MyOrders
+  },
+  {
+    path: '/detail',
+    name: 'ProductDetail',
+    component: ProductDetail
   }
 ]
 
