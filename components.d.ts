@@ -11,6 +11,7 @@ declare module '@vue/runtime-core' {
     AccordionCollapsePropsDocumentation: typeof import('./documentation/collapse/accordion-collapse-props-documentation.md')['default']
     AccordionCollapseSlotsDocumentation: typeof import('./documentation/collapse/accordion-collapse-slots-documentation.md')['default']
     AccordionDefaultDocumentation: typeof import('./documentation/accordion/accordion-default-documentation.md')['default']
+    AccordionImageDocumentation: typeof import('./documentation/accordion-image/accordion-image-documentation.md')['default']
     AccordionImageEventsDocumentation: typeof import('./documentation/accordion-image/accordion-image-events-documentation.md')['default']
     AccordionImagePropsDocumentation: typeof import('./documentation/accordion-image/accordion-image-props-documentation.md')['default']
     AccordionImageSlotsDocumentation: typeof import('./documentation/accordion-image/accordion-image-slots-documentation.md')['default']
