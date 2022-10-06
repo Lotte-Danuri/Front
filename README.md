@@ -1,3 +1,8 @@
+yarn dev치시고
+localhost:3000/views/MyMain   <--- 접속하세용
+
+---------------------------------------------------------------------------------
+
 # Vuero Vue3 - Multipurpose Admin and Webapp Template
 
 [![cssninja-discord](https://img.shields.io/discord/785473098069311510?label=join%20us%20on%20discord&color=6944EC)](https://discord.cssninja.io/)
