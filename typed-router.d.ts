@@ -353,6 +353,7 @@ declare module 'vue-router/auto/routes' {
     '/views/MyShop': RouteRecordInfo<'/views/MyShop', '/views/MyShop', Record<never, never>, Record<never, never>>,
     '/views/MyTopSellers': RouteRecordInfo<'/views/MyTopSellers', '/views/MyTopSellers', Record<never, never>, Record<never, never>>,
     '/views/MyWishlist': RouteRecordInfo<'/views/MyWishlist', '/views/MyWishlist', Record<never, never>, Record<never, never>>,
+    '/views/product/[id]': RouteRecordInfo<'/views/product/[id]', '/views/product/:id', { id: ParamValue<true> }, { id: ParamValue<false> }>,
     '/wizard-v1': RouteRecordInfo<'/wizard-v1', '/wizard-v1', Record<never, never>, Record<never, never>>,
     '/wizard-v1/': RouteRecordInfo<'/wizard-v1/', '/wizard-v1/', Record<never, never>, Record<never, never>>,
     '/wizard-v1/project-details': RouteRecordInfo<'/wizard-v1/project-details', '/wizard-v1/project-details', Record<never, never>, Record<never, never>>,

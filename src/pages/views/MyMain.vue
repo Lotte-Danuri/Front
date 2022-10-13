@@ -4,6 +4,7 @@
     <div
       class="row gx-0 d-block d-lg-flex flickity flickity-lg-none"
       data-flickity='{"watchCSS": true}'
+      style="display: flex"
     >
       <!-- Item -->
       <div
@@ -314,7 +315,15 @@
                 <!-- Image -->
                 <div class="card-img">
                   <!-- Image -->
-                  <a class="card-img-hover" href="/MyProduct">
+                  <RouterLink
+                    class="card-img-hover"
+                    :to="{
+                      name: '/views/product/[id]',
+                      params: {
+                        id: product.id,
+                      },
+                    }"
+                  >
                     <img
                       class="card-img-top card-img-back"
                       :src="product.thumbnailUrl"
@@ -325,7 +334,9 @@
                       :src="product.thumbnailUrl"
                       alt="..."
                     />
-                  </a>
+                  </RouterLink>
+                  <!-- <a class="card-img-hover" href="/MyProduct"> -->
+                  <!-- </a> -->
 
                   <!-- Actions -->
                   <div class="card-actions">
@@ -442,7 +453,7 @@
   </section>
 
   <!-- REVIEWS -->
-  <section class="py-12">
+  <section class="py-12" style="display: none">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-12 col-md-10 col-lg-8 col-xl-6 text-center">
@@ -701,7 +712,7 @@
       <div class="row">
         <div class="col-12 text-center">
           <!-- Heading -->
-          <h2 class="mb-3">@shopper</h2>
+          <h2 class="mb-3">@Lux On</h2>
 
           <!-- Subheading -->
           <p class="mb-10 fs-lg text-gray-500">

@@ -10,9 +10,13 @@
               <a class="text-gray-400" href="index.html">Home</a>
             </li>
             <li class="breadcrumb-item">
-              <a class="text-gray-400" href="shop.html">Women's Shoes</a>
+              <a class="text-gray-400" href="shop.html">{{
+                product?.categoryFirstName
+              }}</a>
             </li>
-            <li class="breadcrumb-item active">Leather Sneakers</li>
+            <li class="breadcrumb-item active">
+              {{ product?.categorySecondName }}
+            </li>
           </ol>
         </div>
       </div>
@@ -40,37 +44,9 @@
                   <!-- Item -->
                   <a
                     href="#"
-                    data-bigpicture='{ "imgSrc": "../assets/img/products/product-7.jpg"}'
+                    data-bigpicture='{ "imgSrc": "assets/img/products/product-7.jpg"}'
                   >
-                    <img
-                      src="../assets/img/products/product-7.jpg"
-                      alt="..."
-                      class="card-img-top"
-                    />
-                  </a>
-
-                  <!-- Item -->
-                  <a
-                    href="#"
-                    data-bigpicture='{ "imgSrc": "../assets/img/products/product-122.jpg"}'
-                  >
-                    <img
-                      src="../assets/img/products/product-122.jpg"
-                      alt="..."
-                      class="card-img-top"
-                    />
-                  </a>
-
-                  <!-- Item -->
-                  <a
-                    href="#"
-                    data-bigpicture='{ "imgSrc": "../assets/img/products/product-146.jpg"}'
-                  >
-                    <img
-                      src="../assets/img/products/product-146.jpg"
-                      alt="..."
-                      class="card-img-top"
-                    />
+                    <img :src="product?.imageList[0]" alt="..." class="card-img-top" />
                   </a>
                 </div>
               </div>
@@ -85,7 +61,7 @@
                   <!-- Image -->
                   <div
                     class="ratio ratio-1x1 bg-cover"
-                    style="background-image: url(../assets/img/products/product-7.jpg)"
+                    style="background-image: url(assets/img/products/product-7.jpg)"
                   ></div>
                 </div>
 
@@ -94,7 +70,7 @@
                   <!-- Image -->
                   <div
                     class="ratio ratio-1x1 bg-cover"
-                    style="background-image: url(../assets/img/products/product-122.jpg)"
+                    style="background-image: url(assets/img/products/product-122.jpg)"
                   ></div>
                 </div>
 
@@ -103,7 +79,7 @@
                   <!-- Image -->
                   <div
                     class="ratio ratio-1x1 bg-cover"
-                    style="background-image: url(../assets/img/products/product-146.jpg)"
+                    style="background-image: url(assets/img/products/product-146.jpg)"
                   ></div>
                 </div>
               </div>
@@ -113,11 +89,15 @@
               <div class="row mb-1">
                 <div class="col">
                   <!-- Preheading -->
-                  <a class="text-muted" href="shop.html">Sneakers</a>
+                  <a class="text-muted" href="shop.html">{{
+                    product?.categoryThirdName
+                  }}</a>
                 </div>
                 <div class="col-auto">
+                  <i class="fa-solid fa-heart"></i>
+                  {{ product?.likeCount }}
                   <!-- Rating -->
-                  <div class="rating fs-xs text-dark" data-value="4">
+                  <!-- <div class="rating fs-xs text-dark" :data-value=product?.likeCount>
                     <div class="rating-item">
                       <i class="fas fa-star"></i>
                     </div>
@@ -133,22 +113,21 @@
                     <div class="rating-item">
                       <i class="fas fa-star"></i>
                     </div>
-                  </div>
+                  </div> -->
 
-                  <a class="fs-sm text-reset ms-2" href="#reviews"> Reviews (6) </a>
+                  <!-- <a class="fs-sm text-reset ms-2" href="#reviews">
+                    Reviews
+                  </a> -->
                 </div>
               </div>
 
               <!-- Heading -->
-              <h3 class="mb-2">Leather Sneakers</h3>
+              <h3 class="mb-2">{{ product?.productName }}</h3>
 
               <!-- Price -->
               <div class="mb-7">
-                <span class="fs-lg fw-bold text-gray-350 text-decoration-line-through"
-                  >$115.00</span
-                >
-                <span class="ms-1 fs-5 fw-bolder text-primary">$85.00</span>
-                <span class="fs-sm ms-1">(In Stock)</span>
+                <span class="ms-1 fs-5 fw-bolder text-primary">{{ product?.price }}</span>
+                <span class="fs-sm ms-1">원</span>
               </div>
 
               <!-- Form -->
@@ -168,9 +147,7 @@
                         data-toggle="form-caption"
                         data-target="#colorCaption"
                         value="White"
-                        style="
-                          background-image: url(../assets/img/products/product-7.jpg);
-                        "
+                        style="background-image: url(assets/img/products/product-7.jpg)"
                         checked
                       />
                     </div>
@@ -183,9 +160,7 @@
                         data-toggle="form-caption"
                         data-target="#colorCaption"
                         value="Black"
-                        style="
-                          background-image: url(../assets/img/products/product-49.jpg);
-                        "
+                        style="background-image: url(assets/img/products/product-49.jpg)"
                       />
                     </div>
                   </div>
@@ -375,7 +350,7 @@
                   <!-- Size chart -->
                   <p class="mb-8">
                     <img
-                      src="../assets/img/icons/icon-ruler.svg"
+                      src="assets/img/icons/icon-ruler.svg"
                       alt="..."
                       class="img-fluid"
                     />
@@ -551,7 +526,7 @@
                       <!-- Size -->
                       <p class="mb-0">
                         <img
-                          src="../assets/img/icons/icon-ruler.svg"
+                          src="assets/img/icons/icon-ruler.svg"
                           alt="..."
                           class="img-fluid"
                         />
@@ -650,12 +625,12 @@
                   <a class="card-img-hover" href="product.html">
                     <img
                       class="card-img-top card-img-back"
-                      src="../assets/img/products/product-120.jpg"
+                      src="assets/img/products/product-120.jpg"
                       alt="..."
                     />
                     <img
                       class="card-img-top card-img-front"
-                      src="../assets/img/products/product-5.jpg"
+                      src="assets/img/products/product-5.jpg"
                       alt="..."
                     />
                   </a>
@@ -718,12 +693,12 @@
                   <a class="card-img-hover" href="product.html">
                     <img
                       class="card-img-top card-img-back"
-                      src="../assets/img/products/product-121.jpg"
+                      src="assets/img/products/product-121.jpg"
                       alt="..."
                     />
                     <img
                       class="card-img-top card-img-front"
-                      src="../assets/img/products/product-6.jpg"
+                      src="assets/img/products/product-6.jpg"
                       alt="..."
                     />
                   </a>
@@ -791,12 +766,12 @@
                   <a class="card-img-hover" href="product.html">
                     <img
                       class="card-img-top card-img-back"
-                      src="../assets/img/products/product-122.jpg"
+                      src="assets/img/products/product-122.jpg"
                       alt="..."
                     />
                     <img
                       class="card-img-top card-img-front"
-                      src="../assets/img/products/product-7.jpg"
+                      src="assets/img/products/product-7.jpg"
                       alt="..."
                     />
                   </a>
@@ -862,7 +837,7 @@
                   <a href="#!">
                     <img
                       class="card-img-top card-img-front"
-                      src="../assets/img/products/product-8.jpg"
+                      src="assets/img/products/product-8.jpg"
                       alt="..."
                     />
                   </a>
@@ -1467,8 +1442,46 @@
   </section>
 </template>
 
-<script>
-export default {}
+<script setup lang="ts">
+import { useHead } from '@vueuse/head'
+import { useApi } from '/@src/composable/useApi'
+
+interface Product {
+  id: number
+  productName: string
+  thumbnailUrl: string
+  price: number
+  stock: number
+  storeName: string
+  likeCount: number
+  productCode: string
+  warranty: number
+  categoryFirstName: string
+  categorySecondName: string
+  categoryThirdName: string
+  imageList: string[]
+}
+const product = ref<Product>()
+const loading = ref(false)
+const api = useApi()
+const router = useRouter()
+const route = useRoute()
+
+watchEffect(async () => {
+  const currentProductId = (route.params?.id as string) ?? ''
+  loading.value = true
+
+  try {
+    const { data } = await api.get<Product>(`/products/` + currentProductId)
+    product.value = data
+  } catch (error) {
+  } finally {
+    loading.value = false
+  }
+})
+useHead({
+  title: computed(() => product.value?.productName ?? 'Loading article...'),
+})
 </script>
 
 <style>

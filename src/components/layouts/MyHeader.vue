@@ -815,7 +815,7 @@
       <!-- Buttons -->
       <div class="offcanvas-body">
         <a class="btn w-100 btn-dark" href="./MyCheckout">Continue to Checkout</a>
-        <a class="btn w-100 btn-outline-dark mt-2" href="./MyCart">View Cart</a>
+        <a class="btn w-100 btn-outline-dark mt-2" href="./views/MyCart">View Cart</a>
       </div>
 
       <!-- Empty cart (remove `.d-none` to enable it) -->
@@ -1129,10 +1129,10 @@
                       <a class="list-styled-link" href="./account-order.html">Order</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./MyOrders">Orders</a>
+                      <a class="list-styled-link" href="./views/MyOrders">Orders</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./MyWishlist">Wishlist</a>
+                      <a class="list-styled-link" href="./views/MyWishlist">Wishlist</a>
                     </li>
                     <li class="list-styled-item">
                       <a class="list-styled-link" href="./account-personal-info.html"
@@ -1991,7 +1991,7 @@
               <!-- Menu -->
               <div class="dropdown-menu w-100">
                 <!-- Tabs -->
-                <div class="mb-2 mb-lg-0 border-bottom-lg">
+                <div class="mb-2 mb-lg-0 border-bottom-lg" style="display: none">
                   <div class="container">
                     <div class="row">
                       <div class="col-12">
@@ -2000,30 +2000,42 @@
                           class="nav nav-tabs nav-overflow fs-xs border-bottom border-bottom-lg-0"
                         >
                           <a
+                            id="a3"
                             class="nav-link text-uppercase active"
                             data-bs-toggle="tab"
                             href="#navTab"
+                            @mouseover="doMouseOver(3)"
+                            @focus="doSth"
                           >
                             Women
                           </a>
                           <a
+                            id="a5"
                             class="nav-link text-uppercase"
                             data-bs-toggle="tab"
                             href="#navTab"
+                            @mouseover="doMouseOver(5)"
+                            @focus="doSth"
                           >
                             Men
                           </a>
                           <a
+                            id="a6"
                             class="nav-link text-uppercase"
                             data-bs-toggle="tab"
                             href="#navTab"
+                            @mouseover="doMouseOver(6)"
+                            @focus="doSth"
                           >
                             Accessories
                           </a>
                           <a
+                            id="a7"
                             class="nav-link text-uppercase"
                             data-bs-toggle="tab"
                             href="#navTab"
+                            @mouseover="doMouseOver(7)"
+                            @focus="doSth"
                           >
                             Beauty
                           </a>
@@ -2040,8 +2052,13 @@
                   :key="i"
                   class="card card-lg"
                 >
-                  <div class="card-body">
-                    <div class="tab-content">
+                  <div
+                    :id="`${category.id}`"
+                    ref="refHead"
+                    class="card-body"
+                    :style="`${categroyShow}`"
+                  >
+                    <div class="tab-content" style="display: block">
                       <div id="navTab" class="tab-pane fade show active">
                         <div class="container">
                           <div class="row">
@@ -2071,7 +2088,6 @@
                                   class="list-styled-item"
                                 >
                                   <a class="list-styled-link" href="./MyShop">
-                                    sfdsf
                                     {{ categoryThirdDtoList.categoryName }}
                                   </a>
                                 </li>
@@ -2081,11 +2097,12 @@
                               <!-- Card -->
                               <div class="card">
                                 <!-- Image -->
-                                <img
+                                <!-- <img
                                   class="card-img"
-                                  src="./assets/img/products/product-110.jpg"
+                                  style="height: 250px"
+                                  src="./assets/img/products/product-109.jpg"
                                   alt="..."
-                                />
+                                /> -->
 
                                 <!-- Overlay -->
                                 <div
@@ -2096,7 +2113,8 @@
                                       class="btn btn-white stretched-link"
                                       href="./MyShop"
                                     >
-                                      Shop Sweaters <i class="fe fe-arrow-right ms-2"></i>
+                                      {{ category.categoryName }}
+                                      <i class="fe fe-arrow-right ms-2"></i>
                                     </a>
                                   </div>
                                 </div>
@@ -2220,7 +2238,9 @@
                             <a class="list-styled-link" href="./MyOrders">Orders</a>
                           </li>
                           <li class="list-styled-item">
-                            <a class="list-styled-link" href="./MyWishlist">Wishlist</a>
+                            <a class="list-styled-link" href="./views/MyWishlist"
+                              >Wishlist</a
+                            >
                           </li>
                           <li class="list-styled-item">
                             <a
@@ -2417,7 +2437,7 @@
               </a>
             </li>
             <li class="nav-item ms-lg-n4">
-              <a class="nav-link" href="./MyWishlist">
+              <a class="nav-link" href="./views/MyWishlist">
                 <i class="fe fe-heart"></i>
               </a>
             </li>
@@ -2469,9 +2489,11 @@ export default {
       this.categoryList = await api.get('/categories', {})
       console.log(this.categoryList)
     },
-    // goToDetail (productId) {
-    //   this.$router.push({ path: '/detail', query: { product_id: productId } })
-    // }
+    doMouseOver(input) {
+      if (this.$refs.refHead.id == input) {
+        this.$refs.refHead.display = 'block'
+      }
+    },
   },
 }
 </script>

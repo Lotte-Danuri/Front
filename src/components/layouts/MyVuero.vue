@@ -357,7 +357,7 @@ useHead({
             "
           />
 
-          <div class="chat-area-footer" style="width: 70%; bottom: 70px; z-index: 1">
+          <div class="chat-area-footer" style="width: 70%; bottom: 120px; z-index: 1">
             <div class="add-content">
               <div ref="dropdownElement2" class="dropdown dropdown-trigger is-up">
                 <div>
