@@ -69,10 +69,10 @@
             <!-- Links -->
             <ul class="list-unstyled mb-7 mb-sm-0">
               <li>
-                <a class="text-gray-300" href="./contact-us.html">Contact Us</a>
+                <a class="text-gray-300" href="./">Contact Us</a>
               </li>
               <li>
-                <a class="text-gray-300" href="./faq.html">FAQs</a>
+                <a class="text-gray-300" href="./">FAQs</a>
               </li>
               <li>
                 <a class="text-gray-300" data-bs-toggle="modal" href="#modalSizeChart"
@@ -80,9 +80,7 @@
                 >
               </li>
               <li>
-                <a class="text-gray-300" href="./shipping-and-returns.html"
-                  >Shipping & Returns</a
-                >
+                <a class="text-gray-300" href="./"> Shipping & Returns</a>
               </li>
             </ul>
           </div>
@@ -93,16 +91,16 @@
             <!-- Links -->
             <ul class="list-unstyled mb-7 mb-sm-0">
               <li>
-                <a class="text-gray-300" href="./shop.html">Men's Shopping</a>
+                <a class="text-gray-300" href="./">Men's Shopping</a>
               </li>
               <li>
-                <a class="text-gray-300" href="./shop.html">Women's Shopping</a>
+                <a class="text-gray-300" href="./">Women's Shopping</a>
               </li>
               <li>
-                <a class="text-gray-300" href="./shop.html">Kids' Shopping</a>
+                <a class="text-gray-300" href="./">Kids' Shopping</a>
               </li>
               <li>
-                <a class="text-gray-300" href="./shop.html">Discounts</a>
+                <a class="text-gray-300" href="./">Discounts</a>
               </li>
             </ul>
           </div>
@@ -113,16 +111,16 @@
             <!-- Links -->
             <ul class="list-unstyled mb-0">
               <li>
-                <a class="text-gray-300" href="./about.html">Our Story</a>
+                <a class="text-gray-300" href="./">Our Story</a>
               </li>
               <li>
-                <a class="text-gray-300" href="#!">Careers</a>
+                <a class="text-gray-300" href="./">Careers</a>
               </li>
               <li>
-                <a class="text-gray-300" href="#!">Terms & Conditions</a>
+                <a class="text-gray-300" href="./">Terms & Conditions</a>
               </li>
               <li>
-                <a class="text-gray-300" href="#!">Privacy & Cookie policy</a>
+                <a class="text-gray-300" href="./">Privacy & Cookie policy</a>
               </li>
             </ul>
           </div>
@@ -133,13 +131,13 @@
             <!-- Links -->
             <ul class="list-unstyled mb-0">
               <li>
-                <a class="text-gray-300" href="#!">1-202-555-0105</a>
+                <a class="text-gray-300" href="./">1-202-555-0105</a>
               </li>
               <li>
-                <a class="text-gray-300" href="#!">1-202-555-0106</a>
+                <a class="text-gray-300" href="./">1-202-555-0106</a>
               </li>
               <li>
-                <a class="text-gray-300" href="#!">help@LuxOn.com</a>
+                <a class="text-gray-300" href="./">help@LuxOn.com</a>
               </li>
             </ul>
           </div>

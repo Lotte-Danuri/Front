@@ -10,10 +10,6 @@
     "node": ">=14.18.0",
     "npm": ">=7"
   },
-  "gitHooks": {
-    "pre-commit": "lint-staged",
-    "commit-msg": "commitlint -e -V "
-  },
   "lint-staged": {
     "*.ts": [
       "eslint --fix",
@@ -117,6 +113,7 @@
     "vue-scrollto": "2.20.0",
     "vue-tippy": "6.0.0-alpha.63",
     "vue3-apexcharts": "1.4.1",
+    "vuetify-money": "^1.2.0",
     "zod": "3.18.0"
   },
   "devDependencies": {
@@ -126,8 +123,8 @@
     "@intlify/vite-plugin-vue-i18n": "7.0.0-beta.2",
     "@nuxt/devalue": "^2.0.0",
     "@types/dragula": "3.7.1",
-    "@types/mapbox-gl": "2.7.5",
     "@types/mapbox__mapbox-gl-geocoder": "4.7.3",
+    "@types/mapbox-gl": "2.7.5",
     "@types/markdown-it": "12.2.3",
     "@types/node": "18.7.14",
     "@types/nprogress": "0.2.0",

@@ -254,7 +254,7 @@
                 />
 
                 <!-- Button -->
-                <a class="btn btn-sm w-100 btn-primary" href="./product.html">
+                <a class="btn btn-sm w-100 btn-primary" href="./">
                   More Product Info <i class="fe fe-info ms-2"></i>
                 </a>
               </div>
@@ -616,9 +616,7 @@
           <div class="col position-static">
             <!-- Text -->
             <p class="mb-0 fw-bold">
-              <a class="stretched-link text-body" href="./product.html"
-                >Leather mid-heel Sandals</a
-              >
+              <a class="stretched-link text-body" href="./">Leather mid-heel Sandals</a>
               <br />
               <span class="text-muted">$129.00</span>
             </p>
@@ -632,9 +630,7 @@
           <div class="col position-static">
             <!-- Text -->
             <p class="mb-0 fw-bold">
-              <a class="stretched-link text-body" href="./product.html"
-                >Cotton floral print Dress</a
-              >
+              <a class="stretched-link text-body" href="./">Cotton floral print Dress</a>
               <br />
               <span class="text-muted">$40.00</span>
             </p>
@@ -648,9 +644,7 @@
           <div class="col position-static">
             <!-- Text -->
             <p class="mb-0 fw-bold">
-              <a class="stretched-link text-body" href="./product.html"
-                >Leather Sneakers</a
-              >
+              <a class="stretched-link text-body" href="./">Leather Sneakers</a>
               <br />
               <span class="text-primary">$85.00</span>
             </p>
@@ -664,9 +658,7 @@
           <div class="col position-static">
             <!-- Text -->
             <p class="mb-0 fw-bold">
-              <a class="stretched-link text-body" href="./product.html"
-                >Cropped cotton Top</a
-              >
+              <a class="stretched-link text-body" href="./">Cropped cotton Top</a>
               <br />
               <span class="text-muted">$29.00</span>
             </p>
@@ -680,9 +672,7 @@
           <div class="col position-static">
             <!-- Text -->
             <p class="mb-0 fw-bold">
-              <a class="stretched-link text-body" href="./product.html"
-                >Floral print midi Dress</a
-              >
+              <a class="stretched-link text-body" href="./">Floral print midi Dress</a>
               <br />
               <span class="text-muted">$50.00</span>
             </p>
@@ -736,7 +726,7 @@
           <div class="row align-items-center">
             <div class="col-4">
               <!-- Image -->
-              <a href="./product.html">
+              <a href="./">
                 <img
                   class="img-fluid"
                   src="./assets/img/products/product-6.jpg"
@@ -747,7 +737,7 @@
             <div class="col-8">
               <!-- Title -->
               <p class="fs-sm fw-bold mb-6">
-                <a class="text-body" href="./product.html">Cotton floral print Dress</a>
+                <a class="text-body" href="./">Cotton floral print Dress</a>
                 <br />
                 <span class="text-muted">$40.00</span>
               </p>
@@ -773,7 +763,7 @@
           <div class="row align-items-center">
             <div class="col-4">
               <!-- Image -->
-              <a href="./product.html">
+              <a href="./">
                 <img
                   class="img-fluid"
                   src="./assets/img/products/product-10.jpg"
@@ -784,7 +774,7 @@
             <div class="col-8">
               <!-- Title -->
               <p class="fs-sm fw-bold mb-6">
-                <a class="text-body" href="./product.html">Suede cross body Bag</a> <br />
+                <a class="text-body" href="./">Suede cross body Bag</a> <br />
                 <span class="text-muted">$49.00</span>
               </p>
 
@@ -814,8 +804,12 @@
 
       <!-- Buttons -->
       <div class="offcanvas-body">
-        <a class="btn w-100 btn-dark" href="./MyCheckout">Continue to Checkout</a>
-        <a class="btn w-100 btn-outline-dark mt-2" href="./views/MyCart">View Cart</a>
+        <RouterLink to="/views/MyCheckout" class="logo">
+          <a class="btn w-100 btn-dark" href="./MyCheckout">Continue to Checkout</a>
+        </RouterLink>
+        <RouterLink to="/views/MyCart" class="logo">
+          <a class="btn w-100 btn-outline-dark mt-2" href="./views/MyCart">View Cart</a>
+        </RouterLink>
       </div>
 
       <!-- Empty cart (remove `.d-none` to enable it) -->
@@ -1051,16 +1045,16 @@
                       <a class="list-styled-link" href="./MyShop">Default</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./shop-topbar.html">Topbar</a>
+                      <a class="list-styled-link" href="./">Topbar</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./shop-collapse.html">Collapse</a>
+                      <a class="list-styled-link" href="./">Collapse</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./shop-simple.html">Simple</a>
+                      <a class="list-styled-link" href="./">Simple</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./shop-masonry.html">Masonry</a>
+                      <a class="list-styled-link" href="./">Masonry</a>
                     </li>
                   </ul>
                 </div>
@@ -1071,27 +1065,19 @@
                   <!-- Links -->
                   <ul class="list-styled fs-lg">
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./product.html">Default</a>
+                      <a class="list-styled-link" href="./">Default</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./product-images-left.html"
-                        >Images Left</a
-                      >
+                      <a class="list-styled-link" href="./">Images Left</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./product-image-grid.html"
-                        >Image Grid</a
-                      >
+                      <a class="list-styled-link" href="./">Image Grid</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./product-image-slider.html"
-                        >Image Slider</a
-                      >
+                      <a class="list-styled-link" href="./">Image Slider</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./product-images-stacked.html"
-                        >Images Stacked</a
-                      >
+                      <a class="list-styled-link" href="./">Images Stacked</a>
                     </li>
                   </ul>
                 </div>
@@ -1108,14 +1094,10 @@
                       <a class="list-styled-link" href="./MyCheckout">Checkout</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./order-completed.html"
-                        >Order Completed</a
-                      >
+                      <a class="list-styled-link" href="./">Order Completed</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./shipping-and-returns.html"
-                        >Shipping & Returns</a
-                      >
+                      <a class="list-styled-link" href="./">Shipping & Returns</a>
                     </li>
                   </ul>
                 </div>
@@ -1135,37 +1117,25 @@
                       <a class="list-styled-link" href="./views/MyWishlist">Wishlist</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./account-personal-info.html"
-                        >Personal Info</a
-                      >
+                      <a class="list-styled-link" href="./">Personal Info</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./account-address.html"
-                        >Addresses</a
-                      >
+                      <a class="list-styled-link" href="./">Addresses</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./account-address-edit.html"
-                        >Addresses: New</a
-                      >
+                      <a class="list-styled-link" href="./">Addresses: New</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./account-payment.html"
-                        >Payment</a
-                      >
+                      <a class="list-styled-link" href="./">Payment</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./account-payment-edit.html"
-                        >Payment: New</a
-                      >
+                      <a class="list-styled-link" href="./">Payment: New</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./account-payment-choose.html"
-                        >Payment: Choose</a
-                      >
+                      <a class="list-styled-link" href="./">Payment: Choose</a>
                     </li>
                     <li class="list-styled-item">
-                      <a class="list-styled-link" href="./auth.html">Auth</a>
+                      <a class="list-styled-link" href="./">Auth</a>
                     </li>
                   </ul>
                 </div>
@@ -1244,65 +1214,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <!-- Toggle -->
-            <a
-              class="nav-link dropdown-toggle"
-              data-bs-toggle="collapse"
-              href="#sidebarPages"
-            >
-              Pages
-            </a>
-
-            <!-- Collapse -->
-            <div id="sidebarPages" class="collapse" data-bs-parent="#sidebarNav">
-              <ul class="list-styled fs-lg py-3 mb-0">
-                <li class="list-styled-item">
-                  <a class="list-styled-link" href="./about.html">About</a>
-                </li>
-                <li class="list-styled-item">
-                  <a class="list-styled-link" href="./contact-us.html">Contact Us</a>
-                </li>
-                <li class="list-styled-item">
-                  <a class="list-styled-link" href="./store-locator.html"
-                    >Store Locator</a
-                  >
-                </li>
-                <li class="list-styled-item">
-                  <a class="list-styled-link" href="./faq.html">FAQ</a>
-                </li>
-                <li class="list-styled-item">
-                  <a class="list-styled-link" href="./coming-soon.html">Coming Soon</a>
-                </li>
-                <li class="list-styled-item">
-                  <a class="list-styled-link" href="./404.html">404</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <!-- Toggle -->
-            <a
-              class="nav-link dropdown-toggle"
-              data-bs-toggle="collapse"
-              href="#sidebarBlog"
-            >
-              Blog
-            </a>
-
-            <!-- Collapse -->
-            <div id="sidebarBlog" class="collapse" data-bs-parent="#sidebarNav">
-              <ul class="list-styled fs-lg py-3 mb-0">
-                <li class="list-styled-item">
-                  <a class="list-styled-link" href="./blog.html">Blog</a>
-                </li>
-                <li class="list-styled-item">
-                  <a class="list-styled-link" href="./blog-post.html">Blog Post</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./docs/getting-started.html">Docs</a>
+            <a class="nav-link" href="./">Docs</a>
           </li>
         </ul>
       </div>
@@ -1631,7 +1543,7 @@
             <div class="row mb-6">
               <div class="col-12 col-md-3">
                 <!-- Image -->
-                <a href="./product.html">
+                <a href="./">
                   <img
                     class="img-fluid mb-7 mb-md-0"
                     src="./assets/img/products/product-6.jpg"
@@ -1642,9 +1554,7 @@
               <div class="col-12 col-md-9">
                 <!-- Label -->
                 <p>
-                  <a class="fw-bold text-body" href="./product.html"
-                    >Cotton floral print Dress</a
-                  >
+                  <a class="fw-bold text-body" href="./">Cotton floral print Dress</a>
                 </p>
 
                 <!-- Radio -->
@@ -1845,7 +1755,7 @@
         <div id="topbarCollapse" class="collapse navbar-collapse">
           <!-- Nav -->
           <ul class="nav nav-divided navbar-nav me-auto">
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown" style="display: none">
               <!-- Toggle -->
               <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">
                 <img class="mb-1 me-1" src="./assets/img/flags/usa.svg" alt="..." />
@@ -1877,7 +1787,7 @@
                 </a>
               </div>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown" style="display: none">
               <!-- Toggle -->
               <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
                 >USD</a
@@ -1907,14 +1817,13 @@
           <!-- Nav -->
           <ul class="nav navbar-nav me-8">
             <li class="nav-item">
-              <a class="nav-link" href="./shipping-and-returns.html">Shipping</a>
+              <RouterLink to="/views/auth/login" class="logo">
+                <a class="nav-link" href="./views/auth/login">Log In</a>
+              </RouterLink>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./faq.html">FAQ</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./contact-us.html">Contact</a>
-            </li>
+            <RouterLink to="/views/auth/signup" class="logo">
+              <a class="nav-link" href="./views/auth/Sign Up">Sign Up</a>
+            </RouterLink>
           </ul>
 
           <!-- Nav -->
@@ -1967,23 +1876,7 @@
         <div id="navbarCollapse" class="collapse navbar-collapse">
           <!-- Nav -->
           <ul class="navbar-nav mx-auto">
-            <li class="nav-item dropdown">
-              <!-- Toggle -->
-              <!-- <a class="nav-link" data-bs-toggle="dropdown" href="#">Home</a> -->
-
-              <!-- Menu -->
-              <!-- <div class="dropdown-menu">
-                <div class="card card-lg">
-                  <div class="card-body">
-                    <ul class="list-styled fs-sm">
-                      <li class="list-styled-item">
-                        <a class="list-styled-link" href="./">Default</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div> -->
-            </li>
+            <li class="nav-item dropdown"></li>
             <li class="nav-item dropdown position-static">
               <!-- Toggle -->
               <a class="nav-link" data-bs-toggle="dropdown" href="#">Catalog</a>
@@ -2078,7 +1971,10 @@
                               </div>
 
                               <!-- Links -->
-                              <ul class="list-styled mb-6 mb-md-0 fs-sm">
+                              <ul
+                                class="list-styled mb-6 mb-md-0 fs-sm"
+                                style="display: none"
+                              >
                                 <li
                                   v-for="(
                                     categoryThirdDtoList, k
@@ -2087,9 +1983,7 @@
                                   style="padding-bottom: 15px"
                                   class="list-styled-item"
                                 >
-                                  <a class="list-styled-link" href="./MyShop">
-                                    {{ categoryThirdDtoList.categoryName }}
-                                  </a>
+                                  <a class="list-styled-link" href="./MyShop"> </a>
                                 </li>
                               </ul>
                             </div>
@@ -2129,8 +2023,13 @@
               </div>
             </li>
             <li class="nav-item dropdown">
-              <!-- Toggle -->
-              <a class="nav-link" data-bs-toggle="dropdown" href="#">Shop</a>
+              <a
+                class="nav-link"
+                data-bs-toggle="dropdown"
+                href="#"
+                style="margin-left: 100px"
+                >Shop</a
+              >
 
               <!-- Menu -->
               <div class="dropdown-menu" style="min-width: 650px">
@@ -2243,11 +2142,11 @@
                             >
                           </li>
                           <li class="list-styled-item">
-                            <a
-                              class="list-styled-link"
-                              href="./account-personal-info.html"
-                              >Personal Info</a
-                            >
+                            <RouterLink to="/views/MyInfo" class="logo">
+                              <a class="list-styled-link" href="./MyInfo"
+                                >Personal Info</a
+                              >
+                            </RouterLink>
                           </li>
                           <li class="list-styled-item">
                             <a class="list-styled-link" href="./account-address.html"
@@ -2361,64 +2260,6 @@
                 </div>
               </div>
             </li>
-            <li class="nav-item dropdown">
-              <!-- Toggle -->
-              <a class="nav-link" data-bs-toggle="dropdown" href="#">Pages</a>
-
-              <!-- Menu -->
-              <div class="dropdown-menu">
-                <div class="card card-lg">
-                  <div class="card-body">
-                    <ul class="list-styled fs-sm">
-                      <li class="list-styled-item">
-                        <a class="list-styled-link" href="./about.html">About</a>
-                      </li>
-                      <li class="list-styled-item">
-                        <a class="list-styled-link" href="./contact-us.html"
-                          >Contact Us</a
-                        >
-                      </li>
-                      <li class="list-styled-item">
-                        <a class="list-styled-link" href="./store-locator.html"
-                          >Store Locator</a
-                        >
-                      </li>
-                      <li class="list-styled-item">
-                        <a class="list-styled-link" href="./faq.html">FAQ</a>
-                      </li>
-                      <li class="list-styled-item">
-                        <a class="list-styled-link" href="./coming-soon.html"
-                          >Coming Soon</a
-                        >
-                      </li>
-                      <li class="list-styled-item">
-                        <a class="list-styled-link" href="./404.html">404</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="nav-item dropdown">
-              <!-- Toggle -->
-              <a class="nav-link" data-bs-toggle="dropdown" href="#">Blog</a>
-
-              <!-- Menu -->
-              <div class="dropdown-menu">
-                <div class="card card-lg">
-                  <div class="card-body">
-                    <ul class="list-styled fs-sm">
-                      <li class="list-styled-item">
-                        <a class="list-styled-link" href="./blog.html">Blog</a>
-                      </li>
-                      <li class="list-styled-item">
-                        <a class="list-styled-link" href="./blog-post.html">Blog Post</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </li>
             <!-- <li class="nav-item">
               <a class="nav-link" href="docs/getting-started.html">Docs</a>
             </li> -->
@@ -2437,7 +2278,7 @@
               </a>
             </li>
             <li class="nav-item ms-lg-n4">
-              <a class="nav-link" href="./views/MyWishlist">
+              <a class="nav-link" href="./MyWishlist">
                 <i class="fe fe-heart"></i>
               </a>
             </li>

@@ -1,4 +1,95 @@
-{
+{"chungChat":[
+  [
+    {
+      "chatId": "634514b53ba202177097f029",
+      "contentType": "메세지",
+      "content": "안녕하세요1",
+      "sendBy": "Test1",
+      "source": "",
+      "createdAt": "2022-10-11T07:01:09.026"
+    },
+    {
+      "chatId": "634514bf3ba202177097f02a",
+      "contentType": "메세지",
+      "content": "안녕하세요2",
+      "sendBy": "Test2",
+      "source": "",
+      "createdAt": "2022-10-11T07:01:19.624"
+    },
+    {
+      "chatId": "634514c33ba202177097f02b",
+      "contentType": "메세지",
+      "content": "안녕하세요3",
+      "sendBy": "Test2",
+      "source": "",
+      "createdAt": "2022-10-11T07:01:23.695"
+    },
+    {
+      "chatId": "634514e03ba202177097f02c",
+      "contentType": "메세지",
+      "content": "안녕하세요4",
+      "sendBy": "Test2",
+      "source": "",
+      "createdAt": "2022-10-11T07:01:52.018"
+    }
+  ],
+  [
+    {
+      "chatId": "634514b53ba202177097f029",
+      "contentType": "메세지",
+      "content": "안녕하세요5",
+      "sendBy": "Test1",
+      "source": "",
+      "createdAt": "2022-10-11T07:01:09.026"
+    },
+    {
+      "chatId": "634514bf3ba202177097f02a",
+      "contentType": "메세지",
+      "content": "안녕하세요6",
+      "sendBy": "Test2",
+      "source": "",
+      "createdAt": "2022-10-11T07:01:19.624"
+    },
+    {
+      "chatId": "634514c33ba202177097f02b",
+      "contentType": "메세지",
+      "content": "안녕하세요7",
+      "sendBy": "Test2",
+      "source": "",
+      "createdAt": "2022-10-11T07:01:23.695"
+    },
+    {
+      "chatId": "634514e03ba202177097f02c",
+      "contentType": "메세지",
+      "content": "안녕하세요8",
+      "sendBy": "Test2",
+      "source": "",
+      "createdAt": "2022-10-11T07:01:52.018"
+    }
+  ]
+],
+"chungRoom":[
+  {
+    "chatRoomId": "6347d7f712f176307c4a888c",
+    "lastChatContent": null,
+    "lastChatCreatedAt": null,
+    "valid": true,
+    "roomType": "chat",
+    "updateAt": "2022-10-13T09:18:47.415",
+    "receiverId": "Test3",
+    "countNewChats": 0
+  },
+  {
+    "chatRoomId": "6345142d77f6406aec261d8a",
+    "lastChatContent": "안녕하세요",
+    "lastChatCreatedAt": "2022-10-11T07:01:52.018",
+    "valid": true,
+    "roomType": "chat",
+    "updateAt": "2022-10-11T07:01:52.018",
+    "receiverId": "Test2",
+    "countNewChats": 0
+  }
+],
   "conversations": [
     {
       "id": 1,

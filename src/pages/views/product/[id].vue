@@ -25,7 +25,7 @@
 
   <!-- PRODUCT -->
   <section>
-    <div class="container">
+    <div class="container" style="background-color: white">
       <div class="row">
         <div class="col-12">
           <div class="row">
@@ -44,43 +44,34 @@
                   <!-- Item -->
                   <a
                     href="#"
-                    data-bigpicture='{ "imgSrc": "assets/img/products/product-7.jpg"}'
+                    data-bigpicture='{ "imgSrc": "../../../assets/img/products/product-7.jpg"}'
                   >
-                    <img :src="product?.imageList[0]" alt="..." class="card-img-top" />
+                    <img
+                      id="thumbnailImg"
+                      :src="product?.thumbnailUrl"
+                      alt="..."
+                      class="card-img-top"
+                      style="height: 637px"
+                    />
                   </a>
                 </div>
               </div>
 
               <!-- Slider -->
-              <div
-                class="flickity-nav mx-n2 mb-10 mb-md-0"
-                data-flickity='{"asNavFor": "#productSlider", "contain": true, "wrapAround": false}'
-              >
-                <!-- Item -->
-                <div class="col-12 px-2" style="max-width: 113px">
-                  <!-- Image -->
-                  <div
-                    class="ratio ratio-1x1 bg-cover"
-                    style="background-image: url(assets/img/products/product-7.jpg)"
-                  ></div>
-                </div>
-
-                <!-- Item -->
-                <div class="col-12 px-2" style="max-width: 113px">
-                  <!-- Image -->
-                  <div
-                    class="ratio ratio-1x1 bg-cover"
-                    style="background-image: url(assets/img/products/product-122.jpg)"
-                  ></div>
-                </div>
-
-                <!-- Item -->
-                <div class="col-12 px-2" style="max-width: 113px">
-                  <!-- Image -->
-                  <div
-                    class="ratio ratio-1x1 bg-cover"
-                    style="background-image: url(assets/img/products/product-146.jpg)"
-                  ></div>
+              <div style="height: 150px; display: flex">
+                <div
+                  v-for="(imageList, i) in product?.imageList.slice(0, 5)"
+                  :key="i"
+                  style="width: 110px"
+                >
+                  <button style="border: none" @click="imgClick($event)">
+                    <img
+                      class="imgList"
+                      :src="product?.imageList[i]"
+                      alt="..."
+                      style="width: 100px; height: 150px"
+                    />
+                  </button>
                 </div>
               </div>
             </div>
@@ -96,37 +87,19 @@
                 <div class="col-auto">
                   <i class="fa-solid fa-heart"></i>
                   {{ product?.likeCount }}
-                  <!-- Rating -->
-                  <!-- <div class="rating fs-xs text-dark" :data-value=product?.likeCount>
-                    <div class="rating-item">
-                      <i class="fas fa-star"></i>
-                    </div>
-                    <div class="rating-item">
-                      <i class="fas fa-star"></i>
-                    </div>
-                    <div class="rating-item">
-                      <i class="fas fa-star"></i>
-                    </div>
-                    <div class="rating-item">
-                      <i class="fas fa-star"></i>
-                    </div>
-                    <div class="rating-item">
-                      <i class="fas fa-star"></i>
-                    </div>
-                  </div> -->
-
-                  <!-- <a class="fs-sm text-reset ms-2" href="#reviews">
-                    Reviews
-                  </a> -->
                 </div>
               </div>
 
               <!-- Heading -->
-              <h3 class="mb-2">{{ product?.productName }}</h3>
+              <h3 class="mb-2" style="font-size: 32px; font-weight: bold">
+                {{ product?.productName }}
+              </h3>
 
               <!-- Price -->
               <div class="mb-7">
-                <span class="ms-1 fs-5 fw-bolder text-primary">{{ product?.price }}</span>
+                <span class="ms-1 fs-5 fw-bolder text-primary">{{
+                  comma(product?.price)
+                }}</span>
                 <span class="fs-sm ms-1">원</span>
               </div>
 
@@ -526,7 +499,7 @@
                       <!-- Size -->
                       <p class="mb-0">
                         <img
-                          src="assets/img/icons/icon-ruler.svg"
+                          src="../assets/img/icons/icon-ruler.svg"
                           alt="..."
                           class="img-fluid"
                         />
@@ -625,12 +598,12 @@
                   <a class="card-img-hover" href="product.html">
                     <img
                       class="card-img-top card-img-back"
-                      src="assets/img/products/product-120.jpg"
+                      src="../assets/img/products/product-120.jpg"
                       alt="..."
                     />
                     <img
                       class="card-img-top card-img-front"
-                      src="assets/img/products/product-5.jpg"
+                      src="../assets/img/products/product-5.jpg"
                       alt="..."
                     />
                   </a>
@@ -693,12 +666,12 @@
                   <a class="card-img-hover" href="product.html">
                     <img
                       class="card-img-top card-img-back"
-                      src="assets/img/products/product-121.jpg"
+                      src="../assets/img/products/product-121.jpg"
                       alt="..."
                     />
                     <img
                       class="card-img-top card-img-front"
-                      src="assets/img/products/product-6.jpg"
+                      src="../assets/img/products/product-6.jpg"
                       alt="..."
                     />
                   </a>
@@ -766,12 +739,12 @@
                   <a class="card-img-hover" href="product.html">
                     <img
                       class="card-img-top card-img-back"
-                      src="assets/img/products/product-122.jpg"
+                      src="../assets/img/products/product-122.jpg"
                       alt="..."
                     />
                     <img
                       class="card-img-top card-img-front"
-                      src="assets/img/products/product-7.jpg"
+                      src="../assets/img/products/product-7.jpg"
                       alt="..."
                     />
                   </a>
@@ -837,7 +810,7 @@
                   <a href="#!">
                     <img
                       class="card-img-top card-img-front"
-                      src="assets/img/products/product-8.jpg"
+                      src="../assets/img/products/product-8.jpg"
                       alt="..."
                     />
                   </a>
@@ -1474,6 +1447,7 @@ watchEffect(async () => {
   try {
     const { data } = await api.get<Product>(`/products/` + currentProductId)
     product.value = data
+    console.log(data)
   } catch (error) {
   } finally {
     loading.value = false
@@ -1482,6 +1456,16 @@ watchEffect(async () => {
 useHead({
   title: computed(() => product.value?.productName ?? 'Loading article...'),
 })
+
+function comma(val) {
+  return String(val).replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+}
+
+function imgClick(e: HTMLDataElement) {
+  const thumb = document.getElementById('thumbnailImg') as HTMLInputElement
+  console.log(e.path[0].src)
+  thumb.src = e.path[0].src
+}
 </script>
 
 <style>
