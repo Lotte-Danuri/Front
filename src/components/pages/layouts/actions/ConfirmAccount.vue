@@ -13,7 +13,7 @@ const confirm = async () => {
 
   await sleep()
   router.push({
-    name: '/sidebar/dashboards',
+    name: '/views/MyMain',
   })
 
   await sleep()

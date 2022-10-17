@@ -270,92 +270,22 @@ useHead({
         <!--Conversation messages-->
         <div class="chat-area is-active" data-simplebar>
           <!--Conversation 1-->
-          <WebappConversation1
-            :class="[selectedConversationId === 1 && 'is-active']"
-            @toggle-mobile-csonversation="
-              mobileConversationListOpen = !mobileConversationListOpen
-            "
-          />
-
-          <!--Conversation 2-->
-          <WebappConversation2
-            :class="[selectedConversationId === 2 && 'is-active']"
-            @toggle-mobile-csonversation="
-              mobileConversationListOpen = !mobileConversationListOpen
-            "
-          />
-
-          <!--Conversation 3-->
-          <WebappConversation3
-            :class="[selectedConversationId === 3 && 'is-active']"
-            @toggle-mobile-csonversation="
-              mobileConversationListOpen = !mobileConversationListOpen
-            "
-          />
-
-          <!--Conversation 4-->
-          <WebappConversation4
-            :class="[selectedConversationId === 4 && 'is-active']"
-            @toggle-mobile-csonversation="
-              mobileConversationListOpen = !mobileConversationListOpen
-            "
-          />
-
-          <!--Conversation 5-->
-          <WebappConversation5
-            :class="[selectedConversationId === 5 && 'is-active']"
-            @toggle-mobile-csonversation="
-              mobileConversationListOpen = !mobileConversationListOpen
-            "
-          />
-
-          <!--Conversation 6-->
-          <WebappConversation6
-            :class="[selectedConversationId === 6 && 'is-active']"
-            @toggle-mobile-csonversation="
-              mobileConversationListOpen = !mobileConversationListOpen
-            "
-          />
-
-          <!--Conversation 7-->
-          <WebappConversation7
-            :class="[selectedConversationId === 7 && 'is-active']"
-            @toggle-mobile-csonversation="
-              mobileConversationListOpen = !mobileConversationListOpen
-            "
-          />
-
-          <!--Conversation 8-->
-          <WebappConversation8
-            :class="[selectedConversationId === 8 && 'is-active']"
-            @toggle-mobile-csonversation="
-              mobileConversationListOpen = !mobileConversationListOpen
-            "
-          />
-
-          <!--Conversation 9-->
-          <WebappConversation9
-            :class="[selectedConversationId === 9 && 'is-active']"
-            @toggle-mobile-csonversation="
-              mobileConversationListOpen = !mobileConversationListOpen
-            "
-          />
-
-          <!--Conversation 10-->
-          <WebappConversation10
-            :class="[selectedConversationId === 10 && 'is-active']"
-            @toggle-mobile-csonversation="
-              mobileConversationListOpen = !mobileConversationListOpen
-            "
-          />
-
-          <!--Conversation 11-->
-          <WebappConversation11
-            :class="[selectedConversationId === 11 && 'is-active']"
-            @toggle-mobile-csonversation="
-              mobileConversationListOpen = !mobileConversationListOpen
-            "
-          />
+          <li class="no-messages">
+            <img
+              class="light-image"
+              src="/@src/assets/illustrations/placeholders/search-4.svg"
+              alt=""
+            />
+            <img
+              class="dark-image"
+              src="/@src/assets/illustrations/placeholders/search-4-dark.svg"
+              alt=""
+            />
+            <div class="text">
+              <h3>No messages yet</h3>
+              <p>Start the conversation by typing a message</p>
+            </div>
+          </li>
 
           <div class="chat-area-footer" style="width: 70%; bottom: 120px; z-index: 1">
             <div class="add-content">

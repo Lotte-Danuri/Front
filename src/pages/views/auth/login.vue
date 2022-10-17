@@ -28,7 +28,7 @@ const handleLogin = async () => {
       router.push(redirect)
     } else {
       router.push({
-        name: '/sidebar/dashboards',
+        name: '/views/MyMain',
       })
     }
 
@@ -51,8 +51,9 @@ useHead({
             <div class="column is-10 is-offset-1">
               <img
                 class="light-image has-light-shadow has-light-border"
-                src="/@src/assets/illustrations/apps/vuero-banking-light.webp"
+                src="../assets/img/covers/cover-15.jpg"
                 alt=""
+                style="width: 2000px"
               />
               <img
                 class="dark-image has-light-shadow"
@@ -72,23 +73,9 @@ useHead({
     <div class="column is-4">
       <div class="hero is-fullheight is-white">
         <div class="hero-heading">
-          <label
-            class="dark-mode ml-auto"
-            tabindex="0"
-            @keydown.space.prevent="(e) => (e.target as HTMLLabelElement).click()"
-          >
-            <input
-              data-cy="dark-mode-toggle"
-              type="checkbox"
-              :checked="!darkmode.isDark"
-              @change="darkmode.onChange"
-            />
-            <span></span>
-          </label>
+          <span></span>
           <div class="auth-logo">
-            <RouterLink to="/">
-              <AnimatedLogo width="36px" height="36px" />
-            </RouterLink>
+            <RouterLink to="/"> </RouterLink>
           </div>
         </div>
         <div class="hero-body">
@@ -96,7 +83,7 @@ useHead({
             <div class="columns">
               <div class="column is-12">
                 <div class="auth-content">
-                  <h2>Welcome Back.</h2>
+                  <h2>Welcome !</h2>
                   <p>Please sign in to your account</p>
                   <RouterLink to="/auth/signup-2">
                     I do not have an account yet
@@ -140,6 +127,7 @@ useHead({
                         <VButton
                           :loading="isLoading"
                           color="primary"
+                          style="background-color: black"
                           type="submit"
                           bold
                           fullwidth

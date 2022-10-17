@@ -99,7 +99,7 @@ onUnmounted(() => {
     <div class="signup-nav">
       <div class="signup-nav-inner">
         <RouterLink to="/" class="logo">
-          <AnimatedLogo width="36px" height="36px" />
+          <!-- <img src="../../assets/logo_black.png" /> -->
         </RouterLink>
       </div>
     </div>
@@ -141,7 +141,7 @@ onUnmounted(() => {
       <img
         :class="[step > 0 && 'is-hidden']"
         class="card-bg"
-        src="/@src/assets/backgrounds/signup/vuero-signup.webp"
+        src="../assets/img/covers/cover-16.jpg"
         alt=""
       />
 
@@ -152,7 +152,7 @@ onUnmounted(() => {
             <div class="columns signup-columns" :class="[step !== 0 && 'is-hidden']">
               <div class="column is-4 is-offset-1">
                 <h1 id="main-signup-title" class="title is-3 signup-title">
-                  Become a Vuero
+                  Become a Lux
                 </h1>
                 <h2 id="main-signup-subtitle" class="subtitle signup-subtitle">
                   And simply join an unmatched design experience.
@@ -164,7 +164,7 @@ onUnmounted(() => {
                         <VField>
                           <VControl>
                             <VInput type="text" autocomplete="given-name" />
-                            <VLabel raw class="auth-label">First Name</VLabel>
+                            <VLabel raw class="auth-label">Name</VLabel>
                           </VControl>
                         </VField>
                       </div>
@@ -172,7 +172,31 @@ onUnmounted(() => {
                         <VField>
                           <VControl>
                             <VInput type="text" autocomplete="family-name" />
-                            <VLabel raw class="auth-label">Last Name</VLabel>
+                            <VLabel raw class="auth-label">성별</VLabel>
+                          </VControl>
+                        </VField>
+                      </div>
+                      <div class="column is-12">
+                        <VField>
+                          <VControl>
+                            <VInput type="text" autocomplete="email" />
+                            <VLabel raw class="auth-label">ID</VLabel>
+                          </VControl>
+                        </VField>
+                      </div>
+                      <div class="column is-12">
+                        <VField>
+                          <VControl>
+                            <VInput type="text" autocomplete="email" />
+                            <VLabel raw class="auth-label">Password</VLabel>
+                          </VControl>
+                        </VField>
+                      </div>
+                      <div class="column is-12">
+                        <VField>
+                          <VControl>
+                            <VInput type="text" autocomplete="email" />
+                            <VLabel raw class="auth-label">Birth Date</VLabel>
                           </VControl>
                         </VField>
                       </div>
@@ -185,23 +209,46 @@ onUnmounted(() => {
                         </VField>
                       </div>
                       <div class="column is-12">
+                        <VField>
+                          <VControl>
+                            <VInput type="text" autocomplete="email" />
+                            <VLabel raw class="auth-label">Phone</VLabel>
+                          </VControl>
+                        </VField>
+                      </div>
+                      <div class="column is-12">
+                        <VField>
+                          <VControl>
+                            <VInput type="text" autocomplete="email" />
+                            <VLabel raw class="auth-label">Address</VLabel>
+                          </VControl>
+                        </VField>
+                      </div>
+                      <div class="column is-12">
                         <div class="signup-type">
                           <div class="box-wrap">
                             <input type="radio" name="signup_type" checked />
-                            <div class="signup-box">
-                              <i aria-hidden="true" class="lnil lnil-coffee-cup"></i>
-                              <div class="meta">
-                                <span>Free</span>
+                            <div
+                              class="signup-box"
+                              style="border-color: black; color: black"
+                            >
+                              <i
+                                aria-hidden="true"
+                                class="lnil lnil-coffee-cup"
+                                style="color: black"
+                              ></i>
+                              <div class="meta" style="color: black">
+                                <span style="color: black">일반 회원</span>
                                 <span>Nice to get started</span>
                               </div>
                             </div>
                           </div>
                           <div class="box-wrap">
                             <input type="radio" name="signup_type" />
-                            <div class="signup-box">
+                            <div class="signup-box" style="border-color: black">
                               <i aria-hidden="true" class="lnil lnil-crown-alt-1"></i>
                               <div class="meta">
-                                <span>Paid</span>
+                                <span>판매자</span>
                                 <span>Get a lot more features</span>
                               </div>
                             </div>
@@ -219,6 +266,7 @@ onUnmounted(() => {
 
                     <div class="button-wrap has-help">
                       <VButton
+                        style="background-color: black"
                         color="primary"
                         size="big"
                         bold
@@ -230,7 +278,9 @@ onUnmounted(() => {
                       </VButton>
                       <span>
                         Or
-                        <RouterLink to="/auth/login"> Sign In </RouterLink>
+                        <RouterLink to="/auth/login" style="color: white">
+                          Sign In
+                        </RouterLink>
                         to your account.
                       </span>
                     </div>
@@ -283,7 +333,14 @@ onUnmounted(() => {
                   </div>
                 </div>
                 <div class="button-wrap is-centered has-text-centered">
-                  <VButton color="primary" size="big" rounded lower @click="step++">
+                  <VButton
+                    color="primary"
+                    style="background-color: black"
+                    size="big"
+                    rounded
+                    lower
+                    @click="step++"
+                  >
                     Continue
                   </VButton>
                 </div>

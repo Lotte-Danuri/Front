@@ -4,6 +4,9 @@ import { useUserSession } from '/@src/stores/userSession'
 
 let api: AxiosInstance
 
+axios.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8'
+axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*'
+
 export function createApi() {
   // Here we set the base URL for all requests made to the api
   api = axios.create({

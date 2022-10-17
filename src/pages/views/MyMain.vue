@@ -911,9 +911,6 @@ export default {
       console.log(this.productList)
       // alert(this.productList.data)
     },
-    // goToDetail (productId) {
-    //   this.$router.push({ path: '/detail', query: { product_id: productId } })
-    // }
   },
 }
 </script>

@@ -19,6 +19,18 @@
         background-color: transparent;
       "
     ></MyVuero>
+    <!-- <V1
+      v-if="chatShow"
+      style="
+        position: fixed;
+        width: 75%;
+        height: 50%;
+        top: 50px;
+        left: 200px;
+        z-index: 999;
+        background-color: transparent;
+      "
+    ></V1> -->
     <RouterView />
     <MyFooter></MyFooter>
   </div>
@@ -32,11 +44,7 @@ export default {
       chatShow: false,
     }
   },
-  created() {
-    // window.onpopstate = function (event) {
-    //   alert('location: ' + document.location + ', state: ' + JSON.stringify(event.state))
-    // }
-  },
+  created() {},
   methods: {
     buttonClick() {
       this.chatShow = !this.chatShow
