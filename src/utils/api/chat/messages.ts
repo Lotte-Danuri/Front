@@ -1,37 +1,20 @@
 import type { AxiosInstance } from 'axios'
 
 export interface Message {
-  id: number
-  conversationId: number
-  messageId: number
-  type: 'msg' | 'image' | 'imagelink' | 'system'
-  sender: string | null
-  avatar: string | null
-  content: {
-    time: string | null
-    text?: string
-    subtext?: string
-    image_url?: string
-    link_image?: string
-    link_badge?: string
-  }
+  chatId: string
+  content: string
+  contentType: '메세지' | '쿠폰' | '이벤트' | '이미지' | '시스템'
+  createdAt: string
+  sendBy: string
+  source: string
 }
 
 export async function fetchMessages(
   api: AxiosInstance,
-  conversationId: number,
-  start = 0,
-  limit = 20
-): Promise<{ messages: Message[]; count: number }> {
-  let count = 0
-
-  const { data: messages, headers } = await api.get<Message[]>(
-    `/api/conversations/${conversationId}/messages?_start=${start}&_limit=${limit}`
+  conversationId: string
+): Promise<{ messages: Message[] }> {
+  const { data: messages } = await api.get<Message[]>(
+    `/chatRoom/chats/Test1/${conversationId}`
   )
-
-  if ('X-Total-Count' in headers) {
-    count = parseInt(headers['X-Total-Count'])
-  }
-
-  return { messages, count }
+  return { messages }
 }

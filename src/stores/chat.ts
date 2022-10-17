@@ -15,34 +15,25 @@ import type { Conversation, Message } from '/@src/utils/api/chat'
 import { fetchConversations, fetchMessages } from '/@src/utils/api/chat'
 import { useApi } from '/@src/composable/useApi'
 
-const defaultConversation: Conversation = {
-  id: 0,
-  name: '',
-  lastMessage: '',
-  unreadMessages: false,
-  avatar: '/images/avatars/placeholder.jpg',
+const defaultConversation = {
+  chatRoomId: '',
+  lastChatContent: '',
+  lastChatCreatedAt: '',
+  valid: true,
+  roomType: '',
+  updateAt: '',
+  receiverId: '',
+  countNewChats: 0,
 }
 
 export const useChat = defineStore('chat', () => {
   const api = useApi()
   const conversations = ref<Conversation[]>([])
   const messages = ref<Message[]>([])
-  const selectedConversationId = ref(0)
+  const selectedConversationId = ref('')
   const addConversationOpen = ref(false)
   const mobileConversationDetailsOpen = ref(false)
   const loading = ref(false)
-
-  const selectedConversation = computed(() => {
-    const conversation = conversations.value.find(
-      (item) => item.id === selectedConversationId.value
-    )
-
-    if (!conversation) {
-      return defaultConversation
-    } else {
-      return conversation
-    }
-  })
 
   async function loadConversations(start = 0, limit = 10) {
     if (loading.value) return
@@ -57,7 +48,7 @@ export const useChat = defineStore('chat', () => {
     }
   }
 
-  async function selectConversastion(conversationId: number) {
+  async function selectConversastion(conversationId: string) {
     if (loading.value) return
 
     loading.value = true
@@ -71,11 +62,6 @@ export const useChat = defineStore('chat', () => {
     }
   }
 
-  function unselectConversation() {
-    selectedConversationId.value = 0
-    messages.value = []
-  }
-
   function setAddConversationOpen(value: boolean) {
     addConversationOpen.value = value
   }
@@ -87,7 +73,6 @@ export const useChat = defineStore('chat', () => {
   return {
     conversations,
     messages,
-    selectedConversation,
     selectedConversationId,
     addConversationOpen,
     mobileConversationDetailsOpen,
@@ -96,7 +81,6 @@ export const useChat = defineStore('chat', () => {
     setAddConversationOpen,
     setMobileConversationDetailsOpen,
     selectConversastion,
-    unselectConversation,
   } as const
 })
 
