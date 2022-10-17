@@ -133,22 +133,74 @@ useHead({
                           fullwidth
                           raised
                         >
-                          Sign In
+                          로그인 하기
                         </VButton>
                       </div>
 
                       <div class="forgot-link has-text-centered">
-                        <a>Forgot Password?</a>
+                        <a>비밀번호 찾기</a>
                       </div>
                     </div>
                   </form>
                 </div>
-                <button><img src="../../../assets/kakao_login.png" /></button>
               </div>
             </div>
+            <div class="login_btn" style="margin-top: 50px; margin-left: 25%">
+              <button style="border: none; margin-bottom: 10px">
+                <img
+                  src="../../../assets/kakao_login.png"
+                  style="width: 300px; height: 50px"
+                  alt=""
+                />
+              </button>
+              <button style="border: none; margin-bottom: 10px">
+                <img
+                  src="../../../assets/naver_login.png"
+                  style="width: 300px; height: 50px"
+                  alt=""
+                />
+              </button>
+              <button style="border: none; margin-bottom: 10px">
+                <img
+                  src="../../../assets/google_login.png"
+                  style="width: 300px; height: 50px"
+                  alt=""
+                />
+              </button>
+            </div>
+            <button
+              style="
+                border: none;
+                cursor: pointer;
+                border: 0;
+                border-radius: 4px;
+                font-weight: 600;
+                margin: 0 10px;
+                width: 200px;
+                padding: 10px 0;
+                box-shadow: 0 0 20px rgba(104, 85, 224, 0.2);
+                transition: 0.4s;
+                color: black;
+                width: ;
+                box-shadow: 0 0 20px rgba(104, 85, 224, 0.6);
+                background-color: rgba(255, 255, 255, 1);
+                width: 500px;
+                height: 80px;
+                margin-top: 50px;
+                margin-left: 10%;
+              "
+            >
+              회원가입
+            </button>
           </div>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<style>
+.login_btn button {
+  border: none;
+}
+</style>
