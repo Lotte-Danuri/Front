@@ -1,148 +1,60 @@
 <script setup lang="ts">
 import { useHead } from '@vueuse/head'
 import { usePanels } from '/@src/stores/panels'
+import { useSidebar } from '/@src/stores/sidebar'
 
-import type { VAvatarProps } from '/@src/components/base/avatar/VAvatar.vue'
+//import type { VAvatarProps } from '/@src/components/base/avatar/VAvatar.vue'
 import { useDropdown } from '/@src/composable/useDropdown'
-import { onceImageErrored } from '/@src/utils/via-placeholder'
+import { useApi } from '/@src/composable/useApi'
+import { useChat } from '/@src/stores/chat'
+import { useLayoutSwitcher } from '/@src/stores/layoutSwitcher'
 
 export interface conversationData {
-  id: number
-  name: string
-  role: string
-  avatar: VAvatarProps
-  lastMessage: string
-  lastMessagePreview: string
+  chatRoomId: string
+  lastChatContent: string
+  lastChatCreatedAt: string
+  valid: boolean
+  roomType: string
+  updateAt: string
+  receiverId: string
+  countNewChats: number
 }
 
 // we are using static data here, but you might need to load those from your API
 // to do so, this should be a ref<any[]>([]) and be populated when request is done
-const conversations: conversationData[] = [
-  {
-    id: 1,
-    name: 'Kelly Marston',
-    role: 'Product Manager',
-    avatar: {
-      picture: '/demo/avatars/11.jpg',
-    },
-    lastMessage: '20m',
-    lastMessagePreview: 'What time was our meeting scheduled for?',
-  },
-  {
-    id: 2,
-    name: 'Alejandro Badajoz',
-    role: 'Business Analyst',
-    avatar: {
-      picture: '/demo/avatars/39.jpg',
-    },
-    lastMessage: '24m',
-    lastMessagePreview: 'Nah, I have a meeting that starts in 5.',
-  },
-  {
-    id: 3,
-    name: 'Work Group',
-    role: '7 people are chatting',
-    avatar: {
-      color: 'h-purple',
-      initials: 'WG',
-    },
-    lastMessage: '31m',
-    lastMessagePreview: 'This is getting funnier and funnier. You gotta love dat team 🥰',
-  },
-  {
-    id: 4,
-    name: 'Alice Carasca',
-    role: 'Software Engineer',
-    avatar: {
-      picture: '/demo/avatars/7.jpg',
-    },
-    lastMessage: '47m',
-    lastMessagePreview: 'I like the curves in this one.',
-  },
-  {
-    id: 5,
-    name: 'Irina Vierbovsky',
-    role: 'Project Manager',
-    avatar: {
-      picture: '/demo/avatars/23.jpg',
-    },
-    lastMessage: '56m',
-    lastMessagePreview: 'I need some help on something Iam working on.',
-  },
-  {
-    id: 6,
-    name: 'Mary Lebowski',
-    role: 'Project Manager',
-    avatar: {
-      picture: '/demo/avatars/5.jpg',
-    },
-    lastMessage: '1h',
-    lastMessagePreview: 'Still down for that movie?',
-  },
-  {
-    id: 7,
-    name: 'Esteban Castellanos',
-    role: 'UI/UX Designer',
-    avatar: {
-      picture: '/demo/avatars/18.jpg',
-    },
-    lastMessage: '1h',
-    lastMessagePreview: 'I can send you the files.',
-  },
-  {
-    id: 8,
-    name: 'Melany Wallace',
-    role: 'Web Developer',
-    avatar: {
-      picture: '/demo/avatars/25.jpg',
-    },
-    lastMessage: '2h',
-    lastMessagePreview: 'I has some issues with the headers tough.',
-  },
-  {
-    id: 9,
-    name: 'Jimmy Hector',
-    role: 'Project Manager',
-    avatar: {
-      picture: '/demo/avatars/22.jpg',
-    },
-    lastMessage: '3h',
-    lastMessagePreview: 'When are you available?',
-  },
-  {
-    id: 10,
-    name: 'Greta Kroppfer',
-    role: 'Sales Manager',
-    avatar: {
-      picture: '/demo/avatars/19.jpg',
-    },
-    lastMessage: '3h',
-    lastMessagePreview: 'Thank you for you clean presentation, it was stunning.',
-  },
-  {
-    id: 11,
-    name: 'Tara Svenson',
-    role: 'UI/UX Designer',
-    avatar: {
-      picture: '/demo/avatars/13.jpg',
-    },
-    lastMessage: '9h',
-    lastMessagePreview: 'Hope you like them.',
-  },
-]
+const api = useApi()
+const conversations = ref<conversationData[]>([])
+watchEffect(async () => {
+  try {
+    const { data } = await api.get<conversationData[]>(`user/Test1`)
+    conversations.value = data
+  } catch (error) {
+  } finally {
+  }
+})
+const chat = useChat()
+const sidebar = useSidebar()
+const layoutSwitcher = useLayoutSwitcher()
+
+// Click handler to toggle the conversations
+function selectConversation(chatRoomId: string) {
+  chat.setAddConversationOpen(false)
+  chat.selectConversastion(chatRoomId)
+}
 
 const panels = usePanels()
-const selectedConversationId = ref(3)
+const selectedConversationId = ref()
 const mobileConversationListOpen = ref(false)
 const selectedConversation = computed(() => {
-  const conversation = conversations.find(
-    (item) => item.id === selectedConversationId.value
+  const conversation: any = conversations.value.find(
+    (item: { chatRoomId: string }) => item.chatRoomId === selectedConversationId.value
   )
   if (conversation) {
+    selectConversation(conversation.chatRoomId)
     return conversation
   }
 
-  return conversations[0]
+  return conversations.value[0]
 })
 
 const dropdownElement1 = ref<HTMLElement>()
@@ -268,95 +180,52 @@ useHead({
         />
 
         <!--Conversation messages-->
+        <!-- Chat Card -->
+        <MessagingLayout :theme="layoutSwitcher.sidebarLayoutTheme">
+          <VViewWrapper
+            id="vuero-messaging"
+            :class="[sidebar.active === 'none' && 'is-pushed-messages']"
+          >
+            <VPageContentWrapper>
+              <VPageContent class="chat-content">
+                <ChatCard>
+                  <template #body>
+                    <li v-if="chat.messages.length === 0" class="no-messages">
+                      <img
+                        class="light-image"
+                        src="/@src/assets/illustrations/placeholders/search-4.svg"
+                        alt=""
+                      />
+                      <img
+                        class="dark-image"
+                        src="/@src/assets/illustrations/placeholders/search-4-dark.svg"
+                        alt=""
+                      />
+                      <div class="text">
+                        <h3>No messages yet</h3>
+                        <p>Start the conversation by typing a message</p>
+                      </div>
+                    </li>
+
+                    <ChatMsg
+                      v-for="message in chat.messages"
+                      :key="message.chatId"
+                      :message="message"
+                    />
+
+                    <li class="chat-loader" :class="[chat.loading && 'is-active']">
+                      <div class="loader is-loading"></div>
+                    </li>
+                  </template>
+                </ChatCard>
+
+                <ChatPlaceholder />
+              </VPageContent>
+            </VPageContentWrapper>
+          </VViewWrapper>
+          <ChatSideFab />
+        </MessagingLayout>
         <div class="chat-area is-active" data-simplebar>
-          <!--Conversation 1-->
-          <WebappConversation1
-            :class="[selectedConversationId === 1 && 'is-active']"
-            @toggle-mobile-csonversation="
-              mobileConversationListOpen = !mobileConversationListOpen
-            "
-          />
-
-          <!--Conversation 2-->
-          <WebappConversation2
-            :class="[selectedConversationId === 2 && 'is-active']"
-            @toggle-mobile-csonversation="
-              mobileConversationListOpen = !mobileConversationListOpen
-            "
-          />
-
-          <!--Conversation 3-->
-          <WebappConversation3
-            :class="[selectedConversationId === 3 && 'is-active']"
-            @toggle-mobile-csonversation="
-              mobileConversationListOpen = !mobileConversationListOpen
-            "
-          />
-
-          <!--Conversation 4-->
-          <WebappConversation4
-            :class="[selectedConversationId === 4 && 'is-active']"
-            @toggle-mobile-csonversation="
-              mobileConversationListOpen = !mobileConversationListOpen
-            "
-          />
-
-          <!--Conversation 5-->
-          <WebappConversation5
-            :class="[selectedConversationId === 5 && 'is-active']"
-            @toggle-mobile-csonversation="
-              mobileConversationListOpen = !mobileConversationListOpen
-            "
-          />
-
-          <!--Conversation 6-->
-          <WebappConversation6
-            :class="[selectedConversationId === 6 && 'is-active']"
-            @toggle-mobile-csonversation="
-              mobileConversationListOpen = !mobileConversationListOpen
-            "
-          />
-
-          <!--Conversation 7-->
-          <WebappConversation7
-            :class="[selectedConversationId === 7 && 'is-active']"
-            @toggle-mobile-csonversation="
-              mobileConversationListOpen = !mobileConversationListOpen
-            "
-          />
-
-          <!--Conversation 8-->
-          <WebappConversation8
-            :class="[selectedConversationId === 8 && 'is-active']"
-            @toggle-mobile-csonversation="
-              mobileConversationListOpen = !mobileConversationListOpen
-            "
-          />
-
-          <!--Conversation 9-->
-          <WebappConversation9
-            :class="[selectedConversationId === 9 && 'is-active']"
-            @toggle-mobile-csonversation="
-              mobileConversationListOpen = !mobileConversationListOpen
-            "
-          />
-
-          <!--Conversation 10-->
-          <WebappConversation10
-            :class="[selectedConversationId === 10 && 'is-active']"
-            @toggle-mobile-csonversation="
-              mobileConversationListOpen = !mobileConversationListOpen
-            "
-          />
-
-          <!--Conversation 11-->
-          <WebappConversation11
-            :class="[selectedConversationId === 11 && 'is-active']"
-            @toggle-mobile-csonversation="
-              mobileConversationListOpen = !mobileConversationListOpen
-            "
-          />
-
           <div class="chat-area-footer" style="width: 70%; bottom: 120px; z-index: 1">
             <div class="add-content">
               <div ref="dropdownElement2" class="dropdown dropdown-trigger is-up">
@@ -414,119 +283,6 @@ useHead({
         </div>
 
         <!--Conversation Details-->
-        <div class="detail-area" data-simplebar>
-          <div class="chat-side-content is-single">
-            <VAvatar
-              :picture="selectedConversation.avatar.picture"
-              :color="selectedConversation.avatar.color"
-              :initials="selectedConversation.avatar.initials"
-            />
-            <h4 id="user-details-name" class="user-name">
-              {{ selectedConversation.name }}
-            </h4>
-            <p id="user-details-title" class="user-job-title">
-              {{ selectedConversation.role }}
-            </p>
-
-            <div class="side-actions">
-              <a class="button v-button is-rounded">
-                <span class="icon is-small">
-                  <i aria-hidden="true" class="fas fa-phone"></i>
-                </span>
-                <span>Audio Call</span>
-              </a>
-              <a class="button v-button is-rounded">
-                <span class="icon is-small">
-                  <i aria-hidden="true" class="fas fa-video"></i>
-                </span>
-                <span>Video Call</span>
-              </a>
-            </div>
-
-            <div class="detail-photos">
-              <div class="detail-photo-title">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="feather feather-image"
-                >
-                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                  <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                  <path d="M21 15l-5-5L5 21"></path>
-                </svg>
-                Shared photos
-              </div>
-              <div class="detail-photo-grid">
-                <img
-                  src="/demo/photos/demo-apps/1.jpg"
-                  alt=""
-                  @error.once="onceImageErrored(1600, 900)"
-                />
-                <img
-                  src="/demo/photos/demo-apps/2.jpg"
-                  alt=""
-                  @error.once="onceImageErrored(1600, 900)"
-                />
-                <img
-                  src="/demo/photos/demo-apps/3.jpg"
-                  alt=""
-                  @error.once="onceImageErrored(1600, 900)"
-                />
-                <img
-                  src="/demo/photos/demo-apps/4.jpg"
-                  alt=""
-                  @error.once="onceImageErrored(1600, 900)"
-                />
-                <img
-                  src="/demo/photos/demo-apps/5.jpg"
-                  alt=""
-                  @error.once="onceImageErrored(1600, 900)"
-                />
-                <img
-                  src="/demo/photos/demo-apps/6.jpg"
-                  alt=""
-                  @error.once="onceImageErrored(1600, 900)"
-                />
-                <img
-                  src="/demo/photos/demo-apps/7.jpg"
-                  alt=""
-                  @error.once="onceImageErrored(1600, 900)"
-                />
-                <img
-                  src="/demo/photos/demo-apps/8.jpg"
-                  alt=""
-                  @error.once="onceImageErrored(1600, 900)"
-                />
-                <img
-                  src="/demo/photos/demo-apps/9.jpg"
-                  alt=""
-                  @error.once="onceImageErrored(1600, 900)"
-                />
-                <img
-                  src="/demo/photos/demo-apps/10.jpg"
-                  alt=""
-                  @error.once="onceImageErrored(1600, 900)"
-                />
-                <img
-                  src="/demo/photos/demo-apps/11.jpg"
-                  alt=""
-                  @error.once="onceImageErrored(1600, 900)"
-                />
-                <img
-                  src="/demo/photos/demo-apps/12.jpg"
-                  alt=""
-                  @error.once="onceImageErrored(1600, 900)"
-                />
-              </div>
-              <a class="view-more">View More</a>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </MinimalLayout>

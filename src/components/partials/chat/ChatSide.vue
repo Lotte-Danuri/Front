@@ -6,10 +6,7 @@ const chat = useChat()
 </script>
 
 <template>
-  <div
-    :class="[chat.mobileConversationDetailsOpen && 'is-mobile-active']"
-    class="chat-side"
-  >
+  <div class="chat-side">
     <div class="chat-side-header">
       <MessagingToolbar @close="chat.setMobileConversationDetailsOpen(false)" />
     </div>
@@ -18,7 +15,7 @@ const chat = useChat()
       <div class="user-pic">
         <img
           id="user-details-image"
-          :src="chat.selectedConversation.avatar"
+          :src="chat.selectedConversationId"
           alt=""
           @error="onceImageErrored(150)"
         />
@@ -30,11 +27,11 @@ const chat = useChat()
           @error.once="onceImageErrored(150)"
         />
       </div>
-      <h4 v-if="chat.selectedConversation.name" class="user-name">
-        {{ chat.selectedConversation.name }}
+      <h4 v-if="chat.selectedConversationId" class="user-name">
+        {{ chat.selectedConversationId }}
       </h4>
-      <p v-if="chat.selectedConversation.lastMessage" class="user-job-title">
-        {{ chat.selectedConversation.lastMessage }}
+      <p v-if="chat.selectedConversationId" class="user-job-title">
+        {{ chat.selectedConversationId }}
       </p>
 
       <div class="side-actions">
