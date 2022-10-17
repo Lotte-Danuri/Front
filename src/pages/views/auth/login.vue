@@ -143,6 +143,7 @@ useHead({
                     </div>
                   </form>
                 </div>
+                <button><img src="../../../assets/kakao_login.png" /></button>
               </div>
             </div>
           </div>
