@@ -1,18 +1,17 @@
 <script setup lang="ts">
 const emit = defineEmits<{
   (e: 'toggleMobileConversation'): void
-  (e: 'update:conversationId', value: number): void
+  (e: 'update:conversationId', value: string): void
 }>()
-
 const props = withDefaults(
   defineProps<{
     conversations?: any[]
-    conversationId?: number
+    conversationId?: string
     mobileConversationListOpen?: boolean
   }>(),
   {
     conversations: () => [],
-    conversationId: 0,
+    conversationId: '',
   }
 )
 </script>
@@ -26,33 +25,29 @@ const props = withDefaults(
     <!--Conversation-->
     <div
       v-for="conversation in props.conversations"
-      :key="conversation.id"
+      :key="conversation.chatRoomId"
       class="conversation"
-      :class="[props.conversationId === conversation.id && 'active']"
+      :class="[props.conversationId === conversation.chatRoomId && 'active']"
       tabindex="0"
       @keydown.space.prevent="
         () => {
-          emit('update:conversationId', conversation.id)
+          emit('update:conversationId', conversation.chatRoomId)
           emit('toggleMobileConversation')
         }
       "
       @click="
         () => {
-          emit('update:conversationId', conversation.id)
+          emit('update:conversationId', conversation.chatRoomId)
           emit('toggleMobileConversation')
         }
       "
     >
-      <VAvatar
-        :picture="conversation.avatar.picture"
-        :color="conversation.avatar.color"
-        :initials="conversation.avatar.initials"
-      />
+      <VAvatar :initials="conversation.receiverId.charAt(0)" />
       <div class="conversation-detail">
-        <div class="conversation-username">{{ conversation.name }}</div>
+        <div class="conversation-username">{{ conversation.receiverId }}</div>
         <div class="conversation-content">
-          <span class="conversation-message">{{ conversation.lastMessagePreview }}</span>
-          <span class="conversation-date">{{ conversation.lastMessage }}</span>
+          <span class="conversation-message">{{ conversation.lastChatContent }}</span>
+          <span class="conversation-date">{{ conversation.lastChatCreatedAt }}</span>
         </div>
       </div>
     </div>
