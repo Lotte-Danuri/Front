@@ -13,11 +13,11 @@ const emit = defineEmits(['toggleMobileConversation'])
       >
         <i aria-hidden="true" class="iconify" data-icon="feather:menu"></i>
       </button>
-      <div class="chat-area-title">Irina V.</div>
+      <div class="chat-area-title">LuxON-고객센터</div>
       <div class="chat-area-group">
         <img
           class="chat-area-profile"
-          src="/demo/avatars/23.jpg"
+          src="/images/logo/logo_black.png"
           alt=""
           data-user-popover="21"
           @error.once="onceImageErrored(150)"
@@ -29,7 +29,7 @@ const emit = defineEmits(['toggleMobileConversation'])
         <div class="chat-msg-profile">
           <img
             class="chat-msg-img"
-            src="/demo/avatars/23.jpg"
+            src="/images/logo/logo_black.png"
             alt=""
             data-user-popover="0"
             @error.once="onceImageErrored(150)"
@@ -37,24 +37,11 @@ const emit = defineEmits(['toggleMobileConversation'])
           <div class="chat-msg-date">Sent at 11:12am</div>
         </div>
         <div class="chat-msg-content">
-          <div class="chat-msg-text">Do you have a moment?</div>
-          <div class="chat-msg-text">I need some help on something Iam working on.</div>
-        </div>
-      </div>
-      <div class="chat-msg owner">
-        <div class="chat-msg-profile">
-          <img
-            class="chat-msg-img"
-            src="/images/avatars/svg/vuero-1.svg"
-            alt=""
-            data-user-popover="3"
-            @error.once="onceImageErrored(150)"
-          />
-          <div class="chat-msg-date">Sent at 11:14am</div>
-        </div>
-        <div class="chat-msg-content">
-          <div class="chat-msg-text">Sure</div>
-          <div class="chat-msg-text">I'll drop by your office.</div>
+          <div class="chat-msg-text">
+            안녕하세요. LuxON-고객센터 입니다. <br />서비스 품질 향상을 위해 10월 21일
+            04시 부터 05시까지 점검이 있을 예정입니다.<br />항상 더 나은 서비스를 제공하는
+            LuxON이 되겠습니다.
+          </div>
         </div>
       </div>
     </div>

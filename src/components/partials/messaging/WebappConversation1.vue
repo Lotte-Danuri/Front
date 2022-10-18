@@ -1,214 +1,134 @@
 <script setup lang="ts">
 import { onceImageErrored } from '/@src/utils/via-placeholder'
-import type { Message } from '/@src/utils/api/chat/messages'
 
 const emit = defineEmits(['toggleMobileConversation'])
-const props = defineProps<{
-  message: Message
-}>()
 </script>
 
-
 <template>
-  <li>
-    <!-- System messages -->
-    <template v-if="props.message.contentType === '시스템'">
-      <li class="divider-container">
-        <div class="divider">
-          <span>{{ props.message.content }}</span>
-        </div>
-      </li>
-    </template>
-
-    <!-- Text messages -->
-    <template v-else-if="props.message.contentType === '메세지'">
-      <div class="avatar">
-        <img v-if="false" :src="props.message.sendBy" draggable="false" alt="" />
+  <div id="navbar-conversation-1" class="chat-area-content">
+    <div class="chat-area-header">
+      <button
+        class="trigger conversations-mobile-trigger h-only-mobile h-only-tablet-p h-only-tablet-l"
+        @click="emit('toggleMobileConversation')"
+      >
+        <i aria-hidden="true" class="iconify" data-icon="feather:menu"></i>
+      </button>
+      <div class="chat-area-title">Channel</div>
+      <div class="chat-area-group">
+        <img
+          class="chat-area-profile"
+          src="/images/logo/channel.svg"
+          alt=""
+          data-user-popover="13"
+          @error.once="onceImageErrored(150)"
+        />
       </div>
-      <div class="msg">
-        <div class="msg-inner">
-          <p>{{ props.message.content }}</p>
-        </div>
-
-        <time>
-          {{ props.message.createdAt }}
-        </time>
-      </div>
-    </template>
-
-    <!-- Image messages -->
-    <template v-else-if="props.message.contentType === '이미지'">
-      <div class="avatar is-online">
-        <img v-if="false" :src="props.message.sendBy" draggable="false" alt="" />
-      </div>
-      <div class="msg is-image">
-        <div class="image-container">
-          <VPhotosSwipe
-            v-if="props.message.source"
-            :items="[
-              {
-                src: props.message.source,
-                thumbnail: props.message.source,
-                w: 600,
-                h: 400,
-                alt: 'optional alt attribute for thumbnail image',
-              },
-            ]"
-            thumbnail-radius="full"
+    </div>
+    <div class="chat-area-main">
+      <div class="chat-msg owner">
+        <div class="chat-msg-profile">
+          <img
+            class="chat-msg-img"
+            src="/images/avatars/svg/vuero-1.svg"
+            alt=""
+            data-user-popover="3"
+            @error.once="onceImageErrored(150)"
           />
-          <div class="image-overlay"></div>
-          <div class="image-actions">
-            <div class="actions-inner">
-              <div class="action download">
-                <span class="iconify" data-icon="feather:download"> </span>
-              </div>
-              <a
-                :href="props.message.source"
-                class="action messaging-popup"
-                aria-label="Maximize"
-              >
-                <span class="iconify" data-icon="feather:maximize"> </span>
-              </a>
-            </div>
+          <div class="chat-msg-date">Sent at 1:22pm</div>
+        </div>
+        <div class="chat-msg-content">
+          <div class="chat-msg-text">안녕하세요. 올 겨울에 맬 백팩을 찾고 있는데</div>
+          <div class="chat-msg-text">검정색 백팩 추천해주세요</div>
+        </div>
+      </div>
+      <div class="chat-msg">
+        <div class="chat-msg-profile">
+          <img
+            class="chat-msg-img"
+            src="/images/logo/channel.svg"
+            alt=""
+            data-user-popover="13"
+            @error.once="onceImageErrored(150)"
+          />
+          <div class="chat-msg-date">Sent at 1:03pm</div>
+        </div>
+        <div class="chat-msg-content">
+          <div class="chat-msg-text">
+            안녕하세요. 고객님의 쇼핑을 도울 쇼핑매니저 입니다.
+          </div>
+          <div class="chat-msg-text">
+            <img
+              src="/images/logo/channelbag.webp"
+              alt=""
+              @error.once="onceImageErrored(400, 300)"
+            />
+            <p style="font-size: 25px; font-weight: bold; color: black">라지백팩</p>
+            <p>페이턴트 카프스킨, 골드 메탈 블랙 레퍼런스</p>
+            <p>AS3662 B09576 94305</p>
+            <p>6,540,000 원*</p>
+            <br />
+            <button type="button" style="width: auto; height: 100; font-weight: bold">
+              상품페이지로 이동
+            </button>
+          </div>
+          <div class="chat-msg-text">
+            22fw 신상 라지 백팩 입니다.<br />
+            디자이너 라프시몬스가 디자인한 이 백팩은<br />
+            최근 20~30대 사이에서 큰 인기를 끌고 있습니다.
           </div>
         </div>
       </div>
-    </template>
-  </li>
+      <div class="chat-msg owner">
+        <div class="chat-msg-profile">
+          <img
+            class="chat-msg-img"
+            src="/images/avatars/svg/vuero-1.svg"
+            alt=""
+            data-user-popover="3"
+            @error.once="onceImageErrored(150)"
+          />
+          <div class="chat-msg-date">Sent at 1:22pm</div>
+        </div>
+        <div class="chat-msg-content">
+          <div class="chat-msg-text">
+            오 정말 예쁘네요
+            <span role="img" aria-label="Faces with Tears of Joy">😂</span>.
+          </div>
+          <div class="chat-msg-text">추천 감사합니다. 덕분에 좋은 쇼핑을 경험 했어요</div>
+        </div>
+      </div>
+      <div class="chat-msg">
+        <div class="chat-msg-profile">
+          <img
+            class="chat-msg-img"
+            src="/images/logo/channel.svg"
+            alt=""
+            data-user-popover="13"
+            @error.once="onceImageErrored(150)"
+          />
+          <div class="chat-msg-date">Sent at 1:22pm</div>
+        </div>
+        <div class="chat-msg-content">
+          <div class="chat-msg-text">좋은 말씀 감사합니다.</div>
+          <div class="chat-msg-text">지금까지 샤넬 쇼핑매니저 였습니다.</div>
+          <div class="chat-msg-text">언제든 궁금하신점이 있으시면 물어봐 주세요.</div>
+        </div>
+      </div>
+      <div class="chat-msg owner">
+        <div class="chat-msg-profile">
+          <img
+            class="chat-msg-img"
+            src="/images/avatars/svg/vuero-1.svg"
+            alt=""
+            data-user-popover="3"
+            @error.once="onceImageErrored(150)"
+          />
+          <div class="chat-msg-date">Sent at 1:23pm</div>
+        </div>
+        <div class="chat-msg-content">
+          <div class="chat-msg-text"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
-
-<style lang="scss">
-/* ==========================================================================
-4. Messages globals and variations
-========================================================================== */
-
-.msg {
-  min-width: 50px;
-  max-width: 40%;
-
-  &.is-image {
-    .image-container {
-      position: relative;
-      border-radius: 3px;
-
-      &:hover,
-      &:focus {
-        .image-overlay {
-          opacity: 0.45;
-          pointer-events: none;
-        }
-
-        .image-actions {
-          opacity: 1;
-
-          .download {
-            pointer-events: all;
-          }
-        }
-      }
-
-      figure {
-        position: relative;
-        display: block;
-        border-radius: 3px;
-        border: 4px solid var(--white);
-        z-index: 1;
-      }
-
-      .image-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        background: var(--primary);
-        border: 4px solid var(--white);
-        border-radius: 3px;
-        transition: all 0.3s; // transition-all test
-        z-index: 2;
-      }
-
-      .image-actions {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        pointer-events: none;
-        transition: all 0.3s; // transition-all test
-        z-index: 3;
-
-        .actions-inner {
-          position: relative;
-          width: 100%;
-          height: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-
-          .action {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 40px;
-            width: 40px;
-            border-radius: var(--radius-rounded);
-            background: var(--white);
-            margin: 0 6px;
-            cursor: pointer;
-            transition: all 0.3s; // transition-all test
-
-            &:hover {
-              background: var(--success);
-
-              svg {
-                color: var(--smoke-white);
-              }
-            }
-
-            svg {
-              height: 18px;
-              width: 18px;
-              color: var(--success);
-              transition: color 0.3s, background-color 0.3s, border-color 0.3s,
-                height 0.3s, width 0.3s;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  p {
-    font-size: 0.8rem;
-    margin: 0 0 0.2rem;
-  }
-
-  img {
-    position: relative;
-    display: block;
-    width: 450px;
-    border-radius: 5px;
-    box-shadow: 0 0 3px var(--light-grey);
-    transition: all 0.4s cubic-bezier(0.565, -0.26, 0.255, 1.41);
-    cursor: default;
-    -webkit-touch-callout: none;
-    user-select: none;
-  }
-}
-
-// Message queries
-@media screen and (max-width: 800px) {
-  .msg img {
-    width: 300px;
-  }
-}
-
-@media screen and (max-width: 550px) {
-  .msg img {
-    width: 200px;
-  }
-}
-</style>

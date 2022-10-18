@@ -1,14 +1,11 @@
 import type { AxiosInstance } from 'axios'
 
 export interface Conversation {
-  chatRoomId: string
-  lastChatContent: string
-  lastChatCreatedAt: string
-  valid: boolean
-  roomType: string
-  updateAt: string
-  receiverId: string
-  countNewChats: number
+  id: number
+  name: string
+  lastMessage: string
+  unreadMessages: boolean
+  avatar: string
 }
 
 export async function fetchConversations(
