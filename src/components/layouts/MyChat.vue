@@ -3,10 +3,14 @@
     <div class="chatButton">
       <button
         type="button"
-        style="border: 0; outlinie: 0; background-color: transparent"
+        style="border: 0; background-color: transparent"
         @click="buttonClick"
       >
-        <img style="width: 100px" src="../../assets/logo.png" alt="chatButton" />
+        <img
+          style="height: 70px; width: 70px"
+          src="../../assets/logo.png"
+          alt="chatButton"
+        />
       </button>
     </div>
   </div>
