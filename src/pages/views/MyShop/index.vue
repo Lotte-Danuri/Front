@@ -604,12 +604,12 @@ export default {
   },
   methods: {
     async getProductList() {
-      this.productList = await api.get('/products', {})
+      this.productList = await api.get('/product/products', {})
       console.log(this.productList)
       // alert(this.productList.data)
     },
     async getCategoryList() {
-      this.categoryList = await api.get('/categories', {})
+      this.categoryList = await api.get('/product/categories', {})
       console.log(this.categoryList)
     },
     doMouseOver(input) {
