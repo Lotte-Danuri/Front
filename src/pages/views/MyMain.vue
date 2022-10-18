@@ -907,7 +907,7 @@ export default {
   },
   methods: {
     async getProductList() {
-      this.productList = await api.get('/products', {})
+      this.productList = await api.get('/product/products', {})
       console.log(this.productList)
       // alert(this.productList.data)
     },

@@ -2327,7 +2327,7 @@ export default {
   },
   methods: {
     async getCategoryList() {
-      this.categoryList = await api.get('/categories', {})
+      this.categoryList = await api.get('/product/categories', {})
       console.log(this.categoryList)
     },
     doMouseOver(input) {

@@ -56,26 +56,9 @@
                   </a>
                 </div>
               </div>
-
-              <!-- Slider -->
-              <div style="height: 150px; display: flex">
-                <div
-                  v-for="(imageList, i) in product?.imageList.slice(0, 5)"
-                  :key="i"
-                  style="width: 110px"
-                >
-                  <button style="border: none" @click="imgClick($event)">
-                    <img
-                      class="imgList"
-                      :src="product?.imageList[i]"
-                      alt="..."
-                      style="width: 100px; height: 150px"
-                    />
-                  </button>
-                </div>
-              </div>
             </div>
             <div class="col-12 col-md-6 ps-lg-10">
+              <br>
               <!-- Header -->
               <div class="row mb-1">
                 <div class="col">
@@ -89,6 +72,8 @@
                   {{ product?.likeCount }}
                 </div>
               </div>
+
+              <br>
 
               <!-- Heading -->
               <h3 class="mb-2" style="font-size: 32px; font-weight: bold">
@@ -107,36 +92,8 @@
               <form>
                 <div class="form-group">
                   <!-- Label -->
-                  <p class="mb-5">Color: <strong id="colorCaption">White</strong></p>
+                  <p class="mb-5">보증기간: <strong id="colorCaption">{{product?.warranty}}개월</strong></p>
 
-                  <!-- Radio -->
-                  <div class="mb-8 ms-n1">
-                    <div class="form-check form-check-inline form-check-img">
-                      <input
-                        id="imgRadioOne"
-                        type="radio"
-                        class="form-check-input"
-                        name="imgRadio"
-                        data-toggle="form-caption"
-                        data-target="#colorCaption"
-                        value="White"
-                        style="background-image: url(assets/img/products/product-7.jpg)"
-                        checked
-                      />
-                    </div>
-                    <div class="form-check form-check-inline form-check-img">
-                      <input
-                        id="imgRadioTwo"
-                        type="radio"
-                        class="form-check-input"
-                        name="imgRadio"
-                        data-toggle="form-caption"
-                        data-target="#colorCaption"
-                        value="Black"
-                        style="background-image: url(assets/img/products/product-49.jpg)"
-                      />
-                    </div>
-                  </div>
                 </div>
                 <div class="form-group">
                   <!-- Label -->
@@ -156,9 +113,9 @@
                         data-toggle="form-caption"
                         data-target="#sizeCaption"
                       />
-                      <label class="form-check-label" for="sizeRadioOne">6</label>
+                      <label class="form-check-label" for="sizeRadioOne">김김진진우우점</label>
                     </div>
-                    <div class="form-check form-check-inline form-check-size mb-2">
+                    <!-- <div class="form-check form-check-inline form-check-size mb-2">
                       <input
                         id="sizeRadioTwo"
                         type="radio"
@@ -170,172 +127,10 @@
                         disabled
                       />
                       <label class="form-check-label" for="sizeRadioTwo">6.5</label>
-                    </div>
-                    <div class="form-check form-check-inline form-check-size mb-2">
-                      <input
-                        id="sizeRadioThree"
-                        type="radio"
-                        class="form-check-input"
-                        name="sizeRadio"
-                        value="7"
-                        data-toggle="form-caption"
-                        data-target="#sizeCaption"
-                      />
-                      <label class="form-check-label" for="sizeRadioThree">7</label>
-                    </div>
-                    <div class="form-check form-check-inline form-check-size mb-2">
-                      <input
-                        id="sizeRadioFour"
-                        type="radio"
-                        class="form-check-input"
-                        name="sizeRadio"
-                        value="7.5"
-                        data-toggle="form-caption"
-                        data-target="#sizeCaption"
-                        checked
-                      />
-                      <label class="form-check-label" for="sizeRadioFour">7.5</label>
-                    </div>
-                    <div class="form-check form-check-inline form-check-size mb-2">
-                      <input
-                        id="sizeRadioFive"
-                        type="radio"
-                        class="form-check-input"
-                        name="sizeRadio"
-                        value="8"
-                        data-toggle="form-caption"
-                        data-target="#sizeCaption"
-                      />
-                      <label class="form-check-label" for="sizeRadioFive">8</label>
-                    </div>
-                    <div class="form-check form-check-inline form-check-size mb-2">
-                      <input
-                        id="sizeRadioSix"
-                        type="radio"
-                        class="form-check-input"
-                        name="sizeRadio"
-                        value="8.5"
-                        data-toggle="form-caption"
-                        data-target="#sizeCaption"
-                      />
-                      <label class="form-check-label" for="sizeRadioSix">8.5</label>
-                    </div>
-                    <div class="form-check form-check-inline form-check-size mb-2">
-                      <input
-                        id="sizeRadioSeven"
-                        type="radio"
-                        class="form-check-input"
-                        name="sizeRadio"
-                        value="9"
-                        data-toggle="form-caption"
-                        data-target="#sizeCaption"
-                        disabled
-                      />
-                      <label class="form-check-label" for="sizeRadioSeven">9</label>
-                    </div>
-                    <div class="form-check form-check-inline form-check-size mb-2">
-                      <input
-                        id="sizeRadioEight"
-                        type="radio"
-                        class="form-check-input"
-                        name="sizeRadio"
-                        value="9.5"
-                        data-toggle="form-caption"
-                        data-target="#sizeCaption"
-                        disabled
-                      />
-                      <label class="form-check-label" for="sizeRadioEight">9.5</label>
-                    </div>
-                    <div class="form-check form-check-inline form-check-size mb-2">
-                      <input
-                        id="sizeRadioNine"
-                        type="radio"
-                        class="form-check-input"
-                        name="sizeRadio"
-                        value="10"
-                        data-toggle="form-caption"
-                        data-target="#sizeCaption"
-                      />
-                      <label class="form-check-label" for="sizeRadioNine">10</label>
-                    </div>
-                    <div class="form-check form-check-inline form-check-size mb-2">
-                      <input
-                        id="sizeRadioTen"
-                        type="radio"
-                        class="form-check-input"
-                        name="sizeRadio"
-                        value="10.5"
-                        data-toggle="form-caption"
-                        data-target="#sizeCaption"
-                      />
-                      <label class="form-check-label" for="sizeRadioTen">10.5</label>
-                    </div>
-                    <div class="form-check form-check-inline form-check-size mb-2">
-                      <input
-                        id="sizeRadioEleven"
-                        type="radio"
-                        class="form-check-input"
-                        name="sizeRadio"
-                        value="11"
-                        data-toggle="form-caption"
-                        data-target="#sizeCaption"
-                      />
-                      <label class="form-check-label" for="sizeRadioEleven">11</label>
-                    </div>
-                    <div class="form-check form-check-inline form-check-size mb-2">
-                      <input
-                        id="sizeRadioTwelve"
-                        type="radio"
-                        class="form-check-input"
-                        name="sizeRadio"
-                        value="12"
-                        data-toggle="form-caption"
-                        data-target="#sizeCaption"
-                      />
-                      <label class="form-check-label" for="sizeRadioTwelve">12</label>
-                    </div>
-                    <div class="form-check form-check-inline form-check-size mb-2">
-                      <input
-                        id="sizeRadioThirteen"
-                        type="radio"
-                        class="form-check-input"
-                        name="sizeRadio"
-                        value="13"
-                        data-toggle="form-caption"
-                        data-target="#sizeCaption"
-                      />
-                      <label class="form-check-label" for="sizeRadioThirteen">13</label>
-                    </div>
-                    <div class="form-check form-check-inline form-check-size mb-2">
-                      <input
-                        id="sizeRadioFourteen"
-                        type="radio"
-                        class="form-check-input"
-                        name="sizeRadio"
-                        value="14"
-                        data-toggle="form-caption"
-                        data-target="#sizeCaption"
-                      />
-                      <label class="form-check-label" for="sizeRadioFourteen">14</label>
-                    </div>
+                    </div> -->
                   </div>
 
-                  <!-- Size chart -->
-                  <p class="mb-8">
-                    <img
-                      src="assets/img/icons/icon-ruler.svg"
-                      alt="..."
-                      class="img-fluid"
-                    />
-                    <a
-                      class="text-reset text-decoration-underline ms-3"
-                      data-bs-toggle="modal"
-                      href="#modalSizeChart"
-                      >Size chart</a
-                    >
-                  </p>
-
-                  <div class="row gx-5 mb-7">
+                  <div class="row-2 gx-5 mb-7">
                     <div class="col-12 col-lg-auto">
                       <!-- Quantity -->
                       <select class="form-select mb-2">
@@ -349,7 +144,10 @@
                     <div class="col-12 col-lg">
                       <!-- Submit -->
                       <button type="submit" class="btn w-100 btn-dark mb-2">
-                        Add to Cart <i class="fe fe-shopping-cart ms-2"></i>
+                        장바구니에 추가 <i class="fe fe-shopping-cart ms-2"></i>
+                      </button>
+                      <button type="submit" class="btn w-100 btn-dark mb-2">
+                        주문하기 &nbsp;  <i class="fa-solid fa-barcode"></i>
                       </button>
                     </div>
                     <div class="col-12 col-lg-auto">
@@ -363,39 +161,6 @@
                     </div>
                   </div>
 
-                  <!-- Text -->
-                  <p>
-                    <span class="text-gray-500">Is your size/color sold out?</span>
-                    <a
-                      class="text-reset text-decoration-underline"
-                      data-bs-toggle="modal"
-                      href="#modalWaitList"
-                      >Join the Wait List!</a
-                    >
-                  </p>
-
-                  <!-- Share -->
-                  <p class="mb-0">
-                    <span class="me-4">Share:</span>
-                    <a
-                      class="btn btn-xxs btn-circle btn-light fs-xxxs text-gray-350"
-                      href="#!"
-                    >
-                      <i class="fab fa-twitter"></i>
-                    </a>
-                    <a
-                      class="btn btn-xxs btn-circle btn-light fs-xxxs text-gray-350"
-                      href="#!"
-                    >
-                      <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a
-                      class="btn btn-xxs btn-circle btn-light fs-xxxs text-gray-350"
-                      href="#!"
-                    >
-                      <i class="fab fa-pinterest-p"></i>
-                    </a>
-                  </p>
                 </div>
               </form>
             </div>
@@ -417,453 +182,23 @@
             <a class="nav-link active" data-bs-toggle="tab" href="#descriptionTab">
               Description
             </a>
-            <a class="nav-link" data-bs-toggle="tab" href="#sizeTab"> Size & Fit </a>
-            <a class="nav-link" data-bs-toggle="tab" href="#shippingTab">
-              Shipping & Return
-            </a>
           </div>
 
           <!-- Content -->
-          <div class="tab-content">
-            <div id="descriptionTab" class="tab-pane fade show active">
-              <div class="row justify-content-center py-9">
-                <div class="col-12 col-lg-10 col-xl-8">
-                  <div class="row">
-                    <div class="col-12">
-                      <!-- Text -->
-                      <p class="text-gray-500">
-                        Won't herb first male seas, beast. Let upon, female upon third
-                        fifth every. Man subdue rule after years herb after form. And
-                        image may, morning. Behold in tree day sea that together cattle
-                        whose. Fifth gathering brought bearing. Abundantly creeping whose.
-                        Beginning form have void two. A whose.
-                      </p>
-                    </div>
-                    <div class="col-12 col-md-6">
-                      <!-- List -->
-                      <ul class="list list-unstyled mb-md-0 text-gray-500">
-                        <li><strong class="text-body">SKU</strong>: #61590437</li>
-                        <li>
-                          <strong class="text-body">Occasion</strong>: Lifestyle, Sport
-                        </li>
-                        <li><strong class="text-body">Country</strong>: Italy</li>
-                      </ul>
-                    </div>
-                    <div class="col-12 col-md-6">
-                      <!-- List -->
-                      <ul class="list list-unstyled mb-0">
-                        <li><strong>Outer</strong>: Leather 100%, Polyamide 100%</li>
-                        <li><strong>Lining</strong>: Polyester 100%</li>
-                        <li><strong>CounSoletry</strong>: Rubber 100%</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="sizeTab" class="tab-pane fade">
-              <div class="row justify-content-center py-9">
-                <div class="col-12 col-lg-10 col-xl-8">
-                  <div class="row">
-                    <div class="col-12 col-md-6">
-                      <!-- Text -->
-                      <p class="mb-4">
-                        <strong>Fitting information:</strong>
-                      </p>
-
-                      <!-- List -->
-                      <ul class="mb-md-0 text-gray-500">
-                        <li>
-                          Upon seas hath every years have whose subdue creeping they're it
-                          were.
-                        </li>
-                        <li>Make great day bearing.</li>
-                        <li>For the moveth is days don't said days.</li>
-                      </ul>
-                    </div>
-                    <div class="col-12 col-md-6">
-                      <!-- Text -->
-                      <p class="mb-4">
-                        <strong>Model measurements:</strong>
-                      </p>
-
-                      <!-- List -->
-                      <ul class="list-unstyled text-gray-500">
-                        <li>Height: 1.80 m</li>
-                        <li>Bust/Chest: 89 cm</li>
-                        <li>Hips: 91 cm</li>
-                        <li>Waist: 65 cm</li>
-                        <li>Model size: M</li>
-                      </ul>
-
-                      <!-- Size -->
-                      <p class="mb-0">
-                        <img
-                          src="../assets/img/icons/icon-ruler.svg"
-                          alt="..."
-                          class="img-fluid"
-                        />
-                        <a
-                          class="text-reset text-decoration-underline ms-3"
-                          data-bs-toggle="modal"
-                          href="#modalSizeChart"
-                          >Size chart</a
-                        >
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="shippingTab" class="tab-pane fade">
-              <div class="row justify-content-center py-9">
-                <div class="col-12 col-lg-10 col-xl-8">
-                  <!-- Table -->
-                  <div class="table-responsive">
-                    <table class="table table-bordered table-sm table-hover">
-                      <thead>
-                        <tr>
-                          <th>Shipping Options</th>
-                          <th>Delivery Time</th>
-                          <th>Price</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>Standard Shipping</td>
-                          <td>Delivery in 5 - 7 working days</td>
-                          <td>$8.00</td>
-                        </tr>
-                        <tr>
-                          <td>Express Shipping</td>
-                          <td>Delivery in 3 - 5 working days</td>
-                          <td>$12.00</td>
-                        </tr>
-                        <tr>
-                          <td>1 - 2 day Shipping</td>
-                          <td>Delivery in 1 - 2 working days</td>
-                          <td>$12.00</td>
-                        </tr>
-                        <tr>
-                          <td>Free Shipping</td>
-                          <td>
-                            Living won't the He one every subdue meat replenish face was
-                            you morning firmament darkness.
-                          </td>
-                          <td>$0.00</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-
-                  <!-- Caption -->
-                  <p class="mb-0 text-gray-500">
-                    May, life blessed night so creature likeness their, for.
-                    <a class="text-body text-decoration-underline" href="#!"
-                      >Find out more</a
-                    >
-                  </p>
-                </div>
-              </div>
+          <div >
+            <div
+              v-for="(descriptionImage, index) in product?.imageList"
+              :key="index"
+            >
+              <img
+                        id="description"
+                        :src="descriptionImage"
+                        alt="..."
+                        class="card-img-top"
+                      />
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRODUCTS -->
-  <section class="pt-11">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <!-- Heading -->
-          <h4 class="mb-10 text-center">You might also like</h4>
-
-          <!-- Items -->
-          <div class="row">
-            <div class="col-6 col-sm-6 col-md-4 col-lg-3">
-              <!-- Card -->
-              <div class="card mb-7">
-                <!-- Badge -->
-                <div
-                  class="badge bg-white text-body card-badge card-badge-start text-uppercase"
-                >
-                  New
-                </div>
-
-                <!-- Image -->
-                <div class="card-img">
-                  <!-- Image -->
-                  <a class="card-img-hover" href="product.html">
-                    <img
-                      class="card-img-top card-img-back"
-                      src="../assets/img/products/product-120.jpg"
-                      alt="..."
-                    />
-                    <img
-                      class="card-img-top card-img-front"
-                      src="../assets/img/products/product-5.jpg"
-                      alt="..."
-                    />
-                  </a>
-
-                  <!-- Actions -->
-                  <div class="card-actions">
-                    <span class="card-action">
-                      <button
-                        class="btn btn-xs btn-circle btn-white-primary"
-                        data-bs-toggle="modal"
-                        data-bs-target="#modalProduct"
-                      >
-                        <i class="fe fe-eye"></i>
-                      </button>
-                    </span>
-                    <span class="card-action">
-                      <button
-                        class="btn btn-xs btn-circle btn-white-primary"
-                        data-toggle="button"
-                      >
-                        <i class="fe fe-shopping-cart"></i>
-                      </button>
-                    </span>
-                    <span class="card-action">
-                      <button
-                        class="btn btn-xs btn-circle btn-white-primary"
-                        data-toggle="button"
-                      >
-                        <i class="fe fe-heart"></i>
-                      </button>
-                    </span>
-                  </div>
-                </div>
-
-                <!-- Body -->
-                <div class="card-body px-0">
-                  <!-- Category -->
-                  <div class="fs-xs">
-                    <a class="text-muted" href="shop.html">Shoes</a>
-                  </div>
-
-                  <!-- Title -->
-                  <div class="fw-bold">
-                    <a class="text-body" href="product.html">
-                      Leather mid-heel Sandals
-                    </a>
-                  </div>
-
-                  <!-- Price -->
-                  <div class="fw-bold text-muted">$129.00</div>
-                </div>
-              </div>
-            </div>
-            <div class="col-6 col-sm-6 col-md-4 col-lg-3">
-              <!-- Card -->
-              <div class="card mb-7">
-                <!-- Image -->
-                <div class="card-img">
-                  <!-- Image -->
-                  <a class="card-img-hover" href="product.html">
-                    <img
-                      class="card-img-top card-img-back"
-                      src="../assets/img/products/product-121.jpg"
-                      alt="..."
-                    />
-                    <img
-                      class="card-img-top card-img-front"
-                      src="../assets/img/products/product-6.jpg"
-                      alt="..."
-                    />
-                  </a>
-
-                  <!-- Actions -->
-                  <div class="card-actions">
-                    <span class="card-action">
-                      <button
-                        class="btn btn-xs btn-circle btn-white-primary"
-                        data-bs-toggle="modal"
-                        data-bs-target="#modalProduct"
-                      >
-                        <i class="fe fe-eye"></i>
-                      </button>
-                    </span>
-                    <span class="card-action">
-                      <button
-                        class="btn btn-xs btn-circle btn-white-primary"
-                        data-toggle="button"
-                      >
-                        <i class="fe fe-shopping-cart"></i>
-                      </button>
-                    </span>
-                    <span class="card-action">
-                      <button
-                        class="btn btn-xs btn-circle btn-white-primary"
-                        data-toggle="button"
-                      >
-                        <i class="fe fe-heart"></i>
-                      </button>
-                    </span>
-                  </div>
-                </div>
-
-                <!-- Body -->
-                <div class="card-body px-0">
-                  <!-- Category -->
-                  <div class="fs-xs">
-                    <a class="text-muted" href="shop.html">Dresses</a>
-                  </div>
-
-                  <!-- Title -->
-                  <div class="fw-bold">
-                    <a class="text-body" href="product.html">
-                      Cotton floral print Dress
-                    </a>
-                  </div>
-
-                  <!-- Price -->
-                  <div class="fw-bold text-muted">$40.00</div>
-                </div>
-              </div>
-            </div>
-            <div class="col-6 col-sm-6 col-md-4 col-lg-3">
-              <!-- Card -->
-              <div class="card mb-7">
-                <!-- Badge -->
-                <div class="badge bg-dark card-badge card-badge-start text-uppercase">
-                  Sale
-                </div>
-
-                <!-- Image -->
-                <div class="card-img">
-                  <!-- Image -->
-                  <a class="card-img-hover" href="product.html">
-                    <img
-                      class="card-img-top card-img-back"
-                      src="../assets/img/products/product-122.jpg"
-                      alt="..."
-                    />
-                    <img
-                      class="card-img-top card-img-front"
-                      src="../assets/img/products/product-7.jpg"
-                      alt="..."
-                    />
-                  </a>
-
-                  <!-- Actions -->
-                  <div class="card-actions">
-                    <span class="card-action">
-                      <button
-                        class="btn btn-xs btn-circle btn-white-primary"
-                        data-bs-toggle="modal"
-                        data-bs-target="#modalProduct"
-                      >
-                        <i class="fe fe-eye"></i>
-                      </button>
-                    </span>
-                    <span class="card-action">
-                      <button
-                        class="btn btn-xs btn-circle btn-white-primary"
-                        data-toggle="button"
-                      >
-                        <i class="fe fe-shopping-cart"></i>
-                      </button>
-                    </span>
-                    <span class="card-action">
-                      <button
-                        class="btn btn-xs btn-circle btn-white-primary"
-                        data-toggle="button"
-                      >
-                        <i class="fe fe-heart"></i>
-                      </button>
-                    </span>
-                  </div>
-                </div>
-
-                <!-- Body -->
-                <div class="card-body px-0">
-                  <!-- Category -->
-                  <div class="fs-xs">
-                    <a class="text-muted" href="shop.html">Shoes</a>
-                  </div>
-
-                  <!-- Title -->
-                  <div class="fw-bold">
-                    <a class="text-body" href="product.html"> Leather Sneakers </a>
-                  </div>
-
-                  <!-- Price -->
-                  <div class="fw-bold">
-                    <span class="fs-xs text-gray-350 text-decoration-line-through"
-                      >$85.00</span
-                    >
-                    <span class="text-primary">$85.00</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-6 col-sm-6 col-md-4 col-lg-3 d-md-none d-lg-block">
-              <!-- Card -->
-              <div class="card mb-7">
-                <!-- Image -->
-                <div class="card-img">
-                  <!-- Image -->
-                  <a href="#!">
-                    <img
-                      class="card-img-top card-img-front"
-                      src="../assets/img/products/product-8.jpg"
-                      alt="..."
-                    />
-                  </a>
-
-                  <!-- Actions -->
-                  <div class="card-actions">
-                    <span class="card-action">
-                      <button
-                        class="btn btn-xs btn-circle btn-white-primary"
-                        data-bs-toggle="modal"
-                        data-bs-target="#modalProduct"
-                      >
-                        <i class="fe fe-eye"></i>
-                      </button>
-                    </span>
-                    <span class="card-action">
-                      <button
-                        class="btn btn-xs btn-circle btn-white-primary"
-                        data-toggle="button"
-                      >
-                        <i class="fe fe-shopping-cart"></i>
-                      </button>
-                    </span>
-                    <span class="card-action">
-                      <button
-                        class="btn btn-xs btn-circle btn-white-primary"
-                        data-toggle="button"
-                      >
-                        <i class="fe fe-heart"></i>
-                      </button>
-                    </span>
-                  </div>
-                </div>
-
-                <!-- Body -->
-                <div class="card-body px-0">
-                  <!-- Category -->
-                  <div class="fs-xs">
-                    <a class="text-muted" href="shop.html">Tops</a>
-                  </div>
-
-                  <!-- Title -->
-                  <div class="fw-bold">
-                    <a class="text-body" href="product.html"> Cropped cotton Top </a>
-                  </div>
-
-                  <!-- Price -->
-                  <div class="fw-bold text-muted">$29.00</div>
-                </div>
-              </div>
-            </div>
           </div>
-        </div>
       </div>
     </div>
   </section>
@@ -1445,7 +780,7 @@ watchEffect(async () => {
   loading.value = true
 
   try {
-    const { data } = await api.get<Product>(`/products/` + currentProductId)
+    const { data } = await api.get<Product>(`/product/products/` + currentProductId)
     product.value = data
     console.log(data)
   } catch (error) {
