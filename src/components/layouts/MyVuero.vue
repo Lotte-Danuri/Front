@@ -280,6 +280,7 @@ $overlay-bg-dark: linear-gradient(
 
 .chat-app-wrapper {
   display: flex;
+  opacity: 0.95;
   flex-direction: column;
   background-color: $theme-bg-color;
   max-width: 1600px;
