@@ -96,44 +96,27 @@
 
                 </div>
                 <div class="form-group">
-                  <!-- Label -->
-                  <p class="mb-5">
-                    Size: <strong><span id="sizeCaption">7.5</span> US</strong>
-                  </p>
-
                   <!-- Radio -->
-                  <div class="mb-2">
-                    <div class="form-check form-check-inline form-check-size mb-2">
+                  <div class="mb-2" >
+                    <div v-for="(store, index) in stores"
+                  :key="index" class="form-check form-check-inline form-check-size mb-2">
                       <input
-                        id="sizeRadioOne"
+                        :id="'문자열'+index"
                         type="radio"
                         class="form-check-input"
                         name="sizeRadio"
-                        value="6"
+                        :value=store.storeId
                         data-toggle="form-caption"
                         data-target="#sizeCaption"
-                      />
-                      <label class="form-check-label" for="sizeRadioOne">김김진진우우점</label>
+                        />
+                          <label class="form-check-label" :for="'문자열'+index">{{store.storeName}}</label>
                     </div>
-                    <!-- <div class="form-check form-check-inline form-check-size mb-2">
-                      <input
-                        id="sizeRadioTwo"
-                        type="radio"
-                        class="form-check-input"
-                        name="sizeRadio"
-                        value="6.5"
-                        data-toggle="form-caption"
-                        data-target="#sizeCaption"
-                        disabled
-                      />
-                      <label class="form-check-label" for="sizeRadioTwo">6.5</label>
-                    </div> -->
                   </div>
 
                   <div class="row-2 gx-5 mb-7">
                     <div class="col-12 col-lg-auto">
                       <!-- Quantity -->
-                      <select class="form-select mb-2">
+                      <select v-model=quantity class="form-select mb-2">
                         <option value="1" selected>1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -143,10 +126,20 @@
                     </div>
                     <div class="col-12 col-lg">
                       <!-- Submit -->
-                      <button type="submit" class="btn w-100 btn-dark mb-2">
-                        장바구니에 추가 <i class="fe fe-shopping-cart ms-2"></i>
-                      </button>
-                      <button type="submit" class="btn w-100 btn-dark mb-2">
+                      <!-- <RouterLink
+                        class="card-img-hover"
+                        :to="{
+                          name: '/views/MyCart',
+                          params: {
+                            // id: product.id,
+                          },
+                        }"
+                      > -->
+                        <button type="button" @click=addCart() class="btn btn-outline-dark w-100 mb-2">
+                          장바구니에 추가 <i class="fe fe-shopping-cart ms-2"></i>
+                        </button>
+                      <!-- </RouterLink> -->
+                      <button type="submit" class="btn btn-outline-dark w-100 mb-2">
                         주문하기 &nbsp;  <i class="fa-solid fa-barcode"></i>
                       </button>
                     </div>
@@ -760,6 +753,7 @@ interface Product {
   thumbnailUrl: string
   price: number
   stock: number
+  storeId : number
   storeName: string
   likeCount: number
   productCode: string
@@ -769,7 +763,15 @@ interface Product {
   categoryThirdName: string
   imageList: string[]
 }
+
+interface Store{
+  storeId : number
+  storeName : string
+}
+
 const product = ref<Product>()
+const stores = ref<Store[]>([])
+const quantity = ref(Number)
 const loading = ref(false)
 const api = useApi()
 const router = useRouter()
@@ -780,9 +782,15 @@ watchEffect(async () => {
   loading.value = true
 
   try {
-    const { data } = await api.get<Product>(`/product/products/` + currentProductId)
-    product.value = data
-    console.log(data)
+    await api.get<Product>(`/product/products/` + currentProductId).then((response)=>{
+      product.value = response.data
+
+      api.get<Store[]>(`/member/store/`+product.value.storeId+`/list`).then((response)=>{
+        stores.value = response.data
+        console.log(stores)
+      })
+    })
+    
   } catch (error) {
   } finally {
     loading.value = false
@@ -791,6 +799,9 @@ watchEffect(async () => {
 useHead({
   title: computed(() => product.value?.productName ?? 'Loading article...'),
 })
+
+function getStores(){
+}
 
 function comma(val) {
   return String(val).replace(/\B(?=(\d{3})+(?!\d))/g, ',')
@@ -801,6 +812,23 @@ function imgClick(e: HTMLDataElement) {
   console.log(e.path[0].src)
   thumb.src = e.path[0].src
 }
+
+function addCart(){
+  api.post(`/member/cart`,{
+      productId : product.value?.id,
+      quantity : quantity.value,
+      memberId : "15" 
+  },{
+    headers : {
+      Authorization: `Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNiIsImV4cCI6MTY2NjA4ODcwNn0.OfYPW4IXpTn8MDvVYk27TRAk5hAsfqYB2xDjukozMMnKYtJaIXO1XWZqucAbJjU1xUt0tUhcsmIc1ZXjegqzxw`
+    }
+  }).then((response)=>{
+        // stores.value = response.data
+        console.log(response)
+        router.push("/views/MyCart")
+      })
+}
+
 </script>
 
 <style>
