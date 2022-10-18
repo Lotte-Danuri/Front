@@ -13,11 +13,11 @@ const emit = defineEmits(['toggleMobileConversation'])
       >
         <i aria-hidden="true" class="iconify" data-icon="feather:menu"></i>
       </button>
-      <div class="chat-area-title">Irina V.</div>
+      <div class="chat-area-title">LuxON-고객센터</div>
       <div class="chat-area-group">
         <img
           class="chat-area-profile"
-          src="/demo/avatars/23.jpg"
+          src="/images/logo/logo_black.png"
           alt=""
           data-user-popover="21"
           @error.once="onceImageErrored(150)"
@@ -29,7 +29,7 @@ const emit = defineEmits(['toggleMobileConversation'])
         <div class="chat-msg-profile">
           <img
             class="chat-msg-img"
-            src="/demo/avatars/23.jpg"
+            src="/images/logo/logo_black.png"
             alt=""
             data-user-popover="0"
             @error.once="onceImageErrored(150)"

@@ -1,59 +1,99 @@
 <script setup lang="ts">
 import { useHead } from '@vueuse/head'
 import { usePanels } from '/@src/stores/panels'
-import { useSidebar } from '/@src/stores/sidebar'
-//import type { VAvatarProps } from '/@src/components/base/avatar/VAvatar.vue'
+
+import type { VAvatarProps } from '/@src/components/base/avatar/VAvatar.vue'
 import { useDropdown } from '/@src/composable/useDropdown'
-import { useApi } from '/@src/composable/useApi'
-import { useChat } from '/@src/stores/chat'
-import { useLayoutSwitcher } from '/@src/stores/layoutSwitcher'
+import { onceImageErrored } from '/@src/utils/via-placeholder'
+import Image from '/@src/pages/components/accordion/image.vue'
 
 export interface conversationData {
-  chatRoomId: string
-  lastChatContent: string
-  lastChatCreatedAt: string
-  valid: boolean
-  roomType: string
-  updateAt: string
-  receiverId: string
-  countNewChats: number
+  id: number
+  name: string
+  role: string
+  avatar: VAvatarProps
+  lastMessage: string
+  lastMessagePreview: string
 }
 
 // we are using static data here, but you might need to load those from your API
 // to do so, this should be a ref<any[]>([]) and be populated when request is done
-const api = useApi()
-const conversations = ref<conversationData[]>([])
-watchEffect(async () => {
-  try {
-    const { data } = await api.get<conversationData[]>(`user/Test1`)
-    conversations.value = data
-  } catch (error) {
-  } finally {
-  }
-})
-const chat = useChat()
-const sidebar = useSidebar()
-const layoutSwitcher = useLayoutSwitcher()
-
-// Click handler to toggle the conversations
-function selectConversation(chatRoomId: string) {
-  chat.setAddConversationOpen(false)
-  chat.selectConversastion(chatRoomId)
-}
+const conversations: conversationData[] = [
+  {
+    id: 1,
+    name: 'Channel',
+    role: '이충현 매니저',
+    avatar: {
+      picture: '/images/logo/channel.svg',
+    },
+    lastMessage: '20m',
+    lastMessagePreview: '언제든 궁금하신점이 있으시면 물어봐 주세요.',
+  },
+  {
+    id: 2,
+    name: 'Gucci',
+    role: 'Business Analyst',
+    avatar: {
+      picture: '/images/logo/Gucci.svg',
+    },
+    lastMessage: '24m',
+    lastMessagePreview: '감사합니다 ^^',
+  },
+  {
+    id: 3,
+    name: '샤넬 안채영 매니저',
+    role: '7 people are chatting',
+    avatar: {
+      color: 'h-purple',
+      initials: '안',
+    },
+    lastMessage: '31m',
+    lastMessagePreview: 'This is getting funnier and funnier. You gotta love dat team 🥰',
+  },
+  {
+    id: 4,
+    name: 'LuxON-프로모션',
+    role: '이벤트',
+    avatar: {
+      picture: '/images/logo/logo_white.png',
+    },
+    lastMessage: '47m',
+    lastMessagePreview: 'I like the curves in this one.',
+  },
+  {
+    id: 5,
+    name: 'LuxON-고객센터',
+    role: '고객센터',
+    avatar: {
+      picture: '/images/logo/logo_black.png',
+    },
+    lastMessage: '47m',
+    lastMessagePreview: 'I like the curves in this one.',
+  },
+  {
+    id: 6,
+    name: 'Hermes',
+    role: 'Project Manager',
+    avatar: {
+      picture: '/images/logo/hermes.png',
+    },
+    lastMessage: '1h',
+    lastMessagePreview: 'Still down for that movie?',
+  },
+]
 
 const panels = usePanels()
-const selectedConversationId = ref()
+const selectedConversationId = ref(3)
 const mobileConversationListOpen = ref(false)
 const selectedConversation = computed(() => {
-  const conversation: any = conversations.value.find(
-    (item: { chatRoomId: string }) => item.chatRoomId === selectedConversationId.value
+  const conversation = conversations.find(
+    (item) => item.id === selectedConversationId.value
   )
   if (conversation) {
-    selectConversation(conversation.chatRoomId)
     return conversation
   }
 
-  return conversations.value[0]
+  return conversations[0]
 })
 
 const dropdownElement1 = ref<HTMLElement>()
@@ -72,98 +112,13 @@ useHead({
     <div class="chat-app-wrapper" style="height: 80%">
       <!--Header-->
       <div class="chat-app-header">
-        <!--Logo-->
-        <div class="logo">
-          <AnimatedLogo width="38px" height="38px" />
-        </div>
-
-        <!--Search-->
-        <div class="search-bar">
-          <div class="field">
-            <div class="control has-icon">
-              <input
-                type="text"
-                class="input search-input"
-                placeholder="Search..."
-                aria-label="Search"
-              />
-              <div class="form-icon">
-                <i aria-hidden="true" class="iconify" data-icon="feather:search"></i>
-              </div>
-              <div class="search-results has-slimscroll"></div>
-            </div>
-          </div>
-        </div>
-
-        <!--User Settings-->
-        <div class="user-settings">
-          <!--Toolbar-->
-          <Toolbar class="desktop-toolbar">
-            <ToolbarNotification />
-
-            <a
-              class="toolbar-link right-panel-trigger"
-              aria-label="View activity"
-              tabindex="0"
-              @keydown.space.prevent="panels.setActive('activity')"
-              @click="panels.setActive('activity')"
-            >
-              <i aria-hidden="true" class="iconify" data-icon="feather:grid"></i>
-            </a>
-          </Toolbar>
-
-          <!--User Menu-->
-          <div
-            ref="dropdownElement1"
-            class="dropdown is-right dropdown-trigger user-dropdown"
-          >
-            <div
-              tabindex="0"
-              class="is-trigger"
-              aria-haspopup="true"
-              @keydown.space.prevent="dropdown1.toggle"
-              @click="dropdown1.toggle"
-            >
-              <div class="profile-avatar">
-                <img
-                  class="avatar"
-                  src="/images/avatars/svg/vuero-1.svg"
-                  alt=""
-                  @error.once="onceImageErrored(150)"
-                />
-              </div>
-              <i aria-hidden="true" class="iconify" data-icon="feather:chevron-down"></i>
-            </div>
-            <div class="dropdown-menu" role="menu">
-              <div class="dropdown-content">
-                <div class="dropdown-item">
-                  <p class="is-size-7">Erik Kovalsky</p>
-                </div>
-                <a href="#" class="dropdown-item">
-                  <i aria-hidden="true" class="iconify" data-icon="feather:user"></i>
-                  <span>Profile</span>
-                </a>
-                <a class="dropdown-item">
-                  <i aria-hidden="true" class="iconify" data-icon="feather:edit-2"></i>
-                  <span>Edit Profile</span>
-                </a>
-                <a class="dropdown-item">
-                  <i aria-hidden="true" class="iconify" data-icon="feather:box"></i>
-                  <span>Projects</span>
-                </a>
-                <a class="dropdown-item">
-                  <i aria-hidden="true" class="iconify" data-icon="feather:settings"></i>
-                  <span>Settings</span>
-                </a>
-                <hr class="dropdown-divider" />
-                <a href="#" class="dropdown-item">
-                  <i aria-hidden="true" class="iconify" data-icon="feather:log-out"></i>
-                  <span>Sign Out</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+        <img
+          class="chat-msg-img"
+          src="/images/logo/logo_white.png"
+          alt=""
+          width="100"
+          height="38"
+        />
       </div>
 
       <!--Chat app wrapper-->
@@ -179,98 +134,99 @@ useHead({
         />
 
         <!--Conversation messages-->
-        <!-- Chat Card -->
-        <MessagingLayout :theme="layoutSwitcher.sidebarLayoutTheme">
-          <VViewWrapper
-            id="vuero-messaging"
-            :class="[sidebar.active === 'none' && 'is-pushed-messages']"
-          >
-            <VPageContentWrapper>
-              <VPageContent class="chat-content">
-                <ChatCard>
-                  <template #body>
-                    <li v-if="chat.messages.length === 0" class="no-messages">
-                      <img
-                        class="light-image"
-                        src="/@src/assets/illustrations/placeholders/search-4.svg"
-                        alt=""
-                      />
-                      <img
-                        class="dark-image"
-                        src="/@src/assets/illustrations/placeholders/search-4-dark.svg"
-                        alt=""
-                      />
-                      <div class="text">
-                        <h3>No messages yet</h3>
-                        <p>Start the conversation by typing a message</p>
-                      </div>
-                    </li>
-
-                    <ChatMsg
-                      v-for="message in chat.messages"
-                      :key="message.chatId"
-                      :message="message"
-                    />
-
-                    <li class="chat-loader" :class="[chat.loading && 'is-active']">
-                      <div class="loader is-loading"></div>
-                    </li>
-                  </template>
-                </ChatCard>
-
-                <ChatPlaceholder />
-              </VPageContent>
-            </VPageContentWrapper>
-          </VViewWrapper>
-          <ChatSideFab />
-        </MessagingLayout>
         <div class="chat-area is-active" data-simplebar>
-          <div class="chat-area-footer" style="width: 70%; bottom: 120px; z-index: 1">
-            <div class="add-content">
-              <div ref="dropdownElement2" class="dropdown dropdown-trigger is-up">
-                <div>
-                  <div class="button" aria-haspopup="true" @click="dropdown2.toggle">
-                    <i aria-hidden="true" class="iconify" data-icon="feather:plus"></i>
-                  </div>
-                </div>
-                <div class="dropdown-menu" role="menu">
-                  <div class="dropdown-content">
-                    <a class="dropdown-item">
-                      <i aria-hidden="true" class="iconify" data-icon="feather:video"></i>
-                      <div class="meta">
-                        <span>Video</span>
-                        <span>Embed a video</span>
-                      </div>
-                    </a>
-                    <a href="#" class="dropdown-item kill-drop v-modal-trigger">
-                      <i aria-hidden="true" class="iconify" data-icon="feather:image"></i>
-                      <div class="meta">
-                        <span>Images</span>
-                        <span>Upload pictures</span>
-                      </div>
-                    </a>
-                    <a href="#" class="dropdown-item kill-drop v-modal-trigger">
-                      <i aria-hidden="true" class="iconify" data-icon="feather:link"></i>
-                      <div class="meta">
-                        <span>Link</span>
-                        <span>Post a link</span>
-                      </div>
-                    </a>
-                    <hr class="dropdown-divider" />
-                    <a href="#" class="dropdown-item kill-drop v-modal-trigger">
-                      <i aria-hidden="true" class="iconify" data-icon="feather:file"></i>
-                      <div class="meta">
-                        <span>File</span>
-                        <span>Upload a file</span>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <!--Conversation 1-->
+          <WebappConversation1
+            :class="[selectedConversationId === 1 && 'is-active']"
+            @toggle-mobile-csonversation="
+              mobileConversationListOpen = !mobileConversationListOpen
+            "
+          />
+
+          <!--Conversation 2-->
+          <WebappConversation2
+            :class="[selectedConversationId === 2 && 'is-active']"
+            @toggle-mobile-csonversation="
+              mobileConversationListOpen = !mobileConversationListOpen
+            "
+          />
+
+          <!--Conversation 3-->
+          <WebappConversation3
+            :class="[selectedConversationId === 3 && 'is-active']"
+            @toggle-mobile-csonversation="
+              mobileConversationListOpen = !mobileConversationListOpen
+            "
+          />
+
+          <!--Conversation 4-->
+          <WebappConversation4
+            :class="[selectedConversationId === 4 && 'is-active']"
+            @toggle-mobile-csonversation="
+              mobileConversationListOpen = !mobileConversationListOpen
+            "
+          />
+
+          <!--Conversation 5-->
+          <WebappConversation5
+            :class="[selectedConversationId === 5 && 'is-active']"
+            @toggle-mobile-csonversation="
+              mobileConversationListOpen = !mobileConversationListOpen
+            "
+          />
+
+          <!--Conversation 6-->
+          <WebappConversation6
+            :class="[selectedConversationId === 6 && 'is-active']"
+            @toggle-mobile-csonversation="
+              mobileConversationListOpen = !mobileConversationListOpen
+            "
+          />
+
+          <!--Conversation 7-->
+          <WebappConversation7
+            :class="[selectedConversationId === 7 && 'is-active']"
+            @toggle-mobile-csonversation="
+              mobileConversationListOpen = !mobileConversationListOpen
+            "
+          />
+
+          <!--Conversation 8-->
+          <WebappConversation8
+            :class="[selectedConversationId === 8 && 'is-active']"
+            @toggle-mobile-csonversation="
+              mobileConversationListOpen = !mobileConversationListOpen
+            "
+          />
+
+          <!--Conversation 9-->
+          <WebappConversation9
+            :class="[selectedConversationId === 9 && 'is-active']"
+            @toggle-mobile-csonversation="
+              mobileConversationListOpen = !mobileConversationListOpen
+            "
+          />
+
+          <!--Conversation 10-->
+          <WebappConversation10
+            :class="[selectedConversationId === 10 && 'is-active']"
+            @toggle-mobile-csonversation="
+              mobileConversationListOpen = !mobileConversationListOpen
+            "
+          />
+
+          <!--Conversation 11-->
+          <WebappConversation11
+            :class="[selectedConversationId === 11 && 'is-active']"
+            @toggle-mobile-csonversation="
+              mobileConversationListOpen = !mobileConversationListOpen
+            "
+          />
+
+          <div class="chat-area-footer" style="width: 70%; bottom: 70px; z-index: 1">
             <div class="add-emoji">
               <div class="button">
-                <i aria-hidden="true" class="iconify" data-icon="feather:smile"></i>
+                <i aria-hidden="true" class="iconify" data-icon="feather:image"></i>
               </div>
             </div>
             <input
@@ -278,10 +234,13 @@ useHead({
               placeholder="Type something here..."
               aria-label="Add new message"
             />
+            <div class="add-emoji">
+              <div class="button">
+                <i aria-hidden="true" class="iconify" data-icon="feather:arrow-right"></i>
+              </div>
+            </div>
           </div>
         </div>
-
-        <!--Conversation Details-->
       </div>
     </div>
   </MinimalLayout>
@@ -296,7 +255,7 @@ useHead({
 $theme-bg-color: var(--white);
 $input-bg: #f8f8fa;
 $input-chat-color: #a2a2a2;
-$border-color: #eef2f4;
+$border-color: #000;
 $body-color: #273346;
 $chat-text-bg: #f1f2f6;
 $msg-date: #c0c7d2;

@@ -13,11 +13,11 @@ const emit = defineEmits(['toggleMobileConversation'])
       >
         <i aria-hidden="true" class="iconify" data-icon="feather:menu"></i>
       </button>
-      <div class="chat-area-title">Alice C.</div>
+      <div class="chat-area-title">LuxON-프로모션</div>
       <div class="chat-area-group">
         <img
           class="chat-area-profile"
-          src="/demo/avatars/7.jpg"
+          src="/images/logo/logo_white.png"
           alt=""
           data-user-popover="0"
           @error.once="onceImageErrored(150)"
@@ -29,7 +29,7 @@ const emit = defineEmits(['toggleMobileConversation'])
         <div class="chat-msg-profile">
           <img
             class="chat-msg-img"
-            src="/demo/avatars/7.jpg"
+            src="/images/logo/logo_white.png"
             alt=""
             data-user-popover="0"
             @error.once="onceImageErrored(150)"
@@ -42,7 +42,7 @@ const emit = defineEmits(['toggleMobileConversation'])
           </div>
           <div class="chat-msg-text">
             <img
-              src="/demo/photos/apps/11.png"
+              src="/images/logo/logo_white.png"
               alt=""
               @error.once="onceImageErrored(400, 300)"
             />
@@ -50,7 +50,7 @@ const emit = defineEmits(['toggleMobileConversation'])
           <div class="chat-msg-text">This one is pretty colorful, I like it.</div>
           <div class="chat-msg-text">
             <img
-              src="/demo/photos/apps/9.png"
+              src="/images/logo/logo_white.png"
               alt=""
               @error.once="onceImageErrored(400, 300)"
             />

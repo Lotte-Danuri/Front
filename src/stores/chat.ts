@@ -17,6 +17,7 @@ import { useApi } from '/@src/composable/useApi'
 
 const defaultConversation = {
   chatRoomId: '',
+  userName: '',
   lastChatContent: '',
   lastChatCreatedAt: '',
   valid: true,
@@ -35,6 +36,18 @@ export const useChat = defineStore('chat', () => {
   const mobileConversationDetailsOpen = ref(false)
   const loading = ref(false)
 
+  const selectedConversation = computed(() => {
+    const conversation = conversations.value.find(
+      (item) => item.chatRoomId === selectedConversationId.value
+    )
+
+    if (!conversation) {
+      return defaultConversation
+    } else {
+      return conversation
+    }
+  })
+
   async function loadConversations(start = 0, limit = 10) {
     if (loading.value) return
 
@@ -48,7 +61,7 @@ export const useChat = defineStore('chat', () => {
     }
   }
 
-  async function selectConversastion(conversationId: string) {
+  async function selectConversation(conversationId: string) {
     if (loading.value) return
 
     loading.value = true
@@ -74,13 +87,14 @@ export const useChat = defineStore('chat', () => {
     conversations,
     messages,
     selectedConversationId,
+    selectedConversation,
     addConversationOpen,
     mobileConversationDetailsOpen,
     loading,
     loadConversations,
     setAddConversationOpen,
     setMobileConversationDetailsOpen,
-    selectConversastion,
+    selectConversation,
   } as const
 })
 
