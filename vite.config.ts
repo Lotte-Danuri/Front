@@ -17,6 +17,7 @@ import purgecss from 'rollup-plugin-purgecss'
 
 const MINIFY_IMAGES = process.env.MINIFY ? process.env.MINIFY === 'true' : false
 
+
 /**
  * This is the main configuration file for vitejs
  *
@@ -36,6 +37,15 @@ export default defineConfig({
   logLevel: 'info',
   // development server configuration
   server: {
+    // proxy: {
+    //   '/api': {
+    //     target: 'https://sbbro.xyz',
+    //     changeOrigin: true,
+    //     rewrite: (path) => path.replace(/^\/api/, ''),
+    //     secure: false,
+    //     ws: true
+    //   }
+    // },
     // Vite 3 now defaults to 5173, but you can override it with the port option.
     port: 3000,
   },

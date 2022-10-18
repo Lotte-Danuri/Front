@@ -1801,9 +1801,7 @@
             </li>
             <li class="nav-item dropdown">
               <!-- Toggle -->
-              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
-                >English</a
-              >
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"></a>
 
               <!-- Menu -->
               <div class="dropdown-menu min-w-0">
@@ -1822,7 +1820,9 @@
               </RouterLink>
             </li>
             <RouterLink to="/views/auth/signup" class="logo">
-              <a class="nav-link" href="./views/auth/Sign Up">Sign Up</a>
+              <a class="nav-link" href="./views/auth/Sign Up" style="font-weight: bold"
+                >회원가입</a
+              >
             </RouterLink>
           </ul>
 
@@ -2027,8 +2027,8 @@
                 class="nav-link"
                 data-bs-toggle="dropdown"
                 href="#"
-                style="margin-left: 100px"
-                >Shop</a
+                style="margin-left: 100px; font-weight: bold"
+                >고객지원</a
               >
 
               <!-- Menu -->
@@ -2036,69 +2036,6 @@
                 <div class="card card-lg">
                   <div class="card-body">
                     <div class="row">
-                      <div class="col">
-                        <!-- Heading -->
-                        <div class="mb-5 fw-bold">Shop</div>
-
-                        <!-- Links -->
-                        <ul class="list-styled mb-7 fs-sm">
-                          <li class="list-styled-item">
-                            <a class="list-styled-link" href="./MyShop">Default</a>
-                          </li>
-                          <li class="list-styled-item">
-                            <a class="list-styled-link" href="./shop-topbar.html"
-                              >Topbar</a
-                            >
-                          </li>
-                          <li class="list-styled-item">
-                            <a class="list-styled-link" href="./shop-collapse.html"
-                              >Collapse</a
-                            >
-                          </li>
-                          <li class="list-styled-item">
-                            <a class="list-styled-link" href="./shop-simple.html"
-                              >Simple</a
-                            >
-                          </li>
-                          <li class="list-styled-item">
-                            <a class="list-styled-link" href="./shop-masonry.html"
-                              >Masonry</a
-                            >
-                          </li>
-                        </ul>
-
-                        <!-- Heading -->
-                        <div class="mb-5 fw-bold">Product</div>
-
-                        <!-- Links -->
-                        <ul class="list-styled fs-sm">
-                          <li class="list-styled-item">
-                            <a class="list-styled-link" href="./product.html">Default</a>
-                          </li>
-                          <li class="list-styled-item">
-                            <a class="list-styled-link" href="./product-images-left.html"
-                              >Images Left</a
-                            >
-                          </li>
-                          <li class="list-styled-item">
-                            <a class="list-styled-link" href="./product-image-grid.html"
-                              >Image Grid</a
-                            >
-                          </li>
-                          <li class="list-styled-item">
-                            <a class="list-styled-link" href="./product-image-slider.html"
-                              >Image Slider</a
-                            >
-                          </li>
-                          <li class="list-styled-item">
-                            <a
-                              class="list-styled-link"
-                              href="./product-images-stacked.html"
-                              >Images Stacked</a
-                            >
-                          </li>
-                        </ul>
-                      </div>
                       <div class="col">
                         <!-- Heading -->
                         <div class="mb-5 fw-bold">Support</div>
@@ -2302,7 +2239,8 @@
             <!-- Text -->
             <div class="text-center text-white">
               <span class="heading-xxs letter-spacing-xl">
-                ⚡️ Happy Holiday Deals on Everything ⚡️
+                <!-- ⚡️ Happy Holiday Deals on Everything ⚡️ -->
+                ⚡️ Lux On에 오신걸 환영합니다! ⚡️
               </span>
             </div>
           </div>
