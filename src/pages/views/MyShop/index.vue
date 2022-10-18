@@ -3,7 +3,16 @@
   <section class="py-11">
     <div class="container" style="background-color: white">
       <div class="row">
-        <div class="col-12 col-md-4 col-lg-3">
+        <div
+          class="col-12 col-md-4 col-lg-3"
+          style="
+            overflow: scroll;
+            height: 1000px;
+            position: sticky;
+            overflow-y: auto;
+            overflow-x: hidden;
+          "
+        >
           <!-- Filters -->
           <form class="mb-10 mb-md-0" action="./MyShop/action">
             <ul id="filterNav" class="nav nav-vertical">
@@ -450,7 +459,7 @@
               class="col-6 col-md-4 col-lg-3"
             >
               <!-- Card -->
-              <div class="card mb-7">
+              <div class="card mb-7" style="height: 420px">
                 <!-- Badge -->
                 <div
                   class="badge bg-white text-body card-badge card-badge-start text-uppercase"
@@ -472,11 +481,13 @@
                   >
                     <img
                       class="card-img-top card-img-back"
+                      style="height: 267px"
                       :src="product.thumbnailUrl"
                       alt="..."
                     />
                     <img
                       class="card-img-top card-img-front"
+                      style="height: 267px"
                       :src="product.thumbnailUrl"
                       alt="..."
                     />
