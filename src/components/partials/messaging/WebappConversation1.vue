@@ -37,10 +37,7 @@ const emit = defineEmits(['toggleMobileConversation'])
           <div class="chat-msg-date">Sent at 1:22pm</div>
         </div>
         <div class="chat-msg-content">
-          <div class="chat-msg-text">
-            안녕하세요. 올 겨울에 맬 백팩을 찾고 있는데
-            <span role="img" aria-label="Faces with Tears of Joy">😂</span>.
-          </div>
+          <div class="chat-msg-text">안녕하세요. 올 겨울에 맬 백팩을 찾고 있는데</div>
           <div class="chat-msg-text">검정색 백팩 추천해주세요</div>
         </div>
       </div>

@@ -48,7 +48,7 @@ const conversations: conversationData[] = [
       initials: '안',
     },
     lastMessage: '31m',
-    lastMessagePreview: 'This is getting funnier and funnier. You gotta love dat team 🥰',
+    lastMessagePreview: '오! 정말 빠르네요',
   },
   {
     id: 4,
@@ -58,7 +58,7 @@ const conversations: conversationData[] = [
       picture: '/images/logo/logo_white.png',
     },
     lastMessage: '47m',
-    lastMessagePreview: 'I like the curves in this one.',
+    lastMessagePreview: '롯데 면세점 x LuxON 면세 이벤트',
   },
   {
     id: 5,
@@ -68,7 +68,7 @@ const conversations: conversationData[] = [
       picture: '/images/logo/logo_black.png',
     },
     lastMessage: '47m',
-    lastMessagePreview: 'I like the curves in this one.',
+    lastMessagePreview: '안녕하세요. LuxON-고객센터 입니다...',
   },
   {
     id: 6,
@@ -78,7 +78,7 @@ const conversations: conversationData[] = [
       picture: '/images/logo/hermes.png',
     },
     lastMessage: '1h',
-    lastMessagePreview: 'Still down for that movie?',
+    lastMessagePreview: '감사합니다.',
   },
 ]
 
@@ -503,7 +503,7 @@ $overlay-bg-dark: linear-gradient(
 
         &.active {
           background: $active-conversation-bg;
-          border-left: 4px solid var(--primary);
+          border-left: 4px solid var(--dark-dark-text);
 
           .conversation-detail {
             .conversation-username {
@@ -772,7 +772,7 @@ $overlay-bg-dark: linear-gradient(
           }
 
           .chat-msg-text {
-            background-color: var(--primary);
+            background-color: var(--dark-dark-text);
             color: var(--white);
             border-radius: 20px 20px 0;
           }
@@ -799,14 +799,14 @@ $overlay-bg-dark: linear-gradient(
         position: fixed;
         right: 0;
         margin: 0 auto;
-        width: calc(100% - 680px);
+        width: 80%;
         overflow-x: hidden;
         bottom: 0;
         left: 0;
 
         input {
           border: 1px solid transparent;
-          color: var(--body-color);
+          color: var(--dark-dark-text);
           background-color: $input-bg;
           padding: 12px;
           border-radius: var(--radius-large);
