@@ -4,17 +4,13 @@ import { useUserSession } from '/@src/stores/userSession'
 
 let api: AxiosInstance
 
+axios.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8'
+axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*'
+
 export function createApi() {
   // Here we set the base URL for all requests made to the api
   api = axios.create({
     baseURL: import.meta.env.VITE_API_BASE_URL,
-    headers: {
-      'Cache-Control': 'no-cache',
-      'Access-Control-Allow-Origin': '*',
-      'Content-Type': 'application/json; charset = utf-8',
-      "Access-Control-Allow-Headers" : "Content-Type",
-      "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
-    }
   })
 
   // We set an interceptor for each request to
