@@ -7,12 +7,12 @@
     </VField>
 
     <VAvatarStack>
-      <VAvatar size="small" picture="/demo/avatars/7.jpg" />
-      <VAvatar size="small" picture="/demo/avatars/9.jpg" />
-      <VAvatar size="small" picture="/demo/avatars/12.jpg" />
+      <VAvatar size="small" picture="https://vuero.cssninja.io/demo/avatars/7.jpg" />
+      <VAvatar size="small" picture="https://vuero.cssninja.io/demo/avatars/9.jpg" />
+      <VAvatar size="small" picture="https://vuero.cssninja.io/demo/avatars/12.jpg" />
       <VAvatar size="small" picture="/images/avatars/svg/vuero-1.svg" />
-      <VAvatar size="small" picture="/demo/avatars/25.jpg" />
-      <VAvatar size="small" picture="/demo/avatars/22.jpg" />
+      <VAvatar size="small" picture="https://vuero.cssninja.io/demo/avatars/25.jpg" />
+      <VAvatar size="small" picture="https://vuero.cssninja.io/demo/avatars/22.jpg" />
     </VAvatarStack>
 
     <a class="button v-button is-primary is-raised is-bold">

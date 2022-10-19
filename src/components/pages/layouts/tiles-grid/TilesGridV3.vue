@@ -78,7 +78,7 @@ const optionsSingle = ['All Posts', 'Recent Posts', 'Older Posts', 'Popular Post
           <a href="#" class="tile is-child tile-grid-item is-medium">
             <div class="tile-grid-item-inner">
               <img
-                src="/demo/photos/11.jpg"
+                src="https://vuero.cssninja.io/demo/photos/11.jpg"
                 alt=""
                 @error.once="onceImageErrored(400, 300)"
               />
@@ -93,7 +93,7 @@ const optionsSingle = ['All Posts', 'Recent Posts', 'Older Posts', 'Popular Post
                   </p>
                 </div>
                 <div class="tile-meta">
-                  <VAvatar picture="/demo/avatars/39.jpg" size="small" />
+                  <VAvatar picture="https://vuero.cssninja.io/demo/avatars/39.jpg" size="small" />
                   <div class="meta-inner">
                     <span class="dark-inverted" data-filter-match> Alejandro B.</span>
                     <span>30 minutes ago</span>
@@ -107,7 +107,7 @@ const optionsSingle = ['All Posts', 'Recent Posts', 'Older Posts', 'Popular Post
           <a href="#" class="tile is-child tile-grid-item is-medium">
             <div class="tile-grid-item-inner">
               <img
-                src="/demo/photos/12.jpg"
+                src="https://vuero.cssninja.io/demo/photos/12.jpg"
                 alt=""
                 @error.once="onceImageErrored(400, 300)"
               />
@@ -122,7 +122,7 @@ const optionsSingle = ['All Posts', 'Recent Posts', 'Older Posts', 'Popular Post
                   </p>
                 </div>
                 <div class="tile-meta">
-                  <VAvatar picture="/demo/avatars/15.jpg" size="small" />
+                  <VAvatar picture="https://vuero.cssninja.io/demo/avatars/15.jpg" size="small" />
                   <div class="meta-inner">
                     <span class="dark-inverted" data-filter-match> Hilde V.</span>
                     <span>4 hours ago</span>
@@ -136,7 +136,7 @@ const optionsSingle = ['All Posts', 'Recent Posts', 'Older Posts', 'Popular Post
           <a href="#" class="tile is-child tile-grid-item is-medium">
             <div class="tile-grid-item-inner">
               <img
-                src="/demo/photos/13.jpg"
+                src="https://vuero.cssninja.io/demo/photos/13.jpg"
                 alt=""
                 @error.once="onceImageErrored(400, 300)"
               />
@@ -151,7 +151,7 @@ const optionsSingle = ['All Posts', 'Recent Posts', 'Older Posts', 'Popular Post
                   </p>
                 </div>
                 <div class="tile-meta">
-                  <VAvatar picture="/demo/avatars/24.jpg" size="small" />
+                  <VAvatar picture="https://vuero.cssninja.io/demo/avatars/24.jpg" size="small" />
                   <div class="meta-inner">
                     <span class="dark-inverted" data-filter-match> Sandrine C.</span>
                     <span>5 hours ago</span>
@@ -170,7 +170,7 @@ const optionsSingle = ['All Posts', 'Recent Posts', 'Older Posts', 'Popular Post
               <a href="#" class="tile is-child tile-grid-item is-medium">
                 <div class="tile-grid-item-inner">
                   <img
-                    src="/demo/photos/14.jpg"
+                    src="https://vuero.cssninja.io/demo/photos/14.jpg"
                     alt=""
                     @error.once="onceImageErrored(400, 300)"
                   />
@@ -185,7 +185,7 @@ const optionsSingle = ['All Posts', 'Recent Posts', 'Older Posts', 'Popular Post
                       </p>
                     </div>
                     <div class="tile-meta">
-                      <VAvatar picture="/demo/avatars/27.jpg" size="small" />
+                      <VAvatar picture="https://vuero.cssninja.io/demo/avatars/27.jpg" size="small" />
                       <div class="meta-inner">
                         <span class="dark-inverted" data-filter-match> Carmen E.</span>
                         <span>8 hours ago</span>
@@ -197,7 +197,7 @@ const optionsSingle = ['All Posts', 'Recent Posts', 'Older Posts', 'Popular Post
               <a href="#" class="tile is-child tile-grid-item is-medium">
                 <div class="tile-grid-item-inner">
                   <img
-                    src="/demo/photos/15.jpg"
+                    src="https://vuero.cssninja.io/demo/photos/15.jpg"
                     alt=""
                     @error.once="onceImageErrored(400, 300)"
                   />
@@ -212,7 +212,7 @@ const optionsSingle = ['All Posts', 'Recent Posts', 'Older Posts', 'Popular Post
                       </p>
                     </div>
                     <div class="tile-meta">
-                      <VAvatar picture="/demo/avatars/10.jpg" size="small" />
+                      <VAvatar picture="https://vuero.cssninja.io/demo/avatars/10.jpg" size="small" />
                       <div class="meta-inner">
                         <span class="dark-inverted" data-filter-match> Henry G.</span>
                         <span>1 day ago</span>
@@ -226,7 +226,7 @@ const optionsSingle = ['All Posts', 'Recent Posts', 'Older Posts', 'Popular Post
               <a href="#" class="tile is-child tile-grid-item is-large">
                 <div class="tile-grid-item-inner">
                   <img
-                    src="/demo/photos/16.jpg"
+                    src="https://vuero.cssninja.io/demo/photos/16.jpg"
                     alt=""
                     @error.once="onceImageErrored(400, 300)"
                   />
@@ -241,7 +241,7 @@ const optionsSingle = ['All Posts', 'Recent Posts', 'Older Posts', 'Popular Post
                       </p>
                     </div>
                     <div class="tile-meta">
-                      <VAvatar picture="/demo/avatars/22.jpg" size="small" />
+                      <VAvatar picture="https://vuero.cssninja.io/demo/avatars/22.jpg" size="small" />
                       <div class="meta-inner">
                         <span class="dark-inverted" data-filter-match> Jimmy H.</span>
                         <span>1 day ago</span>
@@ -256,7 +256,7 @@ const optionsSingle = ['All Posts', 'Recent Posts', 'Older Posts', 'Popular Post
             <a href="#" class="tile is-child tile-grid-item is-wide">
               <div class="tile-grid-item-inner">
                 <img
-                  src="/demo/photos/18.jpg"
+                  src="https://vuero.cssninja.io/demo/photos/18.jpg"
                   alt=""
                   @error.once="onceImageErrored(400, 300)"
                 />
@@ -275,7 +275,7 @@ const optionsSingle = ['All Posts', 'Recent Posts', 'Older Posts', 'Popular Post
                     </p>
                   </div>
                   <div class="tile-meta">
-                    <VAvatar picture="/demo/avatars/16.jpg" size="small" />
+                    <VAvatar picture="https://vuero.cssninja.io/demo/avatars/16.jpg" size="small" />
                     <div class="meta-inner">
                       <span class="dark-inverted" data-filter-match> Jason G.</span>
                       <span>2 days ago</span>
@@ -290,7 +290,7 @@ const optionsSingle = ['All Posts', 'Recent Posts', 'Older Posts', 'Popular Post
           <a href="#" class="tile is-child tile-grid-item is-tall">
             <div class="tile-grid-item-inner">
               <img
-                src="/demo/photos/19.jpg"
+                src="https://vuero.cssninja.io/demo/photos/19.jpg"
                 alt=""
                 @error.once="onceImageErrored(400, 300)"
               />
@@ -309,7 +309,7 @@ const optionsSingle = ['All Posts', 'Recent Posts', 'Older Posts', 'Popular Post
                   </p>
                 </div>
                 <div class="tile-meta">
-                  <VAvatar picture="/demo/avatars/26.jpg" size="small" />
+                  <VAvatar picture="https://vuero.cssninja.io/demo/avatars/26.jpg" size="small" />
                   <div class="meta-inner">
                     <span class="dark-inverted" data-filter-match> Courtney W.</span>
                     <span>2 days ago</span>
@@ -326,7 +326,7 @@ const optionsSingle = ['All Posts', 'Recent Posts', 'Older Posts', 'Popular Post
           <a href="#" class="tile is-child tile-grid-item is-wide">
             <div class="tile-grid-item-inner">
               <img
-                src="/demo/photos/20.jpg"
+                src="https://vuero.cssninja.io/demo/photos/20.jpg"
                 alt=""
                 @error.once="onceImageErrored(400, 300)"
               />
@@ -355,7 +355,7 @@ const optionsSingle = ['All Posts', 'Recent Posts', 'Older Posts', 'Popular Post
           <a href="#" class="tile is-child tile-grid-item is-wide">
             <div class="tile-grid-item-inner">
               <img
-                src="/demo/photos/23.jpg"
+                src="https://vuero.cssninja.io/demo/photos/23.jpg"
                 alt=""
                 @error.once="onceImageErrored(400, 300)"
               />
@@ -370,7 +370,7 @@ const optionsSingle = ['All Posts', 'Recent Posts', 'Older Posts', 'Popular Post
                   </p>
                 </div>
                 <div class="tile-meta">
-                  <VAvatar picture="/demo/avatars/40.jpg" size="small" />
+                  <VAvatar picture="https://vuero.cssninja.io/demo/avatars/40.jpg" size="small" />
                   <div class="meta-inner">
                     <span class="dark-inverted" data-filter-match> Jeanne M.</span>
                     <span>3 days ago</span>
@@ -387,7 +387,7 @@ const optionsSingle = ['All Posts', 'Recent Posts', 'Older Posts', 'Popular Post
           <a href="#" class="tile is-child tile-grid-item is-medium">
             <div class="tile-grid-item-inner">
               <img
-                src="/demo/photos/22.jpg"
+                src="https://vuero.cssninja.io/demo/photos/22.jpg"
                 alt=""
                 @error.once="onceImageErrored(400, 300)"
               />
@@ -402,7 +402,7 @@ const optionsSingle = ['All Posts', 'Recent Posts', 'Older Posts', 'Popular Post
                   </p>
                 </div>
                 <div class="tile-meta">
-                  <VAvatar picture="/demo/avatars/9.jpg" size="small" />
+                  <VAvatar picture="https://vuero.cssninja.io/demo/avatars/9.jpg" size="small" />
                   <div class="meta-inner">
                     <span class="dark-inverted" data-filter-match>Ana B.</span>
                     <span>3 days ago</span>
@@ -416,7 +416,7 @@ const optionsSingle = ['All Posts', 'Recent Posts', 'Older Posts', 'Popular Post
           <a href="#" class="tile is-child tile-grid-item is-medium">
             <div class="tile-grid-item-inner">
               <img
-                src="/demo/photos/24.jpg"
+                src="https://vuero.cssninja.io/demo/photos/24.jpg"
                 alt=""
                 @error.once="onceImageErrored(400, 300)"
               />
@@ -431,7 +431,7 @@ const optionsSingle = ['All Posts', 'Recent Posts', 'Older Posts', 'Popular Post
                   </p>
                 </div>
                 <div class="tile-meta">
-                  <VAvatar picture="/demo/avatars/19.jpg" size="small" />
+                  <VAvatar picture="https://vuero.cssninja.io/demo/avatars/19.jpg" size="small" />
                   <div class="meta-inner">
                     <span class="dark-inverted" data-filter-match> Greta K.</span>
                     <span>3 days ago</span>
@@ -445,7 +445,7 @@ const optionsSingle = ['All Posts', 'Recent Posts', 'Older Posts', 'Popular Post
           <a href="#" class="tile is-child tile-grid-item is-medium">
             <div class="tile-grid-item-inner">
               <img
-                src="/demo/photos/27.jpg"
+                src="https://vuero.cssninja.io/demo/photos/27.jpg"
                 alt=""
                 @error.once="onceImageErrored(400, 300)"
               />
@@ -460,7 +460,7 @@ const optionsSingle = ['All Posts', 'Recent Posts', 'Older Posts', 'Popular Post
                   </p>
                 </div>
                 <div class="tile-meta">
-                  <VAvatar picture="/demo/avatars/33.jpg" size="small" />
+                  <VAvatar picture="https://vuero.cssninja.io/demo/avatars/33.jpg" size="small" />
                   <div class="meta-inner">
                     <span class="dark-inverted" data-filter-match> Harvey M.</span>
                     <span>4 days ago</span>

@@ -202,7 +202,7 @@ useHead({
         >
           <template #image>
             <VAvatar
-              picture="/demo/avatars/22.jpg"
+              picture="https://vuero.cssninja.io/demo/avatars/22.jpg"
               badge="/images/icons/flags/united-states-of-america.svg"
             />
           </template>
@@ -227,7 +227,7 @@ useHead({
         >
           <template #image>
             <VAvatar
-              picture="/demo/avatars/22.jpg"
+              picture="https://vuero.cssninja.io/demo/avatars/22.jpg"
               badge="/images/icons/flags/united-states-of-america.svg"
             />
           </template>
@@ -253,7 +253,7 @@ useHead({
         >
           <template #image>
             <VAvatar
-              picture="/demo/avatars/22.jpg"
+              picture="https://vuero.cssninja.io/demo/avatars/22.jpg"
               badge="/images/icons/flags/united-states-of-america.svg"
             />
           </template>
@@ -279,7 +279,7 @@ useHead({
         >
           <template #image>
             <VAvatar
-              picture="/demo/avatars/22.jpg"
+              picture="https://vuero.cssninja.io/demo/avatars/22.jpg"
               badge="/images/icons/flags/united-states-of-america.svg"
             />
           </template>
@@ -305,7 +305,7 @@ useHead({
         >
           <template #image>
             <VAvatar
-              picture="/demo/avatars/22.jpg"
+              picture="https://vuero.cssninja.io/demo/avatars/22.jpg"
               badge="/images/icons/flags/united-states-of-america.svg"
             />
           </template>
@@ -487,7 +487,7 @@ useHead({
                       {
                         value: 'alice',
                         name: 'Alice Carasca',
-                        image: '/demo/avatars/7.jpg',
+                        image: 'https://vuero.cssninja.io/demo/avatars/7.jpg',
                       },
                       {
                         value: 'erik',
@@ -497,27 +497,27 @@ useHead({
                       {
                         value: 'melany',
                         name: 'melany Wallace',
-                        image: '/demo/avatars/25.jpg',
+                        image: 'https://vuero.cssninja.io/demo/avatars/25.jpg',
                       },
                       {
                         value: 'tara',
                         name: 'Tara Svenson',
-                        image: '/demo/avatars/13.jpg',
+                        image: 'https://vuero.cssninja.io/demo/avatars/13.jpg',
                       },
                       {
                         value: 'mary',
                         name: 'Mary Lebowski',
-                        image: '/demo/avatars/5.jpg',
+                        image: 'https://vuero.cssninja.io/demo/avatars/5.jpg',
                       },
                       {
                         value: 'irina',
                         name: 'Irina Vierbovsky',
-                        image: '/demo/avatars/23.jpg',
+                        image: 'https://vuero.cssninja.io/demo/avatars/23.jpg',
                       },
                       {
                         value: 'jonathan',
                         name: 'Jonathan Krugger',
-                        image: '/demo/avatars/32.jpg',
+                        image: 'https://vuero.cssninja.io/demo/avatars/32.jpg',
                       },
                     ]"
                     :max-height="145"

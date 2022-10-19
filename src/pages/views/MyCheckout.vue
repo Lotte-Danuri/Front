@@ -266,7 +266,7 @@
 
                     <!-- Label -->
                     <label class="form-check-label fs-sm text-body text-nowrap" for="checkoutPaymentCard">
-                      Credit Card <img class="ms-2" src="assets/img/brands/color/cards.svg" alt="...">
+                      Credit Card <img class="ms-2" src="./assets/img/brands/color/cards.svg" alt="...">
                     </label>
 
                   </div>
@@ -331,7 +331,7 @@
 
                     <!-- Label -->
                     <label class="form-check-label fs-sm text-body text-nowrap" for="checkoutPaymentPaypal">
-                      <img src="assets/img/brands/color/paypal.svg" alt="...">
+                      <img src="./assets/img/brands/color/paypal.svg" alt="...">
                     </label>
 
                   </div>
@@ -361,7 +361,7 @@
 
                     <!-- Image -->
                     <a href="product.html">
-                      <img src="assets/img/products/product-6.jpg" alt="..." class="img-fluid">
+                      <img src="./assets/img/products/product-6.jpg" alt="..." class="img-fluid">
                     </a>
 
                   </div>
@@ -388,7 +388,7 @@
 
                     <!-- Image -->
                     <a href="product.html">
-                      <img src="assets/img/products/product-10.jpg" alt="..." class="img-fluid">
+                      <img src="./assets/img/products/product-10.jpg" alt="..." class="img-fluid">
                     </a>
 
                   </div>

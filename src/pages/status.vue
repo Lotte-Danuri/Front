@@ -45,7 +45,7 @@ useHead({
           <div class="list-block">
             <div class="icon-wrap">
               <img
-                src="/demo/photos/animaticons/lightbulb.gif"
+                src="https://vuero.cssninja.io/demo/photos/animaticons/lightbulb.gif"
                 alt=""
                 @error.once="onceImageErrored(150)"
               />
@@ -69,7 +69,7 @@ useHead({
           <div class="list-block api">
             <div class="icon-wrap">
               <img
-                src="/demo/photos/animaticons/image.gif"
+                src="https://vuero.cssninja.io/demo/photos/animaticons/image.gif"
                 alt=""
                 @error.once="onceImageErrored(150)"
               />
@@ -93,7 +93,7 @@ useHead({
           <div class="list-block">
             <div class="icon-wrap">
               <img
-                src="/demo/photos/animaticons/search.gif"
+                src="https://vuero.cssninja.io/demo/photos/animaticons/search.gif"
                 alt=""
                 @error.once="onceImageErrored(150)"
               />
@@ -117,7 +117,7 @@ useHead({
           <div class="list-block">
             <div class="icon-wrap">
               <img
-                src="/demo/photos/animaticons/diamond.gif"
+                src="https://vuero.cssninja.io/demo/photos/animaticons/diamond.gif"
                 alt=""
                 @error.once="onceImageErrored(150)"
               />
@@ -141,7 +141,7 @@ useHead({
           <div class="list-block api">
             <div class="icon-wrap">
               <img
-                src="/demo/photos/animaticons/chart.gif"
+                src="https://vuero.cssninja.io/demo/photos/animaticons/chart.gif"
                 alt=""
                 @error.once="onceImageErrored(150)"
               />
@@ -165,7 +165,7 @@ useHead({
           <div class="list-block api">
             <div class="icon-wrap">
               <img
-                src="/demo/photos/animaticons/rocket.gif"
+                src="https://vuero.cssninja.io/demo/photos/animaticons/rocket.gif"
                 alt=""
                 @error.once="onceImageErrored(150)"
               />
@@ -189,7 +189,7 @@ useHead({
           <div class="list-block">
             <div class="icon-wrap">
               <img
-                src="/demo/photos/animaticons/check.gif"
+                src="https://vuero.cssninja.io/demo/photos/animaticons/check.gif"
                 alt=""
                 @error.once="onceImageErrored(150)"
               />

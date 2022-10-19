@@ -9,13 +9,17 @@ the component background white.
 
 ```vue
 <template>
-  <VSnack title="Support" white image="/demo/photos/misc/buoy.jpg">
+  <VSnack
+    title="Support"
+    white
+    image="https://vuero.cssninja.io/demo/photos/misc/buoy.jpg"
+  >
     <i class="iconify" data-icon="feather:x"></i>
   </VSnack>
   <VSnack title="Metamovies" white image="/images/icons/logos/metamovies.svg">
     <i class="iconify" data-icon="feather:x"></i>
   </VSnack>
-  <VSnack title="Corporate" white image="/demo/avatars/7.jpg">
+  <VSnack title="Corporate" white image="https://vuero.cssninja.io/demo/avatars/7.jpg">
     <i class="iconify" data-icon="feather:x"></i>
   </VSnack>
   <VSnack title="English" white image="/images/icons/flags/united-states-of-america.svg">
@@ -32,13 +36,13 @@ the component background white.
 <!--example-->
 
 <div class="snacks">
-    <VSnack title="Support" white  image="/demo/photos/misc/buoy.jpg">
+    <VSnack title="Support" white  image="https://vuero.cssninja.io/demo/photos/misc/buoy.jpg">
         <i class="iconify" data-icon="feather:x"></i>
     </VSnack>
     <VSnack title="Metamovies" white  image="/images/icons/logos/metamovies.svg">
         <i class="iconify" data-icon="feather:x"></i>
     </VSnack>
-    <VSnack title="Corporate" white  image="/demo/avatars/7.jpg">
+    <VSnack title="Corporate" white  image="https://vuero.cssninja.io/demo/avatars/7.jpg">
         <i class="iconify" data-icon="feather:x"></i>
     </VSnack>
     <VSnack title="English" white  image="/images/icons/flags/united-states-of-america.svg">
