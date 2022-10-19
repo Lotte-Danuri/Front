@@ -8,13 +8,13 @@ an image inside the component.
 
 ```vue
 <template>
-  <VSnack title="Support" image="/demo/photos/misc/buoy.jpg">
+  <VSnack title="Support" image="https://vuero.cssninja.io/demo/photos/misc/buoy.jpg">
     <i class="iconify" data-icon="feather:x"></i>
   </VSnack>
   <VSnack title="Metamovies" image="/images/icons/logos/metamovies.svg">
     <i class="iconify" data-icon="feather:x"></i>
   </VSnack>
-  <VSnack title="Corporate" image="/demo/avatars/7.jpg">
+  <VSnack title="Corporate" image="https://vuero.cssninja.io/demo/avatars/7.jpg">
     <i class="iconify" data-icon="feather:x"></i>
   </VSnack>
   <VSnack title="English" image="/images/icons/flags/united-states-of-america.svg">
@@ -31,13 +31,13 @@ an image inside the component.
 <!--example-->
 
 <div class="snacks">
-    <VSnack title="Support" image="/demo/photos/misc/buoy.jpg">
+    <VSnack title="Support" image="https://vuero.cssninja.io/demo/photos/misc/buoy.jpg">
         <i class="iconify" data-icon="feather:x"></i>
     </VSnack>
     <VSnack title="Metamovies" image="/images/icons/logos/metamovies.svg">
         <i class="iconify" data-icon="feather:x"></i>
     </VSnack>
-    <VSnack title="Corporate" image="/demo/avatars/7.jpg">
+    <VSnack title="Corporate" image="https://vuero.cssninja.io/demo/avatars/7.jpg">
         <i class="iconify" data-icon="feather:x"></i>
     </VSnack>
     <VSnack title="English" image="/images/icons/flags/united-states-of-america.svg">

@@ -14,7 +14,7 @@ See code for more details about usage.
     <VIconWrap icon="feather:x" color="danger" />
     <VIconWrap icon="feather:code" />
     <VIconWrap picture="/images/avatars/svg/vuero-1.svg" />
-    <VIconWrap picture="/demo/avatars/13.jpg" />
+    <VIconWrap picture="https://vuero.cssninja.io/demo/avatars/13.jpg" />
   </VFlex>
 </template>
 ```
@@ -35,7 +35,7 @@ See code for more details about usage.
       has-large-icon
     />
     <VIconWrap picture="/images/avatars/svg/vuero-1.svg" />
-    <VIconWrap picture="/demo/avatars/13.jpg" />
+    <VIconWrap picture="https://vuero.cssninja.io/demo/avatars/13.jpg" />
   </VFlex>
 </div>
 

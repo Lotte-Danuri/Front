@@ -14,14 +14,14 @@
           <div class="col-12 col-md-7">
 
             <!-- List group -->
-            <ul class="list-group list-group-lg list-group-flush-x mb-6">
+            <ul v-for="(product, index) in products" :key="index" class="list-group list-group-lg list-group-flush-x mb-6">
               <li class="list-group-item">
                 <div class="row align-items-center">
                   <div class="col-3">
 
                     <!-- Image -->
-                    <a href="product.html">
-                      <img src="assets/img/products/product-6.jpg" alt="..." class="img-fluid">
+                    <a href="htts://sbbro.xyz">
+                      <img :src="product.productDto.thumbnailUrl" alt="..." class="img-fluid">
                     </a>
 
                   </div>
@@ -29,55 +29,13 @@
 
                     <!-- Title -->
                     <div class="d-flex mb-2 fw-bold">
-                      <a class="text-body" href="product.html">Cotton floral print</a> <span class="ms-auto">$40.00</span>
+                      <a class="text-body" href="product.html">{{product.productDto.productName}}</a> <span class="ms-auto">{{comma(product.productDto.price)}} 원</span>
                     </div>
-
+ 
                     <!-- Text -->
                     <p class="mb-7 fs-sm text-muted">
                       Size: M <br>
                       Color: Red
-                    </p>
-
-                    <!--Footer -->
-                    <div class="d-flex align-items-center">
-
-                      <!-- Select -->
-                      <select class="form-select form-select-xxs w-auto">
-                        <option value="1">1</option>
-                        <option value="1">2</option>
-                        <option value="1">3</option>
-                      </select>
-
-                      <!-- Remove -->
-                      <a class="fs-xs text-gray-400 ms-auto" href="#!">
-                        <i class="fe fe-x"></i> Remove
-                      </a>
-
-                    </div>
-
-                  </div>
-                </div>
-              </li>
-              <li class="list-group-item">
-                <div class="row align-items-center">
-                  <div class="col-3">
-
-                    <!-- Image -->
-                    <a href="product.html">
-                      <img src="assets/img/products/product-10.jpg" alt="..." class="img-fluid">
-                    </a>
-
-                  </div>
-                  <div class="col">
-
-                    <!-- Title -->
-                    <div class="d-flex mb-2 fw-bold">
-                      <a class="text-body" href="product.html">Suede cross body Bag</a> <span class="ms-auto">$49.00</span>
-                    </div>
-
-                    <!-- Text -->
-                    <p class="mb-7 fs-sm text-muted">
-                      Color: Brown
                     </p>
 
                     <!--Footer -->
@@ -178,6 +136,9 @@
 </template>
 
 <script setup lang="ts">
+import { useApi } from "/@src/composable/useApi"
+
+const api = useApi()
 
 interface Product {
   id: number
@@ -196,24 +157,27 @@ interface Product {
   imageList: string[]
 }
 
-const articles = ref<Product[]>([]) 
+const products = ref<Product[]>([]) 
 
-//   watchEffect(async () => {
-//   try {
-//     await api.get<Product[]>(`/member/cart`,{
-//       memberId : "15"
-//     }
-//     ,{
-//     headers : {
-//       Authorization: `Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNiIsImV4cCI6MTY2NjA4ODcwNn0.OfYPW4IXpTn8MDvVYk27TRAk5hAsfqYB2xDjukozMMnKYtJaIXO1XWZqucAbJjU1xUt0tUhcsmIc1ZXjegqzxw`
-//     }}).then((response)=>{
-//     console.log(response)
-//     })
-    
-//   } catch (error) {
-//   } finally {
-//   }
-// })
+  watchEffect(async () => {
+  try {
+    await api.get<Product[]>(`/member/cart`,{
+      headers : {
+        Authorization: `Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNyIsImV4cCI6MTY2NjA5OTc5Mn0._LKHof_P1d1_6sLh5Xw2LKWiudoZznZHfPBdhkMSou-J6f4BEQ2ZR-nCdL0FyUtjQcwhJFvc2CYra4OXGEIoTw`
+      },
+    }).then((response)=>{
+      products.value = response.data
+      console.log(products.value)
+    })
+} catch(error){
+  console.log(error)
+} finally {
+
+}})
+
+function comma(val) {
+  return String(val).replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+}
 
 </script>
 

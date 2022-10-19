@@ -34,7 +34,7 @@ prop.
 ```vue
 <script setup lang="ts">
 const user = {
-  avatar: '/demo/avatars/19.jpg',
+  avatar: 'https://vuero.cssninja.io/demo/avatars/19.jpg',
   badge: '/images/icons/flags/germany.svg',
   username: 'Greta K.',
   location: 'Los Angeles, CA',

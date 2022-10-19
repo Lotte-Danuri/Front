@@ -19,14 +19,18 @@ the `is-rounded` class to the image element.
         </div>
       </a>
       <a href="#" class="dropdown-item is-media is-active">
-        <img class="item-img" src="/demo/avatars/7.jpg" alt="" />
+        <img class="item-img" src="https://vuero.cssninja.io/demo/avatars/7.jpg" alt="" />
         <div class="meta">
           <span>Alice C.</span>
           <span>San Diego, CA</span>
         </div>
       </a>
       <a href="#" class="dropdown-item is-media">
-        <img class="item-img" src="/demo/avatars/25.jpg" alt="" />
+        <img
+          class="item-img"
+          src="https://vuero.cssninja.io/demo/avatars/25.jpg"
+          alt=""
+        />
         <div class="meta">
           <span>Melany W.</span>
           <span>San Jose, CA</span>
@@ -34,7 +38,7 @@ the `is-rounded` class to the image element.
       </a>
       <hr class="dropdown-divider" />
       <a href="#" class="dropdown-item is-media">
-        <img class="item-img" src="/demo/avatars/9.jpg" alt="" />
+        <img class="item-img" src="https://vuero.cssninja.io/demo/avatars/9.jpg" alt="" />
         <div class="meta">
           <span>Anna B</span>
           <span>San Francisco, CA</span>
@@ -67,7 +71,7 @@ the `is-rounded` class to the image element.
         <a href="#" class="dropdown-item is-media is-active">
           <img
             class="item-img"
-            src="/demo/avatars/7.jpg"
+            src="https://vuero.cssninja.io/demo/avatars/7.jpg"
             alt=""
           />
           <div class="meta">
@@ -78,7 +82,7 @@ the `is-rounded` class to the image element.
         <a href="#" class="dropdown-item is-media">
           <img
             class="item-img"
-            src="/demo/avatars/25.jpg"
+            src="https://vuero.cssninja.io/demo/avatars/25.jpg"
             alt=""
           />
           <div class="meta">
@@ -90,7 +94,7 @@ the `is-rounded` class to the image element.
         <a href="#" class="dropdown-item is-media">
           <img
             class="item-img"
-            src="/demo/avatars/9.jpg"
+            src="https://vuero.cssninja.io/demo/avatars/9.jpg"
             alt=""
           />
           <div class="meta">
@@ -119,7 +123,7 @@ the `is-rounded` class to the image element.
         <a href="#" class="dropdown-item is-media is-active">
           <img
             class="item-img is-rounded"
-            src="/demo/avatars/7.jpg"
+            src="https://vuero.cssninja.io/demo/avatars/7.jpg"
             alt=""
           />
           <div class="meta">
@@ -130,7 +134,7 @@ the `is-rounded` class to the image element.
         <a href="#" class="dropdown-item is-media">
           <img
             class="item-img is-rounded"
-            src="/demo/avatars/25.jpg"
+            src="https://vuero.cssninja.io/demo/avatars/25.jpg"
             alt=""
           />
           <div class="meta">
@@ -142,7 +146,7 @@ the `is-rounded` class to the image element.
         <a href="#" class="dropdown-item is-media">
           <img
             class="item-img is-rounded"
-            src="/demo/avatars/9.jpg"
+            src="https://vuero.cssninja.io/demo/avatars/9.jpg"
             alt=""
           />
           <div class="meta">

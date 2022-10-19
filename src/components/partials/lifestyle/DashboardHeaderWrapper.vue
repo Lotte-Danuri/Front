@@ -7,7 +7,7 @@ import { onceImageErrored } from '/@src/utils/via-placeholder'
     <div class="dashboard-header">
       <div class="avatar-container">
         <img
-          src="/demo/photos/faces/girl1.jpg"
+          src="https://vuero.cssninja.io/demo/photos/faces/girl1.jpg"
           alt=""
           @error.once="onceImageErrored(150)"
         />

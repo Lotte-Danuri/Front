@@ -59,7 +59,7 @@ import { onceImageErrored } from '/@src/utils/via-placeholder'
                 <div class="featured-authors-item">
                   <VBlock title="Alice C." subtitle="Software Engineer" center>
                     <template #icon>
-                      <VAvatar picture="/demo/avatars/7.jpg" squared />
+                      <VAvatar picture="https://vuero.cssninja.io/demo/avatars/7.jpg" squared />
                     </template>
                     <template #action>
                       <span class="dark-inverted">112K</span>
@@ -70,7 +70,7 @@ import { onceImageErrored } from '/@src/utils/via-placeholder'
                 <div class="featured-authors-item">
                   <VBlock title="Elizabeth F." subtitle="Web Developer" center>
                     <template #icon>
-                      <VAvatar picture="/demo/avatars/21.jpg" squared />
+                      <VAvatar picture="https://vuero.cssninja.io/demo/avatars/21.jpg" squared />
                     </template>
                     <template #action>
                       <span class="dark-inverted">91K</span>
@@ -81,7 +81,7 @@ import { onceImageErrored } from '/@src/utils/via-placeholder'
                 <div class="featured-authors-item">
                   <VBlock title="Jonathan K." subtitle="UI/UX Designer" center>
                     <template #icon>
-                      <VAvatar picture="/demo/avatars/32.jpg" squared />
+                      <VAvatar picture="https://vuero.cssninja.io/demo/avatars/32.jpg" squared />
                     </template>
                     <template #action>
                       <span class="dark-inverted">72K</span>
@@ -92,7 +92,7 @@ import { onceImageErrored } from '/@src/utils/via-placeholder'
                 <div class="featured-authors-item">
                   <VBlock title="Christie D." subtitle="Software Engineer" center>
                     <template #icon>
-                      <VAvatar picture="/demo/avatars/38.jpg" squared />
+                      <VAvatar picture="https://vuero.cssninja.io/demo/avatars/38.jpg" squared />
                     </template>
                     <template #action>
                       <span class="dark-inverted">19K</span>
@@ -167,7 +167,7 @@ import { onceImageErrored } from '/@src/utils/via-placeholder'
               <a class="articles-feed-item">
                 <div class="featured-image">
                   <img
-                    src="/demo/photos/38.jpg"
+                    src="https://vuero.cssninja.io/demo/photos/38.jpg"
                     alt=""
                     @error.once="onceImageErrored(800, 600)"
                   />
@@ -178,7 +178,7 @@ import { onceImageErrored } from '/@src/utils/via-placeholder'
 
                   <VBlock title="Alice C." subtitle="Software Engineer">
                     <template #icon>
-                      <VAvatar picture="/demo/avatars/7.jpg" squared />
+                      <VAvatar picture="https://vuero.cssninja.io/demo/avatars/7.jpg" squared />
                     </template>
                   </VBlock>
                 </div>
@@ -187,7 +187,7 @@ import { onceImageErrored } from '/@src/utils/via-placeholder'
               <a class="articles-feed-item">
                 <div class="featured-image">
                   <img
-                    src="/demo/photos/37.jpg"
+                    src="https://vuero.cssninja.io/demo/photos/37.jpg"
                     alt=""
                     @error.once="onceImageErrored(800, 600)"
                   />
@@ -198,7 +198,7 @@ import { onceImageErrored } from '/@src/utils/via-placeholder'
 
                   <VBlock title="Mary L." subtitle="Project Manager">
                     <template #icon>
-                      <VAvatar picture="/demo/avatars/5.jpg" squared />
+                      <VAvatar picture="https://vuero.cssninja.io/demo/avatars/5.jpg" squared />
                     </template>
                   </VBlock>
                 </div>

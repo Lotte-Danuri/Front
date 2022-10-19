@@ -251,7 +251,7 @@ useHead({
                 <!--Contact-->
                 <div class="contact-block">
                   <img
-                    src="/demo/avatars/7.jpg"
+                    src="https://vuero.cssninja.io/demo/avatars/7.jpg"
                     alt=""
                     @error.once="onceImageErrored(150)"
                   />
@@ -263,7 +263,7 @@ useHead({
                 <!--Contact-->
                 <div class="contact-block">
                   <img
-                    src="/demo/avatars/25.jpg"
+                    src="https://vuero.cssninja.io/demo/avatars/25.jpg"
                     alt=""
                     @error.once="onceImageErrored(150)"
                   />
@@ -275,7 +275,7 @@ useHead({
                 <!--Contact-->
                 <div class="contact-block">
                   <img
-                    src="/demo/avatars/18.jpg"
+                    src="https://vuero.cssninja.io/demo/avatars/18.jpg"
                     alt=""
                     @error.once="onceImageErrored(150)"
                   />
@@ -287,7 +287,7 @@ useHead({
                 <!--Contact-->
                 <div class="contact-block">
                   <img
-                    src="/demo/avatars/32.jpg"
+                    src="https://vuero.cssninja.io/demo/avatars/32.jpg"
                     alt=""
                     @error.once="onceImageErrored(150)"
                   />
@@ -299,7 +299,7 @@ useHead({
                 <!--Contact-->
                 <div class="contact-block">
                   <img
-                    src="/demo/avatars/38.jpg"
+                    src="https://vuero.cssninja.io/demo/avatars/38.jpg"
                     alt=""
                     @error.once="onceImageErrored(150)"
                   />

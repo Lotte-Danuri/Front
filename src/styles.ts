@@ -17,7 +17,7 @@ import 'tippy.js/dist/border.css'
 import 'tippy.js/dist/backdrop.css'
 import 'tippy.js/themes/light.css'
 
-// import './assets/css/libs.bundle.css'
-// import './assets/css/theme.bundle.css'
+// import '../assets/css/libs.css'
+// import '../assets/css/theme.css'
 
 import './scss/main.scss'

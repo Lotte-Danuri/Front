@@ -820,7 +820,7 @@ function addCart(){
       memberId : "15" 
   },{
     headers : {
-      Authorization: `Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNiIsImV4cCI6MTY2NjA4ODcwNn0.OfYPW4IXpTn8MDvVYk27TRAk5hAsfqYB2xDjukozMMnKYtJaIXO1XWZqucAbJjU1xUt0tUhcsmIc1ZXjegqzxw`
+      Authorization: `Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNiIsImV4cCI6MTY2NjA5Njc2MX0.B7_gfsQ_aHNGSJrAZNY9bngr9t8-Uk9vloS5r678DMSDnZM5_IEnXCs3ITVqloIVy76f3MXfXyweZhMhzT3GHw`
     }
   }).then((response)=>{
         // stores.value = response.data

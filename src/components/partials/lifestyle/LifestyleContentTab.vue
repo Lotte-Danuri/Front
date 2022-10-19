@@ -207,7 +207,7 @@ import {
           <div class="card-image">
             <figure class="image is-4by3">
               <img
-                src="/demo/photos/30.jpg"
+                src="https://vuero.cssninja.io/demo/photos/30.jpg"
                 alt=""
                 @error.once="onceImageErrored(1280, 960)"
               />
@@ -217,28 +217,28 @@ import {
             <div class="post-group">
               <a>
                 <img
-                  src="/demo/photos/33.jpg"
+                  src="https://vuero.cssninja.io/demo/photos/33.jpg"
                   alt=""
                   @error.once="onceImageErrored(1280, 960)"
                 />
               </a>
               <a>
                 <img
-                  src="/demo/photos/34.jpg"
+                  src="https://vuero.cssninja.io/demo/photos/34.jpg"
                   alt=""
                   @error.once="onceImageErrored(1280, 960)"
                 />
               </a>
               <a>
                 <img
-                  src="/demo/photos/35.jpeg"
+                  src="https://vuero.cssninja.io/demo/photos/35.jpeg"
                   alt=""
                   @error.once="onceImageErrored(1280, 960)"
                 />
               </a>
               <a>
                 <img
-                  src="/demo/photos/36.jpg"
+                  src="https://vuero.cssninja.io/demo/photos/36.jpg"
                   alt=""
                   @error.once="onceImageErrored(1280, 960)"
                 />
@@ -263,7 +263,7 @@ import {
           <div class="card-image">
             <figure class="image is-4by3">
               <img
-                src="/demo/photos/31.png"
+                src="https://vuero.cssninja.io/demo/photos/31.png"
                 alt=""
                 @error.once="onceImageErrored(1280, 960)"
               />
@@ -273,28 +273,28 @@ import {
             <div class="post-group">
               <a>
                 <img
-                  src="/demo/photos/33.jpg"
+                  src="https://vuero.cssninja.io/demo/photos/33.jpg"
                   alt=""
                   @error.once="onceImageErrored(1280, 960)"
                 />
               </a>
               <a>
                 <img
-                  src="/demo/photos/34.jpg"
+                  src="https://vuero.cssninja.io/demo/photos/34.jpg"
                   alt=""
                   @error.once="onceImageErrored(1280, 960)"
                 />
               </a>
               <a>
                 <img
-                  src="/demo/photos/35.jpeg"
+                  src="https://vuero.cssninja.io/demo/photos/35.jpeg"
                   alt=""
                   @error.once="onceImageErrored(1280, 960)"
                 />
               </a>
               <a>
                 <img
-                  src="/demo/photos/36.jpg"
+                  src="https://vuero.cssninja.io/demo/photos/36.jpg"
                   alt=""
                   @error.once="onceImageErrored(1280, 960)"
                 />
@@ -319,7 +319,7 @@ import {
           <div class="card-image">
             <figure class="image is-4by3">
               <img
-                src="/demo/photos/32.jpg"
+                src="https://vuero.cssninja.io/demo/photos/32.jpg"
                 alt=""
                 @error.once="onceImageErrored(1280, 960)"
               />
@@ -329,28 +329,28 @@ import {
             <div class="post-group">
               <a>
                 <img
-                  src="/demo/photos/33.jpg"
+                  src="https://vuero.cssninja.io/demo/photos/33.jpg"
                   alt=""
                   @error.once="onceImageErrored(1280, 960)"
                 />
               </a>
               <a>
                 <img
-                  src="/demo/photos/34.jpg"
+                  src="https://vuero.cssninja.io/demo/photos/34.jpg"
                   alt=""
                   @error.once="onceImageErrored(1280, 960)"
                 />
               </a>
               <a>
                 <img
-                  src="/demo/photos/35.jpeg"
+                  src="https://vuero.cssninja.io/demo/photos/35.jpeg"
                   alt=""
                   @error.once="onceImageErrored(1280, 960)"
                 />
               </a>
               <a>
                 <img
-                  src="/demo/photos/36.jpg"
+                  src="https://vuero.cssninja.io/demo/photos/36.jpg"
                   alt=""
                   @error.once="onceImageErrored(1280, 960)"
                 />

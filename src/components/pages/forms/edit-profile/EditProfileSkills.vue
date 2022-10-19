@@ -560,12 +560,12 @@ const onSave = async () => {
                           {
                             value: 'jira',
                             name: 'Jira Software',
-                            icon: '/demo/photos/tools/jira.svg',
+                            icon: 'https://vuero.cssninja.io/demo/photos/tools/jira.svg',
                           },
                           {
                             value: 'office',
                             name: 'MS Office',
-                            icon: '/demo/photos/tools/office.svg',
+                            icon: 'https://vuero.cssninja.io/demo/photos/tools/office.svg',
                           },
                         ]"
                       >
@@ -652,7 +652,7 @@ const onSave = async () => {
 
             <!--Skill Item-->
             <div class="setting-item">
-              <VIconWrap picture="/demo/photos/tools/jira.svg" />
+              <VIconWrap picture="https://vuero.cssninja.io/demo/photos/tools/jira.svg" />
 
               <div class="meta">
                 <span class="dark-inverted">Jira Software</span>
@@ -665,7 +665,7 @@ const onSave = async () => {
 
             <!--Skill Item-->
             <div class="setting-item">
-              <VIconWrap picture="/demo/photos/tools/office.svg" />
+              <VIconWrap picture="https://vuero.cssninja.io/demo/photos/tools/office.svg" />
 
               <div class="meta">
                 <span class="dark-inverted">MS Office</span>
