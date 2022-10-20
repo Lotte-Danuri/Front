@@ -25,10 +25,18 @@
               >
               <RouterLink to="/views/MyWishlist"
                 ><a
-                  class="list-group-item list-group-item-action dropend-toggle active"
+                  class="list-group-item list-group-item-action dropend-toggle"
                   href="account-wishlist.html"
                 >
                   Wishlist
+                </a></RouterLink
+              >
+              <RouterLink to="/views/MyWarranty"
+                ><a
+                  class="list-group-item list-group-item-action dropend-toggle"
+                  href="account-wishlist.html"
+                >
+                  Warranty
                 </a></RouterLink
               >
               <RouterLink to="/views/MyInfo"

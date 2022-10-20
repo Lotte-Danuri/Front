@@ -6,28 +6,7 @@
   >
     <div class="py-12 border-bottom border-gray-700">
       <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-12 col-md-10 col-lg-8 col-xl-6">
-            <!-- Heading -->
-            <h5 class="mb-7 text-center text-white">Want style Ideas and Treats?</h5>
-
-            <!-- Form -->
-            <form class="mb-11">
-              <div class="row gx-5 align-items-start">
-                <div class="col">
-                  <input
-                    type="email"
-                    class="form-control form-control-gray-700 form-control-lg"
-                    placeholder="Enter Email *"
-                  />
-                </div>
-                <div class="col-auto">
-                  <button type="submit" class="btn btn-gray-500 btn-lg">Subscribe</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
+        
         <div class="row">
           <div class="col-12 col-md-3">
             <!-- Heading -->
@@ -150,25 +129,7 @@
           <div class="col">
             <!-- Copyright -->
             <p class="mb-3 mb-md-0 fs-xxs text-muted">
-              © 2022 All rights reserved. Designed by Unvab.
             </p>
-          </div>
-          <div class="col-auto">
-            <!-- Payment methods -->
-            <img
-              class="footer-payment"
-              src="./assets/img/payment/mastercard.svg"
-              alt="..."
-            />
-            <img class="footer-payment" src="./assets/img/payment/visa.svg" alt="..." />
-            <img class="footer-payment" src="./assets/img/payment/amex.svg" alt="..." />
-            <img class="footer-payment" src="./assets/img/payment/paypal.svg" alt="..." />
-            <img
-              class="footer-payment"
-              src="./assets/img/payment/maestro.svg"
-              alt="..."
-            />
-            <img class="footer-payment" src="./assets/img/payment/klarna.svg" alt="..." />
           </div>
         </div>
       </div>
