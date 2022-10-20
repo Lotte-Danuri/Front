@@ -1814,10 +1814,15 @@
 
           <!-- Nav -->
           <ul class="nav navbar-nav me-8">
-            <li class="nav-item">
+            <li ref="inLi" class="nav-item">
               <RouterLink to="/views/auth/login" class="logo">
                 <a class="nav-link" href="./views/auth/login">Log In</a>
               </RouterLink>
+            </li>
+            <li ref="onLi">
+              <a ref="onLiText" class="nav-link" style="font-weight: bold">
+                반갑습니다 회원님
+              </a>
             </li>
             <RouterLink to="/views/auth/signup" class="logo">
               <a class="nav-link" href="./views/auth/Sign Up" style="font-weight: bold"
@@ -2258,12 +2263,29 @@ export default {
   data() {
     return {
       categoryList: [],
+      arrLocalStorage: [],
     }
   },
   created() {
     this.getCategoryList()
+    this.getStorage()
+  },
+  mounted() {
+    if (localStorage.getItem('access_token').length > 0) {
+      this.$refs.inLi.style.display = 'none'
+      const getName = decodeURIComponent(
+        escape(window.atob(localStorage.getItem('name')))
+      )
+      this.$refs.onLiText.innerText = '반갑습니다  <' + getName + '>  회원님'
+    }
   },
   methods: {
+    async getStorage() {
+      if (localStorage.getItem('access_token').length > 0) {
+        // alert('환영합니다 고객님')
+        this.$ref['onLi'].style.display = 'none'
+      }
+    },
     async getCategoryList() {
       this.categoryList = await api.get('/product/categories', {})
       console.log(this.categoryList)

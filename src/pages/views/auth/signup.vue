@@ -8,8 +8,10 @@ import { onceImageErrored } from '/@src/utils/via-placeholder'
 import sleep from '/@src/utils/sleep'
 import { useNotyf } from '/@src/composable/useNotyf'
 import { useDarkmode } from '/@src/stores/darkmode'
+import { useApi } from '/@src/composable/useApi'
 
 let slider: TinySliderInstance
+const api = useApi()
 const sliderElement = ref<HTMLElement>()
 const router = useRouter()
 const notif = useNotyf()
@@ -47,63 +49,81 @@ const handleSignup = async () => {
   }
 }
 
-const onAvatarChanged = (info: any) => {
-  // direct access to info object
-  const indexPrev = info.indexCached
-  const indexCurrent = info.index
+// name: '양준혁94',
+//     gender: '남자',
+//     id: '양준혁이에요',
+//     password: '1234',
+//     birthDate: '1017',
+//     userEmail: '네이버에요',
+//     phoneNumber: '010',
+//     address: '됩니당',
+//     role: 0,
 
-  // update style based on index
-  info.slideItems[indexPrev].classList.remove('active')
-  info.slideItems[indexCurrent].classList.add('active')
+// let data = {
+//   name: document.getElementById('username').value,
+//   gender: document.getElementById('male').value,
+//   id: document.getElementById('userId').value,
+//   password: document.getElementById('userPassword').value,
+//   birthDate: document.getElementById('userBD').value,
+//   userEmail: document.getElementById('userEmail').value,
+//   phoneNumber: document.getElementById('userPhone').value,
+//   address: document.getElementById('userAddress').value,
+//   role: 0,
+// }
 
-  if (info.displayIndex) {
-    selectedAvatar.value = info.displayIndex - 1
-  }
-}
+// function btnClick() {
+//   console.log('teststs')
+//   // alert(data)
+//   api
+//     .post(`/auth/users`, {
+//       name: document.getElementById('username').value,
+//       gender: document.getElementById('male').value,
+//       id: document.getElementById('userId').value,
+//       password: document.getElementById('userPassword').value,
+//       birthDate: document.getElementById('userBD').value,
+//       userEmail: document.getElementById('userEmail').value,
+//       phoneNumber: document.getElementById('userPhone').value,
+//       address: document.getElementById('userAddress').value,
+//       role: 0,
+//     })
+//     .then((response) => {
+//       console.log(response)
+//       alert(response)
+//     })
+// }
 
-useHead({
-  title: 'Auth Signup 1 - Vuero',
-})
-
-onMounted(() => {
-  if (sliderElement.value) {
-    slider = tns({
-      container: sliderElement.value,
-      controls: false,
-      nav: false,
-      mouseDrag: true,
-      startIndex: 2,
-      fixedWidth: 100,
-      gutter: 40,
-      slideBy: 1,
-      swipeAngle: false,
-      center: false,
-      loop: true,
-      edgePadding: 325,
+function submitForm() {
+  // let data = {
+  //   name: document.getElementById('username').value,
+  //   gender: document.getElementById('male').value,
+  //   id: document.getElementById('userId').value,
+  //   password: document.getElementById('userPassword').value,
+  //   birthDate: document.getElementById('userBD').value,
+  //   phoneNumber: document.getElementById('userPhone').value,
+  //   address: document.getElementById('userAddress').value,
+  //   role: 0,
+  // }
+  // alert(JSON.stringify(data))
+  api
+    .post(`/auth/users`, {
+      name: document.getElementById('username').value,
+      gender: document.getElementById('male').value,
+      id: document.getElementById('userId').value,
+      password: document.getElementById('userPassword').value,
+      birthDate: document.getElementById('userBD').value,
+      phoneNumber: document.getElementById('userPhone').value,
+      address: document.getElementById('userAddress').value,
+      role: 0,
     })
-    slider.events.on('indexChanged', onAvatarChanged)
-    onAvatarChanged(slider.getInfo())
-  }
-})
-
-onUnmounted(() => {
-  if (slider) {
-    slider.events.off('indexChanged', onAvatarChanged)
-    slider.destroy()
-  }
-})
+    .then((response) => {
+      console.log(response)
+      alert(data)
+    })
+}
 </script>
 
 <template>
   <div>
-    <!-- <div class="signup-nav"> -->
-    <!-- <div class="signup-nav-inner"> -->
-    <!-- <RouterLink to="/" class="logo"> -->
-    <!-- <img src="../../assets/logo_black.png" /> -->
-    <!-- </RouterLink> -->
-    <!-- </div> -->
-    <!-- </div> -->
-
     <div id="vuero-signup" class="signup-wrapper">
       <div class="signup-steps" :class="[step === 0 && 'is-hidden']">
         <div class="steps-container">
@@ -158,103 +178,133 @@ onUnmounted(() => {
                   And simply join an unmatched design experience.
                 </h2>
                 <div class="signup-card">
-                  <form class="signup-form is-mobile-spaced" @submit.prevent>
+                  <form class="signup-form is-mobile-spaced" @submit="submitForm">
                     <div class="columns is-multiline">
-                      <div class="column is-6">
-                        <VField>
-                          <VControl>
-                            <VInput type="text" autocomplete="given-name" />
-                            <VLabel raw class="auth-label">Name</VLabel>
-                          </VControl>
-                        </VField>
-                      </div>
-                      <div class="column is-6">
-                        <VField>
-                          <VControl>
-                            <VInput type="text" autocomplete="family-name" />
-                            <VLabel raw class="auth-label">성별</VLabel>
-                          </VControl>
-                        </VField>
-                      </div>
-                      <div class="column is-12">
-                        <VField>
-                          <VControl>
-                            <VInput type="text" autocomplete="email" />
-                            <VLabel raw class="auth-label">ID</VLabel>
-                          </VControl>
-                        </VField>
-                      </div>
-                      <div class="column is-12">
-                        <VField>
-                          <VControl>
-                            <VInput type="text" autocomplete="email" />
-                            <VLabel raw class="auth-label">Password</VLabel>
-                          </VControl>
-                        </VField>
-                      </div>
-                      <div class="column is-12">
-                        <VField>
-                          <VControl>
-                            <VInput type="text" autocomplete="email" />
-                            <VLabel raw class="auth-label">Birth Date</VLabel>
-                          </VControl>
-                        </VField>
-                      </div>
-                      <div class="column is-12">
-                        <VField>
-                          <VControl>
-                            <VInput type="text" autocomplete="email" />
-                            <VLabel raw class="auth-label">Email Address</VLabel>
-                          </VControl>
-                        </VField>
-                      </div>
-                      <div class="column is-12">
-                        <VField>
-                          <VControl>
-                            <VInput type="text" autocomplete="email" />
-                            <VLabel raw class="auth-label">Phone</VLabel>
-                          </VControl>
-                        </VField>
-                      </div>
-                      <div class="column is-12">
-                        <VField>
-                          <VControl>
-                            <VInput type="text" autocomplete="email" />
-                            <VLabel raw class="auth-label">Address</VLabel>
-                          </VControl>
-                        </VField>
-                      </div>
-                      <div class="column is-12">
-                        <div class="signup-type">
-                          <div class="box-wrap">
-                            <input type="radio" name="signup_type" checked />
-                            <div
-                              class="signup-box"
-                              style="border-color: black; color: black"
-                            >
-                              <i
-                                aria-hidden="true"
-                                class="lnil lnil-coffee-cup"
-                                style="color: black"
-                              ></i>
-                              <div class="meta" style="color: black">
-                                <span style="color: black">일반 회원</span>
-                                <span>Nice to get started</span>
+                      <form>
+                        <div class="column is-6">
+                          Name
+                          <input
+                            id="username"
+                            type="text"
+                            style="
+                              border: none;
+                              width: 200px;
+                              height: 30px;
+                              border-radius: 7px;
+                            "
+                          />
+                        </div>
+                        <div class="column is-6">
+                          성별
+                          <input
+                            id="male"
+                            type="text"
+                            style="
+                              border: none;
+                              width: 200px;
+                              height: 30px;
+                              border-radius: 7px;
+                            "
+                          />
+                        </div>
+                        <div class="column is-12">
+                          ID<br />
+                          <input
+                            id="userId"
+                            type="text"
+                            style="
+                              border: none;
+                              width: 200px;
+                              height: 30px;
+                              border-radius: 7px;
+                            "
+                          />
+                        </div>
+                        <div class="column is-12">
+                          Password<br />
+                          <input
+                            id="userPassword"
+                            type="text"
+                            style="
+                              border: none;
+                              width: 200px;
+                              height: 30px;
+                              border-radius: 7px;
+                            "
+                          />
+                        </div>
+                        <div class="column is-12">
+                          Birth Date<br />
+                          <input
+                            id="userBD"
+                            type="text"
+                            style="
+                              border: none;
+                              width: 200px;
+                              height: 30px;
+                              border-radius: 7px;
+                            "
+                          />
+                        </div>
+                        <div class="column is-12">
+                          Phone<br />
+                          <input
+                            id="userPhone"
+                            type="text"
+                            style="
+                              border: none;
+                              width: 200px;
+                              height: 30px;
+                              border-radius: 7px;
+                            "
+                          />
+                        </div>
+                        <div class="column is-12">
+                          Address<br />
+                          <input
+                            id="userAddress"
+                            type="text"
+                            style="
+                              border: none;
+                              width: 200px;
+                              height: 30px;
+                              border-radius: 7px;
+                            "
+                          />
+                        </div>
+                        <br /><br />
+                        <div class="column is-12">
+                          <div class="signup-type">
+                            <div class="box-wrap">
+                              <input type="radio" name="signup_type" checked />
+                              <div
+                                class="signup-box"
+                                style="border-color: black; color: black"
+                              >
+                                <i
+                                  aria-hidden="true"
+                                  class="lnil lnil-coffee-cup"
+                                  style="color: black"
+                                ></i>
+                                <div class="meta" style="color: black">
+                                  <span style="color: black">일반 회원</span>
+                                  <span>Nice to get started</span>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                          <div class="box-wrap">
-                            <input type="radio" name="signup_type" />
-                            <div class="signup-box" style="border-color: black">
-                              <i aria-hidden="true" class="lnil lnil-crown-alt-1"></i>
-                              <div class="meta">
-                                <span>판매자</span>
-                                <span>Get a lot more features</span>
+                            <div class="box-wrap">
+                              <input type="radio" name="signup_type" />
+                              <div class="signup-box" style="border-color: black">
+                                <i aria-hidden="true" class="lnil lnil-crown-alt-1"></i>
+                                <div class="meta">
+                                  <span>판매자</span>
+                                  <span>Get a lot more features</span>
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </form>
                     </div>
 
                     <div class="control is-agree">
@@ -272,9 +322,10 @@ onUnmounted(() => {
                         bold
                         fullwidth
                         rounded
-                        @click="step++"
+                        @click="submitForm"
                       >
-                        Continue
+                        <!-- <button type="submit">Sign Up</button> -->
+                        <button @click="submitForm">Sign Up</button>
                       </VButton>
                       <span>
                         Or
