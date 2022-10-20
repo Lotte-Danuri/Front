@@ -161,7 +161,7 @@ const products = ref<Product[]>([])
   try {
     await api.get<Product[]>(`/member/cart`,{
       headers : {
-        Authorization: `Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiZXhwIjoxNjY2MjI5NTY3fQ.IHGvSNizFEX0_5ViF6Of0FUjA-W6AU89METmutnpiTll24DklXtEf_euOW-xaWUxeOntskLF8rv9iu23TghSZw`
+        Authorization: `Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiZXhwIjoxNjY2MjM5ODUzfQ.PgoxeuhzR--y7g-dEJRa5_NxcdWhNrA6PVdJSdIV27YrdGfmPEP9K50xfJFfliyC82LRpQkpDfQxVQyaieA78w`
       },
     }).then((response)=>{
       products.value = response.data
@@ -181,7 +181,7 @@ function comma(val) {
 function total(products){
   var totalPrice = 0
   for(const product in products){
-    totalPrice += products[product].productDto.price
+    totalPrice += (products[product].productDto.price*products[product].quantity)
   }
   return totalPrice
 }
@@ -213,7 +213,7 @@ function addOrder(products){
       orderDataDtoList : orderDataDtoList
     },{
       headers : {
-        Authorization: `Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiZXhwIjoxNjY2MjI5NTY3fQ.IHGvSNizFEX0_5ViF6Of0FUjA-W6AU89METmutnpiTll24DklXtEf_euOW-xaWUxeOntskLF8rv9iu23TghSZw`
+        Authorization: `Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiZXhwIjoxNjY2MjM5ODUzfQ.PgoxeuhzR--y7g-dEJRa5_NxcdWhNrA6PVdJSdIV27YrdGfmPEP9K50xfJFfliyC82LRpQkpDfQxVQyaieA78w`
       }
     }).then((response)=>{
           alert("주문 완료되었습니다.")
