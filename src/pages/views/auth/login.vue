@@ -5,7 +5,9 @@ import { useDarkmode } from '/@src/stores/darkmode'
 import { useUserSession } from '/@src/stores/userSession'
 import { useNotyf } from '/@src/composable/useNotyf'
 import sleep from '/@src/utils/sleep'
+import { useApi } from '/@src/composable/useApi'
 
+const api = useApi()
 const isLoading = ref(false)
 const darkmode = useDarkmode()
 const router = useRouter()
@@ -39,6 +41,38 @@ const handleLogin = async () => {
 useHead({
   title: 'Auth Login 2 - Vuero',
 })
+
+// api
+//   .post(`/auth/login`, {
+//     id: 'chang',
+//     password: 'chang',
+//   })
+//   .then((response) => {
+//     console.log(response)
+//   })
+function btn() {}
+
+function submitBtn() {
+  // alert('test')
+  const data = {
+    id: document.getElementById('userId').value,
+    password: document.getElementById('userPassword').value,
+  }
+  // alert(JSON.stringify(data))
+  api
+    .post(`/auth/login`, {
+      id: document.getElementById('userId').value,
+      password: document.getElementById('userPassword').value,
+    })
+    .then((response) => {
+      // alert(response)
+      console.log(response)
+      localStorage.setItem('access_token', response.headers.access_token)
+      localStorage.setItem('refresh_token', response.headers.refresh_token)
+      localStorage.setItem('name', response.headers.name)
+      location.href = '../MyMain'
+    })
+}
 </script>
 
 <template>
@@ -91,79 +125,79 @@ useHead({
                 </div>
                 <div class="auth-form-wrapper">
                   <!-- Login Form -->
-                  <form @submit.prevent="handleLogin">
-                    <div class="login-form">
-                      <!-- Username -->
-                      <VField>
-                        <VControl icon="feather:user">
-                          <VInput
-                            type="text"
-                            placeholder="Username"
-                            autocomplete="username"
-                          />
-                        </VControl>
-                      </VField>
+                  <div class="login-form">
+                    <!-- Username -->
+                    <VField>
+                      <VControl icon="feather:user">
+                        <VInput
+                          id="userId"
+                          type="text"
+                          placeholder="Username"
+                          autocomplete="username"
+                        />
+                      </VControl>
+                    </VField>
 
-                      <!-- Password -->
-                      <VField>
-                        <VControl icon="feather:lock">
-                          <VInput
-                            type="password"
-                            placeholder="Password"
-                            autocomplete="current-password"
-                          />
-                        </VControl>
-                      </VField>
+                    <!-- Password -->
+                    <VField>
+                      <VControl icon="feather:lock">
+                        <VInput
+                          id="userPassword"
+                          type="password"
+                          placeholder="Password"
+                          autocomplete="current-password"
+                        />
+                      </VControl>
+                    </VField>
 
-                      <!-- Switch -->
-                      <VField>
-                        <VControl class="setting-item">
-                          <VCheckbox label="Remember me" paddingless />
-                        </VControl>
-                      </VField>
+                    <!-- Switch -->
+                    <VField>
+                      <VControl class="setting-item">
+                        <VCheckbox label="Remember me" paddingless />
+                      </VControl>
+                    </VField>
 
-                      <!-- Submit -->
-                      <div class="login">
-                        <VButton
-                          :loading="isLoading"
-                          color="primary"
-                          style="background-color: black"
-                          type="submit"
-                          bold
-                          fullwidth
-                          raised
-                        >
-                          로그인 하기
-                        </VButton>
-                      </div>
-
-                      <div class="forgot-link has-text-centered">
-                        <a>비밀번호 찾기</a>
-                      </div>
+                    <!-- Submit -->
+                    <button
+                      style="
+                        margin-left: 10%;
+                        border: none;
+                        width: 400px;
+                        height: 40px;
+                        border-radius: 7px;
+                        background-color: black;
+                        color: white;
+                      "
+                      @click="submitBtn"
+                    >
+                      Log In
+                    </button>
+                    <div class="forgot-link has-text-centered">
+                      <a>비밀번호 찾기</a>
                     </div>
-                  </form>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="login_btn" style="margin-top: 50px; margin-left: 25%">
+            <div class="login_btn" style="margin-top: 50px; margin-left: 15%">
               <button style="border: none; margin-bottom: 10px">
                 <img
                   src="../../../assets/kakao_login.png"
-                  style="width: 300px; height: 50px"
+                  style="width: 400px; height: 60px"
                   alt=""
                 />
               </button>
               <button style="border: none; margin-bottom: 10px">
                 <img
                   src="../../../assets/naver_login.png"
-                  style="width: 300px; height: 50px"
+                  style="width: 400px; height: 60px"
                   alt=""
                 />
               </button>
               <button style="border: none; margin-bottom: 10px">
                 <img
                   src="../../../assets/google_login.png"
-                  style="width: 300px; height: 50px"
+                  style="width: 400px; height: 60px"
                   alt=""
                 />
               </button>

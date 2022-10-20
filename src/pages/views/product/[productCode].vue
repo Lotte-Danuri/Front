@@ -58,7 +58,7 @@
               </div>
             </div>
             <div class="col-12 col-md-6 ps-lg-10">
-              <br>
+              <br />
               <!-- Header -->
               <div class="row mb-1">
                 <div class="col">
@@ -73,7 +73,7 @@
                 </div>
               </div>
 
-              <br>
+              <br />
 
               <!-- Heading -->
               <h3 class="mb-2" style="font-size: 32px; font-weight: bold">
@@ -92,32 +92,39 @@
               <form>
                 <div class="form-group">
                   <!-- Label -->
-                  <p class="mb-5">보증기간: <strong id="colorCaption">{{products[0]?.warranty}}개월</strong></p>
-
+                  <p class="mb-5">
+                    보증기간:
+                    <strong id="colorCaption">{{ products[0]?.warranty }}개월</strong>
+                  </p>
                 </div>
                 <div class="form-group">
                   <!-- Radio -->
-                  <div class="mb-2" >
-                    <div v-for="(product, index) in products"
-                  :key="index" class="form-check form-check-inline form-check-size mb-2">
+                  <div class="mb-2">
+                    <div
+                      v-for="(product, index) in products"
+                      :key="index"
+                      class="form-check form-check-inline form-check-size mb-2"
+                    >
                       <input
-                        :id="'문자열'+index"
-                        v-model=productId
+                        :id="'문자열' + index"
+                        v-model="productId"
                         type="radio"
                         class="form-check-input"
                         name="sizeRadio"
-                        :value=product.id
+                        :value="product.id"
                         data-toggle="form-caption"
                         data-target="#sizeCaption"
-                        />
-                          <label class="form-check-label" :for="'문자열'+index">{{product.storeName}}</label>
+                      />
+                      <label class="form-check-label" :for="'문자열' + index">{{
+                        product.storeName
+                      }}</label>
                     </div>
                   </div>
 
                   <div class="row-2 gx-5 mb-7">
                     <div class="col-12 col-lg-auto">
                       <!-- Quantity -->
-                      <select v-model=quantity class="form-select mb-2">
+                      <select v-model="quantity" class="form-select mb-2">
                         <option value="1" selected>1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -136,12 +143,20 @@
                           },
                         }"
                       > -->
-                        <button type="button" @click=addCart() class="btn btn-outline-dark w-100 mb-2">
-                          장바구니에 추가 <i class="fe fe-shopping-cart ms-2"></i>
-                        </button>
+                      <button
+                        type="button"
+                        class="btn btn-outline-dark w-100 mb-2"
+                        @click="addCart()"
+                      >
+                        장바구니에 추가 <i class="fe fe-shopping-cart ms-2"></i>
+                      </button>
                       <!-- </RouterLink> -->
-                      <button type="button" @click=addOrder() class="btn btn-outline-dark w-100 mb-2">
-                        주문하기 &nbsp;  <i class="fa-solid fa-barcode"></i>
+                      <button
+                        type="button"
+                        class="btn btn-outline-dark w-100 mb-2"
+                        @click="addOrder()"
+                      >
+                        주문하기 &nbsp; <i class="fa-solid fa-barcode"></i>
                       </button>
                     </div>
                     <div class="col-12 col-lg-auto">
@@ -154,7 +169,6 @@
                       </button>
                     </div>
                   </div>
-
                 </div>
               </form>
             </div>
@@ -179,20 +193,17 @@
           </div>
 
           <!-- Content -->
-          <div >
-            <div
-              v-for="(descriptionImage, index) in products[0]?.imageList"
-              :key="index"
-            >
+          <div>
+            <div v-for="(descriptionImage, index) in products[0]?.imageList" :key="index">
               <img
-                        id="description"
-                        :src="descriptionImage"
-                        alt="..."
-                        class="card-img-top"
-                      />
+                id="description"
+                :src="descriptionImage"
+                alt="..."
+                class="card-img-top"
+              />
             </div>
           </div>
-          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -754,7 +765,7 @@ interface Product {
   thumbnailUrl: string
   price: number
   stock: number
-  storeId : number
+  storeId: number
   storeName: string
   likeCount: number
   productCode: string
@@ -765,9 +776,9 @@ interface Product {
   imageList: string[]
 }
 
-interface Store{
-  storeId : number
-  storeName : string
+interface Store {
+  storeId: number
+  storeName: string
 }
 
 const products = ref<Product[]>([])
@@ -784,13 +795,16 @@ watchEffect(async () => {
   loading.value = true
 
   try {
-    await api.get<Product[]>(`/product/products/list/` + currentProductCode).then((response)=>{
-      products.value = response.data
-      api.get<Store[]>(`/member/store/`+products.value[0].storeId+`/list`).then((response)=>{
-        stores.value = response.data
+    await api
+      .get<Product[]>(`/product/products/list/` + currentProductCode)
+      .then((response) => {
+        products.value = response.data
+        api
+          .get<Store[]>(`/member/store/` + products.value[0].storeId + `/list`)
+          .then((response) => {
+            stores.value = response.data
+          })
       })
-    })
-    
   } catch (error) {
   } finally {
     loading.value = false
@@ -810,21 +824,27 @@ function imgClick(e: HTMLDataElement) {
   thumb.src = e.path[0].src
 }
 
-function addCart(){
-  api.post(`/member/cart`,{
-      productId : productId.value,
-      quantity : quantity.value,
-      memberId : "2" 
-  },{
-    headers : {
-      Authorization: `Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiZXhwIjoxNjY2MjM5ODUzfQ.PgoxeuhzR--y7g-dEJRa5_NxcdWhNrA6PVdJSdIV27YrdGfmPEP9K50xfJFfliyC82LRpQkpDfQxVQyaieA78w`
-    }
-  }).then((response)=>{
-        // stores.value = response.data
-        router.push("/views/MyCart")
-      })
+function addCart() {
+  let accessToken = localStorage.getItem('access_token')
+  api
+    .post(
+      `/member/cart`,
+      {
+        productId: productId.value,
+        quantity: quantity.value,
+        memberId: '1',
+      },
+      {
+        headers: {
+          Authorization: `Bearer ` + accessToken,
+        },
+      }
+    )
+    .then((response) => {
+      // stores.value = response.data
+      router.push('/views/MyCart')
+    })
 }
-
 </script>
 
 <style>

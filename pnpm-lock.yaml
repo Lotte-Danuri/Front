@@ -118,7 +118,6 @@ specifiers:
   vue-tippy: 6.0.0-alpha.63
   vue-tsc: 0.40.6
   vue3-apexcharts: 1.4.1
-  vuetify-money: ^1.2.0
   yorkie: 2.0.0
   zod: 3.18.0
 
@@ -175,7 +174,6 @@ dependencies:
   vue-scrollto: 2.20.0
   vue-tippy: 6.0.0-alpha.63_vue@3.2.38
   vue3-apexcharts: 1.4.1_pzo2uwmueqbdjnfljvsxuiuhxq
-  vuetify-money: 1.2.0
   zod: 3.18.0
 
 devDependencies:
@@ -1983,8 +1981,8 @@ packages:
     resolution: {integrity: sha512-Jh0llaK2LRXQoYsorIH8maClebsnzTcve+7U3rQUSnC11X4jtPnFuyatqFLvMxZ8MLG8dB4zfHsbPfuvxluONw==}
     dev: true
 
-  /@intlify/bundle-utils/3.2.1_vue-i18n@9.3.0-beta.3:
-    resolution: {integrity: sha512-rf4cLBOnbqmpXVcCdcYHilZpMt1m82syh3WLBJlZvGxN2KkH9HeHVH4+bnibF/SDXCHNh6lM6wTpS/qw+PkcMg==}
+  /@intlify/bundle-utils/3.1.0_vue-i18n@9.3.0-beta.3:
+    resolution: {integrity: sha512-ghlJ0kR2cCQ8D+poKknC0Xx0ncOt3J3os7CcIAqqIWVF7k6AtGoCDnIru+YzlZcvFRNmP9wEZ7jKliojCdAWNg==}
     engines: {node: '>= 12'}
     peerDependencies:
       petite-vue-i18n: '*'
@@ -1995,8 +1993,8 @@ packages:
       vue-i18n:
         optional: true
     dependencies:
-      '@intlify/message-compiler': 9.3.0-beta.6
-      '@intlify/shared': 9.3.0-beta.6
+      '@intlify/message-compiler': 9.3.0-beta.3
+      '@intlify/shared': 9.3.0-beta.3
       jsonc-eslint-parser: 1.4.1
       source-map: 0.6.1
       vue-i18n: 9.3.0-beta.3_vue@3.2.38
@@ -2025,22 +2023,9 @@ packages:
       '@intlify/shared': 9.3.0-beta.3
       source-map: 0.6.1
 
-  /@intlify/message-compiler/9.3.0-beta.6:
-    resolution: {integrity: sha512-3PJqRJoqvFHExA9DCkf7fZYKbvYne1tYQ0fptJAhUOZsELarh8wr4aPLKWCkQSRuutdrtZ/n5CcPgJgUmVthDw==}
-    engines: {node: '>= 14'}
-    dependencies:
-      '@intlify/shared': 9.3.0-beta.6
-      source-map: 0.6.1
-    dev: true
-
   /@intlify/shared/9.3.0-beta.3:
     resolution: {integrity: sha512-Z/0TU4GhFKRxKh+0RbwJExik9zz57gXYgxSYaPn7YQdkQ/pabSioCY/SXnYxQHL6HzULF5tmqarFm6glbGqKhw==}
     engines: {node: '>= 14'}
-
-  /@intlify/shared/9.3.0-beta.6:
-    resolution: {integrity: sha512-ITA1R4tvJYwZXT5x6QCSwxcwQ4dU52zrzVm/EUbgsp8oWzYS1xexBrxyNM80PSQudYvL2rvcZJKQ7yBh7b0LkQ==}
-    engines: {node: '>= 14'}
-    dev: true
 
   /@intlify/vite-plugin-vue-i18n/7.0.0-beta.2_volzdo7qm3xl72jtfs77l55igm:
     resolution: {integrity: sha512-vQWxuqfPJvKuxV1ordhCzi4PO5U+do5S13ICtIoJKdxOkBoy9HuiqDmBDIFVcYbcSLh57bixn2RfGoCQARmuUw==}
@@ -2057,8 +2042,8 @@ packages:
       vue-i18n:
         optional: true
     dependencies:
-      '@intlify/bundle-utils': 3.2.1_vue-i18n@9.3.0-beta.3
-      '@intlify/shared': 9.3.0-beta.6
+      '@intlify/bundle-utils': 3.1.0_vue-i18n@9.3.0-beta.3
+      '@intlify/shared': 9.3.0-beta.3
       '@rollup/pluginutils': 4.2.1
       debug: 4.3.4
       fast-glob: 3.2.11
@@ -12000,10 +11985,6 @@ packages:
     dependencies:
       apexcharts: 3.35.5
       vue: 3.2.38
-    dev: false
-
-  /vuetify-money/1.2.0:
-    resolution: {integrity: sha512-YVxO2bNE9HIgRZmF/d3ol4DJrJrbnptzrd72D5KpUxaSyjx0+8bTxUStGRYIHPoFsnUH/uCJOuZkGSVhbdqf3A==}
     dev: false
 
   /webidl-conversions/3.0.1:
