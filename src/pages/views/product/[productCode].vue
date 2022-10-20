@@ -11,11 +11,11 @@
             </li>
             <li class="breadcrumb-item">
               <a class="text-gray-400" href="shop.html">{{
-                product?.categoryFirstName
+                products[0]?.categoryFirstName
               }}</a>
             </li>
             <li class="breadcrumb-item active">
-              {{ product?.categorySecondName }}
+              {{ products[0]?.categorySecondName }}
             </li>
           </ol>
         </div>
@@ -48,7 +48,7 @@
                   >
                     <img
                       id="thumbnailImg"
-                      :src="product?.thumbnailUrl"
+                      :src="products[0]?.thumbnailUrl"
                       alt="..."
                       class="card-img-top"
                       style="height: 637px"
@@ -64,12 +64,12 @@
                 <div class="col">
                   <!-- Preheading -->
                   <a class="text-muted" href="shop.html">{{
-                    product?.categoryThirdName
+                    products[0]?.categoryThirdName
                   }}</a>
                 </div>
                 <div class="col-auto">
                   <i class="fa-solid fa-heart"></i>
-                  {{ product?.likeCount }}
+                  {{ products[0]?.likeCount }}
                 </div>
               </div>
 
@@ -77,13 +77,13 @@
 
               <!-- Heading -->
               <h3 class="mb-2" style="font-size: 32px; font-weight: bold">
-                {{ product?.productName }}
+                {{ products[0]?.productName }}
               </h3>
 
               <!-- Price -->
               <div class="mb-7">
                 <span class="ms-1 fs-5 fw-bolder text-primary">{{
-                  comma(product?.price)
+                  comma(products[0]?.price)
                 }}</span>
                 <span class="fs-sm ms-1">원</span>
               </div>
@@ -92,24 +92,25 @@
               <form>
                 <div class="form-group">
                   <!-- Label -->
-                  <p class="mb-5">보증기간: <strong id="colorCaption">{{product?.warranty}}개월</strong></p>
+                  <p class="mb-5">보증기간: <strong id="colorCaption">{{products[0]?.warranty}}개월</strong></p>
 
                 </div>
                 <div class="form-group">
                   <!-- Radio -->
                   <div class="mb-2" >
-                    <div v-for="(store, index) in stores"
+                    <div v-for="(product, index) in products"
                   :key="index" class="form-check form-check-inline form-check-size mb-2">
                       <input
                         :id="'문자열'+index"
+                        v-model=productId
                         type="radio"
                         class="form-check-input"
                         name="sizeRadio"
-                        :value=store.storeId
+                        :value=product.id
                         data-toggle="form-caption"
                         data-target="#sizeCaption"
                         />
-                          <label class="form-check-label" :for="'문자열'+index">{{store.storeName}}</label>
+                          <label class="form-check-label" :for="'문자열'+index">{{product.storeName}}</label>
                     </div>
                   </div>
 
@@ -131,7 +132,7 @@
                         :to="{
                           name: '/views/MyCart',
                           params: {
-                            // id: product.id,
+                            // id: products[0].id,
                           },
                         }"
                       > -->
@@ -139,7 +140,7 @@
                           장바구니에 추가 <i class="fe fe-shopping-cart ms-2"></i>
                         </button>
                       <!-- </RouterLink> -->
-                      <button type="submit" class="btn btn-outline-dark w-100 mb-2">
+                      <button type="button" @click=addOrder() class="btn btn-outline-dark w-100 mb-2">
                         주문하기 &nbsp;  <i class="fa-solid fa-barcode"></i>
                       </button>
                     </div>
@@ -180,7 +181,7 @@
           <!-- Content -->
           <div >
             <div
-              v-for="(descriptionImage, index) in product?.imageList"
+              v-for="(descriptionImage, index) in products[0]?.imageList"
               :key="index"
             >
               <img
@@ -769,25 +770,24 @@ interface Store{
   storeName : string
 }
 
-const product = ref<Product>()
+const products = ref<Product[]>([])
 const stores = ref<Store[]>([])
 const quantity = ref(Number)
 const loading = ref(false)
 const api = useApi()
 const router = useRouter()
 const route = useRoute()
+const productId = ref(Number)
 
 watchEffect(async () => {
-  const currentProductId = (route.params?.id as string) ?? ''
+  const currentProductCode = (route.params?.productCode as string) ?? ''
   loading.value = true
 
   try {
-    await api.get<Product>(`/product/products/` + currentProductId).then((response)=>{
-      product.value = response.data
-
-      api.get<Store[]>(`/member/store/`+product.value.storeId+`/list`).then((response)=>{
+    await api.get<Product[]>(`/product/products/list/` + currentProductCode).then((response)=>{
+      products.value = response.data
+      api.get<Store[]>(`/member/store/`+products.value[0].storeId+`/list`).then((response)=>{
         stores.value = response.data
-        console.log(stores)
       })
     })
     
@@ -797,11 +797,8 @@ watchEffect(async () => {
   }
 })
 useHead({
-  title: computed(() => product.value?.productName ?? 'Loading article...'),
+  title: computed(() => products.value[0]?.productName ?? 'Loading article...'),
 })
-
-function getStores(){
-}
 
 function comma(val) {
   return String(val).replace(/\B(?=(\d{3})+(?!\d))/g, ',')
@@ -815,16 +812,15 @@ function imgClick(e: HTMLDataElement) {
 
 function addCart(){
   api.post(`/member/cart`,{
-      productId : product.value?.id,
+      productId : productId.value,
       quantity : quantity.value,
-      memberId : "15" 
+      memberId : "2" 
   },{
     headers : {
-      Authorization: `Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNiIsImV4cCI6MTY2NjA5Njc2MX0.B7_gfsQ_aHNGSJrAZNY9bngr9t8-Uk9vloS5r678DMSDnZM5_IEnXCs3ITVqloIVy76f3MXfXyweZhMhzT3GHw`
+      Authorization: `Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiZXhwIjoxNjY2MjI5NTY3fQ.IHGvSNizFEX0_5ViF6Of0FUjA-W6AU89METmutnpiTll24DklXtEf_euOW-xaWUxeOntskLF8rv9iu23TghSZw`
     }
   }).then((response)=>{
         // stores.value = response.data
-        console.log(response)
         router.push("/views/MyCart")
       })
 }

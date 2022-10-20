@@ -34,18 +34,15 @@
  
                     <!-- Text -->
                     <p class="mb-7 fs-sm text-muted">
-                      Size: M <br>
-                      Color: Red
+                      {{product.storeName}}&nbsp;&nbsp;&nbsp;{{product.productDto.productCode}} <br>
+                      보증기간 : {{product.productDto.warranty}} 개월
                     </p>
 
                     <!--Footer -->
                     <div class="d-flex align-items-center">
-
                       <!-- Select -->
                       <select class="form-select form-select-xxs w-auto">
-                        <option value="1">1</option>
-                        <option value="1">2</option>
-                        <option value="1">3</option>
+                        <option value="{{product.quantity}}" selected="selcted">{{product.quantity}}</option>
                       </select>
 
                       <!-- Remove -->
@@ -104,23 +101,23 @@
               <div class="card-body">
                 <ul class="list-group list-group-sm list-group-flush-y list-group-flush-x">
                   <li class="list-group-item d-flex">
-                    <span>Subtotal</span> <span class="ms-auto fs-sm">$89.00</span>
+                    <span>상품 금액</span> <span class="ms-auto fs-sm">{{comma(total(products))}}&nbsp;원</span>
                   </li>
                   <li class="list-group-item d-flex">
-                    <span>Tax</span> <span class="ms-auto fs-sm">$00.00</span>
+                    <span>배송 금액</span> <span class="ms-auto fs-sm">{{comma(5000)}}&nbsp;원</span>
                   </li>
                   <li class="list-group-item d-flex fs-lg fw-bold">
-                    <span>Total</span> <span class="ms-auto fs-sm">$89.00</span>
+                    <span>총 금액</span> <span class="ms-auto fs-sm">{{comma(total(products)+5000)}}&nbsp;원</span>
                   </li>
                   <li class="list-group-item fs-sm text-center text-gray-500">
-                    Shipping cost calculated at Checkout *
+                    * 배송비가 포함된 가격입니다 *
                   </li>
                 </ul>
               </div>
             </div>
 
             <!-- Button -->
-            <a class="btn w-100 btn-dark mb-2" href="checkout.html">Proceed to Checkout</a>
+            <button type="button" class="btn w-100 btn-dark mb-2" @click=addOrder(products)>주문하기</button>
 
             <!-- Link -->
             <a class="btn btn-link btn-sm px-0 text-body" href="shop.html">
@@ -139,6 +136,7 @@
 import { useApi } from "/@src/composable/useApi"
 
 const api = useApi()
+const router = useRouter()
 
 interface Product {
   id: number
@@ -163,11 +161,12 @@ const products = ref<Product[]>([])
   try {
     await api.get<Product[]>(`/member/cart`,{
       headers : {
-        Authorization: `Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNyIsImV4cCI6MTY2NjA5OTc5Mn0._LKHof_P1d1_6sLh5Xw2LKWiudoZznZHfPBdhkMSou-J6f4BEQ2ZR-nCdL0FyUtjQcwhJFvc2CYra4OXGEIoTw`
+        Authorization: `Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiZXhwIjoxNjY2MjI5NTY3fQ.IHGvSNizFEX0_5ViF6Of0FUjA-W6AU89METmutnpiTll24DklXtEf_euOW-xaWUxeOntskLF8rv9iu23TghSZw`
       },
     }).then((response)=>{
       products.value = response.data
       console.log(products.value)
+      console.log(products.value[0].productDto.productName)
     })
 } catch(error){
   console.log(error)
@@ -179,6 +178,50 @@ function comma(val) {
   return String(val).replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 }
 
+function total(products){
+  var totalPrice = 0
+  for(const product in products){
+    totalPrice += products[product].productDto.price
+  }
+  return totalPrice
+}
+
+function totalQuantity(products){
+  var totalQuantity = 0
+  for(const product in products){
+    totalQuantity += products[product].quantity
+  }
+  return totalQuantity
+}
+
+function addOrder(products){
+  if(confirm("주문 하시겠습니다?")){
+
+    var orderDataDtoList = new Array()
+    for(const product in products){
+      var Json = new Object()
+      Json.productId = products[product].productDto.id
+      Json.productName = products[product].productDto.productName
+      Json.productQuantity = products[product].quantity
+      Json.productPrice = products[product].productDto.price
+      orderDataDtoList.push(Json)
+    }
+     api.post(`/order/orders/pays`,{
+      buyerId : 2,
+      totalPrice : total(products)+5000,
+      totalQuantity : totalQuantity(products),
+      orderDataDtoList : orderDataDtoList
+    },{
+      headers : {
+        Authorization: `Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiZXhwIjoxNjY2MjI5NTY3fQ.IHGvSNizFEX0_5ViF6Of0FUjA-W6AU89METmutnpiTll24DklXtEf_euOW-xaWUxeOntskLF8rv9iu23TghSZw`
+      }
+    }).then((response)=>{
+          alert("주문 완료되었습니다.")
+          // stores.value = response.data
+          router.push("/views/MyMain")
+        })
+  }
+}
 </script>
 
 <style>

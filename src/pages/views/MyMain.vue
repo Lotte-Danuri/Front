@@ -330,9 +330,9 @@
                   <RouterLink
                     class="card-img-hover"
                     :to="{
-                      name: '/views/product/[id]',
+                      name: '/views/product/[productCode]',
                       params: {
-                        id: product.id,
+                        productCode: product.productCode,
                       },
                     }"
                   >
