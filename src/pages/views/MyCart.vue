@@ -39,21 +39,20 @@
 
                   <!-- Text -->
                   <p class="mb-7 fs-sm text-muted">
-                    {{ product.productDto.productCode }} <br />
-                    보증기간: {{ product.productDto.warranty }} 개월
+                    {{ product.storeName }}&nbsp;&nbsp;&nbsp;{{
+                      product.productDto.productCode
+                    }}
+                    <br />
+                    보증기간 : {{ product.productDto.warranty }} 개월
                   </p>
 
                   <!--Footer -->
                   <div class="d-flex align-items-center">
                     <!-- Select -->
                     <select class="form-select form-select-xxs w-auto">
-                      <option v-for="index in product.quantity" :value="product.quantity">
+                      <option value="{{product.quantity}}" selected="selcted">
                         {{ product.quantity }}
                       </option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
                     </select>
 
                     <!-- Remove -->
@@ -103,32 +102,34 @@
             <div class="card-body">
               <ul class="list-group list-group-sm list-group-flush-y list-group-flush-x">
                 <li class="list-group-item d-flex">
-                  <span>총 금액</span>
-                  <span
-                    v-for="(product, index) in products"
-                    :key="index"
-                    class="ms-auto fs-sm"
-                  >
-                    {{ product.productDto.price }}
-                  </span>
-                  <span> 총금액 </span>
+                  <span>상품 금액</span>
+                  <span class="ms-auto fs-sm">{{ comma(total(products)) }}&nbsp;원</span>
                 </li>
                 <li class="list-group-item d-flex">
-                  <span>배송</span>
+                  <span>배송 금액</span>
                   <span class="ms-auto fs-sm">{{ comma(5000) }}&nbsp;원</span>
                 </li>
                 <li class="list-group-item d-flex fs-lg fw-bold">
-                  <span>Total</span> <span class="ms-auto fs-sm" v-bind="products"></span>
+                  <span>총 금액</span>
+                  <span class="ms-auto fs-sm"
+                    >{{ comma(total(products) + 5000) }}&nbsp;원</span
+                  >
                 </li>
                 <li class="list-group-item fs-sm text-center text-gray-500">
-                  Shipping cost calculated at Checkout *
+                  * 배송비가 포함된 가격입니다 *
                 </li>
               </ul>
             </div>
           </div>
 
           <!-- Button -->
-          <a class="btn w-100 btn-dark mb-2" href="checkout.html">Proceed to Checkout</a>
+          <button
+            type="button"
+            class="btn w-100 btn-dark mb-2"
+            @click="addOrder(products)"
+          >
+            주문하기
+          </button>
 
           <!-- Link -->
           <a class="btn btn-link btn-sm px-0 text-body" href="shop.html">
@@ -144,6 +145,7 @@
 import { useApi } from '/@src/composable/useApi'
 
 const api = useApi()
+const router = useRouter()
 
 interface Product {
   id: number
@@ -169,12 +171,13 @@ watchEffect(async () => {
     await api
       .get<Product[]>(`/member/cart`, {
         headers: {
-          Authorization: `Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiZXhwIjoxNjY2MTYwOTUyfQ.twyylh4fJB79fUtYHKhYB9rm-LKlegWGJTNNlsdO_Fkn3uUhO4119Qlsw9PAt4za9dGNYkEtqJfNL2ylpNYn3Q`,
+          Authorization: `Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiZXhwIjoxNjY2MjM5ODUzfQ.PgoxeuhzR--y7g-dEJRa5_NxcdWhNrA6PVdJSdIV27YrdGfmPEP9K50xfJFfliyC82LRpQkpDfQxVQyaieA78w`,
         },
       })
       .then((response) => {
         products.value = response.data
         console.log(products.value)
+        console.log(products.value[0].productDto.productName)
       })
   } catch (error) {
     console.log(error)
@@ -186,16 +189,53 @@ function comma(val) {
   return String(val).replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 }
 
-function selectedControl() {
-  const el = document.getElementById('fruit') //select box
-  const len = el.options.length //select box의 option 갯수
-  const str = document.getElementById('searchValue').value //입력 받은 value 값
-  //select box의 option 갯수만큼 for문 돌림
-  for (let i = 0; i < len; i++) {
-    //select box의 option value가 입력 받은 value의 값과 일치할 경우 selected
-    if (el.options[i].value == str) {
-      el.options[i].selected = true
+function total(products) {
+  var totalPrice = 0
+  for (const product in products) {
+    totalPrice += products[product].productDto.price * products[product].quantity
+  }
+  return totalPrice
+}
+
+function totalQuantity(products) {
+  var totalQuantity = 0
+  for (const product in products) {
+    totalQuantity += products[product].quantity
+  }
+  return totalQuantity
+}
+
+function addOrder(products) {
+  if (confirm('주문 하시겠습니다?')) {
+    var orderDataDtoList = new Array()
+    for (const product in products) {
+      var Json = new Object()
+      Json.productId = products[product].productDto.id
+      Json.productName = products[product].productDto.productName
+      Json.productQuantity = products[product].quantity
+      Json.productPrice = products[product].productDto.price
+      orderDataDtoList.push(Json)
     }
+    api
+      .post(
+        `/order/orders/pays`,
+        {
+          buyerId: 2,
+          totalPrice: total(products) + 5000,
+          totalQuantity: totalQuantity(products),
+          orderDataDtoList: orderDataDtoList,
+        },
+        {
+          headers: {
+            Authorization: `Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiZXhwIjoxNjY2MjM5ODUzfQ.PgoxeuhzR--y7g-dEJRa5_NxcdWhNrA6PVdJSdIV27YrdGfmPEP9K50xfJFfliyC82LRpQkpDfQxVQyaieA78w`,
+          },
+        }
+      )
+      .then((response) => {
+        alert('주문 완료되었습니다.')
+        // stores.value = response.data
+        router.push('/views/MyMain')
+      })
   }
 }
 </script>
