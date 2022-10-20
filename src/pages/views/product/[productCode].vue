@@ -817,7 +817,7 @@ function addCart(){
       memberId : "2" 
   },{
     headers : {
-      Authorization: `Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiZXhwIjoxNjY2MjI5NTY3fQ.IHGvSNizFEX0_5ViF6Of0FUjA-W6AU89METmutnpiTll24DklXtEf_euOW-xaWUxeOntskLF8rv9iu23TghSZw`
+      Authorization: `Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiZXhwIjoxNjY2MjM5ODUzfQ.PgoxeuhzR--y7g-dEJRa5_NxcdWhNrA6PVdJSdIV27YrdGfmPEP9K50xfJFfliyC82LRpQkpDfQxVQyaieA78w`
     }
   }).then((response)=>{
         // stores.value = response.data
