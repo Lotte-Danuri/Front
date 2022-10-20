@@ -53,14 +53,12 @@
                     <div class="col-6 col-lg-3">
                       <!-- Heading -->
                       <h6 class="heading-xxxs text-muted">{{}}</h6>
-
                       <!-- Text -->
                       <p class="mb-lg-0 fs-sm fw-bold">NO.{{ order.id }}</p>
                     </div>
                     <div class="col-6 col-lg-3">
                       <!-- Heading -->
                       <h6 class="heading-xxxs text-muted">Ordered date:</h6>
-
                       <!-- Text -->
                       <p class="mb-lg-0 fs-sm fw-bold">
                         <time datetime="2019-10-01">
@@ -71,20 +69,17 @@
                     <div class="col-6 col-lg-3">
                       <!-- Heading -->
                       <h6 class="heading-xxxs text-muted">Status:</h6>
-
                       <!-- Text -->
                       <p class="mb-0 fs-sm fw-bold">구매완료</p>
                     </div>
                     <div class="col-6 col-lg-3">
                       <!-- Heading -->
                       <h6 class="heading-xxxs text-muted">Total Price:</h6>
-
                       <!-- Text -->
                       <p class="mb-0 fs-sm fw-bold">
                         {{ comma(order.totalPrice) }}
                       </p>
                     </div>
-
                     <div>
                       <br />
                       <div v-for="o in order.orderDataDtoList">
@@ -195,7 +190,6 @@
               </div>
             </div>
           </div>
-
           <!-- Pagination -->
           <nav class="d-flex justify-content-center justify-content-md-end mt-10">
             <ul class="pagination pagination-sm text-gray-400">
@@ -234,13 +228,10 @@
     </div>
   </section>
 </template>
-
 <script>
 import { useApi } from '/@src/composable/useApi'
 const api = useApi()
-
 // const orderList = ref<Order[]>([])
-
 export default {
   data() {
     return {
@@ -252,10 +243,11 @@ export default {
   },
   methods: {
     async getOrderList() {
+      let accessToken = localStorage.getItem('access_token')
       await api
         .get('/member/products', {
           headers: {
-            Authorization: `Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjY2MjUyNjg1fQ.LGZvTB2NtlvoFkh0xHITluWoJy2z5DHhdn_dNLX2ri7SN_47xYSe4r-yipK-myiH2mRjTVuzPbEGx9KaywJbdw`,
+            Authorization: `Bearer ` + accessToken,
           },
         })
         .then((response) => {
@@ -269,7 +261,5 @@ export default {
   },
 }
 </script>
-
 <style>
-
 </style>

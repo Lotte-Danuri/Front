@@ -1819,9 +1819,13 @@
                 <a class="nav-link" href="./views/auth/login">Log In</a>
               </RouterLink>
             </li>
-            <li ref="onLi">
-              <a ref="onLiText" class="nav-link" style="font-weight: bold">
-                반갑습니다 회원님
+            <li>
+              <a class="nav-link" style="font-weight: bold">
+                <button
+                  ref="onLiText"
+                  style="border: none; background-color: transparent; font-weight: bold"
+                  @click="outBtn"
+                ></button>
               </a>
             </li>
             <RouterLink to="/views/auth/signup" class="logo">
@@ -2276,7 +2280,7 @@ export default {
       const getName = decodeURIComponent(
         escape(window.atob(localStorage.getItem('name')))
       )
-      this.$refs.onLiText.innerText = '반갑습니다  <' + getName + '>  회원님'
+      this.$refs.onLiText.innerText = '로그아웃'
     }
   },
   methods: {
@@ -2294,6 +2298,10 @@ export default {
       if (this.$refs.refHead.id == input) {
         this.$refs.refHead.display = 'block'
       }
+    },
+    outBtn() {
+      localStorage.clear()
+      location.href = '../views/MyMain'
     },
   },
 }

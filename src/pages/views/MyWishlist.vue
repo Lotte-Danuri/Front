@@ -140,6 +140,7 @@ export default {
   },
   methods: {
     async getLikeList() {
+      let accessToken = localStorage.getItem('access_token')
       await api
         .post(
           '/member/like',
@@ -148,7 +149,7 @@ export default {
           },
           {
             headers: {
-              Authorization: `Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNjY2MjM0Mjk1fQ.9YtxFGFTRrVkknbkW1JU-JY-4IZivHi9AWAUYZGwMgRzu1qG_lHosM4m1xCDMK2kGLNXIovXWszyPmNDaOeNgg`,
+              Authorization: `Bearer ` + accessToken,
             },
           }
         )

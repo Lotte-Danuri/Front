@@ -58,14 +58,14 @@ function submitBtn() {
     id: document.getElementById('userId').value,
     password: document.getElementById('userPassword').value,
   }
-  alert(JSON.stringify(data))
+  // alert(JSON.stringify(data))
   api
     .post(`/auth/login`, {
       id: document.getElementById('userId').value,
       password: document.getElementById('userPassword').value,
     })
     .then((response) => {
-      alert(response)
+      // alert(response)
       console.log(response)
       localStorage.setItem('access_token', response.headers.access_token)
       localStorage.setItem('refresh_token', response.headers.refresh_token)

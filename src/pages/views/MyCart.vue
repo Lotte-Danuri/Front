@@ -168,10 +168,11 @@ const products = ref<Product[]>([])
 
 watchEffect(async () => {
   try {
+    let accessToken = localStorage.getItem('access_token')
     await api
       .get<Product[]>(`/member/cart`, {
         headers: {
-          Authorization: `Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiZXhwIjoxNjY2MjM5ODUzfQ.PgoxeuhzR--y7g-dEJRa5_NxcdWhNrA6PVdJSdIV27YrdGfmPEP9K50xfJFfliyC82LRpQkpDfQxVQyaieA78w`,
+          Authorization: `Bearer ` + accessToken,
         },
       })
       .then((response) => {
@@ -206,6 +207,7 @@ function totalQuantity(products) {
 }
 
 function addOrder(products) {
+  let accessToken = localStorage.getItem('access_token')
   if (confirm('주문 하시겠습니다?')) {
     var orderDataDtoList = new Array()
     for (const product in products) {
@@ -220,14 +222,14 @@ function addOrder(products) {
       .post(
         `/order/orders/pays`,
         {
-          buyerId: 2,
+          buyerId: 1,
           totalPrice: total(products) + 5000,
           totalQuantity: totalQuantity(products),
           orderDataDtoList: orderDataDtoList,
         },
         {
           headers: {
-            Authorization: `Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiZXhwIjoxNjY2MjM5ODUzfQ.PgoxeuhzR--y7g-dEJRa5_NxcdWhNrA6PVdJSdIV27YrdGfmPEP9K50xfJFfliyC82LRpQkpDfQxVQyaieA78w`,
+            Authorization: `Bearer ` + accessToken,
           },
         }
       )
