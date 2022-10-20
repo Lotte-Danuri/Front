@@ -1731,30 +1731,11 @@
 
     <!-- NAVBAR -->
     <div class="navbar navbar-topbar navbar-expand-xl navbar-light bg-light">
-      <div class="container">
-        <!-- Promo -->
-        <div class="me-xl-8">
-          <i class="fe fe-truck me-2"></i>
-          <span class="heading-xxxs">Free shipping worldwide</span>
-        </div>
-
-        <!-- Toggler -->
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#topbarCollapse"
-          aria-controls="topbarCollapse"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
+      <div class="container" style="margin-left:60%">
         <!-- Collapse -->
-        <div id="topbarCollapse" class="collapse navbar-collapse">
+        <div id="topbarCollapse" class="collapse navbar-collapse" style="right:1000px">
           <!-- Nav -->
-          <ul class="nav nav-divided navbar-nav me-auto">
+          <ul class="nav nav-divided navbar-nav me-auto" style="display:none">
             <li class="nav-item dropdown" style="display: none">
               <!-- Toggle -->
               <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">
@@ -2285,10 +2266,9 @@ export default {
   },
   methods: {
     async getStorage() {
-      if (localStorage.getItem('access_token').length > 0) {
-        // alert('환영합니다 고객님')
-        this.$ref['onLi'].style.display = 'none'
-      }
+      // if (localStorage.getItem('access_token').length > 0) {
+      //   this.$ref['onLi'].style.display = 'none'
+      // }
     },
     async getCategoryList() {
       this.categoryList = await api.get('/product/categories', {})
