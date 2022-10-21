@@ -3,9 +3,9 @@
   <section class="pt-7 pb-12">
     <div class="container">
       <div class="row">
-        <div class="col-12 text-center">
+        <div class="col-12 text-center" style="margin-left:17%">
           <!-- Heading -->
-          <h3 class="mb-10" style="font-size: xx-large; font-weight: bold; color: black">
+          <h3 class="mb-10" style="font-size: xx-large; font-weight: bold; color: black;">
             My Orders
           </h3>
         </div>
@@ -70,7 +70,7 @@
                       <!-- Text -->
                       <p class="mb-lg-0 fs-sm fw-bold">
                         <time datetime="2019-10-01">
-                          {{ order.orderDate.slice(0, 10) }}
+                          {{ order.orderDate }}
                         </time>
                       </p>
                     </div>
@@ -105,7 +105,7 @@
                               "
                             >
                               <div style="margin-top: 7%">
-                                <span>[상품명] {{ o.productName.slice(0, 15) }}</span>
+                                <span>[상품명] {{ o.productName.substring(0, 15) }}</span>
                                 <br />
                                 <span>[가격] {{ comma(o.productPrice) }}원</span>
                                 <br />

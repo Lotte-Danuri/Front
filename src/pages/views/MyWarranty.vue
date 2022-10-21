@@ -3,7 +3,7 @@
     <section class="pt-7 pb-12">
       <div class="container">
         <div class="row">
-          <div class="col-12 text-center">
+          <div class="col-12 text-center" style="margin-left:17%">
             <!-- Heading -->
             <h3 class="mb-10" style="font-size: xx-large; font-weight: bold; color: black">
               보증서
@@ -101,7 +101,7 @@
                                   >
                                     <div class="col-4 col-lg-4">
                                       <img
-                                        src="./assets/img/icons/brands/chanel (2).png"
+                                        src="./assets/img/icons/brands/chanel(2).png"
                                         style="
                                           height: 100px;
                                           width: 100px;

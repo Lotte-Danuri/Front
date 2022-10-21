@@ -535,13 +535,13 @@
                   <!-- Title -->
                   <div class="fw-bold">
                     <a class="text-body" href="/MyProduct">
-                      {{ product.productName }}
+                      {{ product.productName.substring(0, 15) }}
                     </a>
                   </div>
 
                   <!-- Price -->
                   <div class="fw-bold text-muted">
-                    {{ product.price }}
+                    {{ comma(product.price) }}
                   </div>
                 </div>
               </div>
@@ -627,6 +627,9 @@ export default {
       })
       console.log(result)
     },
+    comma(val) {
+      return String(val).replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+    }
   },
 }
 </script>

@@ -3,7 +3,7 @@
   <section class="pt-7 pb-12">
     <div class="container">
       <div class="row">
-        <div class="col-12 text-center">
+        <div class="col-12 text-center" style="margin-left:17%">
           <!-- Heading -->
           <h3 class="mb-10" style="font-size: xx-large; font-weight: bold; color: black">
             My Wishlist
@@ -82,7 +82,7 @@
                 </div>
                 <!-- Body -->
                 <div class="card-body fw-bold text-center">
-                  <a class="text-body" href="product.html">{{ like.productName }}</a>
+                  <a class="text-body" href="product.html">{{ like.productName.substring(0, 15) }}</a>
                   <br />
                   <span class="text-muted">￦ {{ comma(like.price) }} 원</span>
                 </div>

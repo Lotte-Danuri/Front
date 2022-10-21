@@ -179,13 +179,13 @@
                   <!-- Title -->
                   <div class="fw-bold">
                     <a class="text-body" href="/MyProduct">
-                      {{ product.productName }}
+                      {{ product.productName.substring(0, 15) }}
                     </a>
                   </div>
 
                   <!-- Price -->
                   <div class="fw-bold text-muted">
-                    {{ product.price }}
+                    {{ comma(product.price) }}
                   </div>
                 </div>
               </div>
@@ -387,6 +387,8 @@
 import { useApi } from '/@src/composable/useApi'
 const api = useApi()
 
+
+
 export default {
   data() {
     return {
@@ -402,6 +404,9 @@ export default {
       console.log(this.productList)
       // alert(this.productList.data)
     },
+    comma(val) {
+      return String(val).replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+    }
   },
 }
 </script>
